@@ -98,4 +98,4 @@ Use validated dataset to benchmark LLMs or other models:
   "flags": []
 }
 ```
-Team: MathLABS -> (L)ucas Yao, (A)khilesh Vangala, (B)ruce Zhang, (S)ahil Parupudi
+Team: MathLABS -> (L)ucas Yao, (A)khilesh Vangala, (B)ruce Zhang, (S)ahil Parupudi; NYU | CDS
