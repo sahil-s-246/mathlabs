@@ -70,12 +70,32 @@ Use validated dataset to benchmark LLMs or other models:
 
 ```json
 {
-  "id": "ALG-001",
-  "topic": "Linear Algebra",
-  "msc2020_field": "15A18",
-  "question": "Find the eigenvalues of A = [[1,2],[2,1]]",
-  "answer": "[3, -1]",
-  "difficulty": "medium",
-  "source": "baseline",
-  "validated": true
+  "problem_id": "prob-venn-001",
+  "source": {
+    "type": "generated"
+  },
+  "subfield": ["60"],
+  "topic": ["probability", "venn_diagram"],
+  "gradelevel": ["High-School", "College-level"],
+  "statement": "In a class of 50 students, 30 study Math, 25 study Physics, and 10 study both Math and Physics. How many students study neither Math nor Physics?",
+  "diagram_data": {
+    "type": "venn_diagram",
+    "circles": [
+      { "label": "Math", "size": 30, "position": [100, 100], "radius": 50 },
+      { "label": "Physics", "size": 25, "position": [150, 100], "radius": 50 }
+    ],
+    "intersections": [
+      { "labels": ["Math", "Physics"], "size": 10 }
+    ],
+    "universal_set": 50
+  },
+  "hints": [
+    "Use the principle of inclusion-exclusion: |A ∪ B| = |A| + |B| - |A ∩ B|.",
+    "Subtract |A ∪ B| from total students to find students in neither."
+  ],
+  "solution": "Number studying neither = Total - |Math ∪ Physics| = 50 - (30 + 25 - 10) = 50 - 45 = 5",
+  "validation_status": "unverified",
+  "flags": []
 }
+```
+
