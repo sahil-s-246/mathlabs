@@ -1,13 +1,13 @@
-# 🧮 MathFlow: Visual and Symbolic Mathematical Reasoning Dataset
+# 🧮 MathLABS: Visual and Symbolic Mathematical Reasoning Dataset
 
-MathFlow is a collaborative dataset project exploring **visual mathematical reasoning** and **symbolic problem solving** in modern LLMs and VLMs.  
+MathLABS is a collaborative dataset project exploring **visual mathematical reasoning** and **symbolic problem solving** in modern LLMs and VLMs.  
 The goal is to benchmark model reasoning on **small-data visual math problems** with structured, schema-aligned questions.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 ```
-mathflow/
+mathlabs/
 │
 ├── dataset/ # Phase 1: All questions (baseline + validated)
 │ ├── baseline.json #Intial pool
@@ -32,18 +32,18 @@ mathflow/
 
 ---
 
-## ⚙️ Workflow
+## Workflow
 
 ### **Phase 1: Dataset**
-All team members collaborate to create a robust baseline, then split tasks for efficiency:
+All team members collaborate to create a robust baseline in ```baseline.json```, then split tasks for efficiency:
 
-| Step | Description | Output |
-|------|-------------|--------|
-| **Baseline** | Initial question pool (~100 questions) across subfields (Algebra, Geometry, Probability, etc.) | `dataset/baseline/*.json` |
-| **Extraction** | Extract diagrams, OCR text, and structured representations | `dataset/extraction/diagram_objects.json` |
-| **Generation** | LLM-assisted synthetic question creation | `dataset/generation/generated_questions.json` |
-| **Formatting** | Schema normalization, MSC2020 classification, difficulty tagging | `dataset/formatting/unified_schema.json` |
-| **Validation** | Auto + manual verification of answers, reasoning, hints | `dataset/validation/verified_questions.json` |
+| Step | Description |
+|------|-------------|
+| **Baseline** | Initial question pool (~100 questions) across subfields (Algebra, Geometry, Probability, etc.)|
+| **Extraction** | Extract diagrams, OCR text, and structured representations|
+| **Generation** | LLM-assisted synthetic question creation|
+| **Formatting** | Schema normalization, MSC2020 classification, difficulty tagging|
+| **Validation** | Auto + manual verification of answers, reasoning, hints|
 
 ---
 
@@ -58,7 +58,7 @@ Use validated dataset to benchmark LLMs or other models:
 
 ---
 
-## 🧠 Research Focus
+## Research Focus
 - Reasoning with **small-data**  
 - **Visual + symbolic** math problem understanding  
 - **Few-shot and zero-shot** evaluation of LLMs  
@@ -66,7 +66,7 @@ Use validated dataset to benchmark LLMs or other models:
 
 ---
 
-## 🧩 JSON Schema Example
+## JSON Schema Example
 
 ```json
 {
