@@ -1,91 +1,92 @@
-[{
-  "problem_id": "15-001",
+[
+  {
+    "problem_id": "15-001",
     "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": "SIXTH EDITION",
+      "chapter": 1,
+      "page": 89
+    },
+    "subfield": [
+      "15"
     ],
-    "edition": "SIXTH EDITION",
-    "chapter": 1,
-    "page": 89
-  },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "linear_independence",
-    "vectors"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "Determine if the following vectors are linearly independent. Justify your answer.\n\\mathbf{v}_1 = \\begin{bmatrix} 5 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\mathbf{v}_2 = \\begin{bmatrix} 7 \\\\ 2 \\\\ -6 \\end{bmatrix}, \\mathbf{v}_3 = \\begin{bmatrix} -2 \\\\ -1 \\\\ 6 \\end{bmatrix}",
-  "diagram_data": {
-    "type": "matrix_representation",
-    "matrix": [
-      [5, 7, -2],
-      [1, 2, -1],
-      [0, -6, 6]
+    "topic": [
+      "linear_algebra",
+      "linear_independence",
+      "vectors"
     ],
-    "dimensions": "3x3"
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine if the following vectors are linearly independent. Justify your answer.\n\\mathbf{v}_1 = \\begin{bmatrix} 5 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\mathbf{v}_2 = \\begin{bmatrix} 7 \\\\ 2 \\\\ -6 \\end{bmatrix}, \\mathbf{v}_3 = \\begin{bmatrix} -2 \\\\ -1 \\\\ 6 \\end{bmatrix}",
+    "diagram_data": {
+      "type": "matrix_representation",
+      "matrix": [
+        [5, 7, -2],
+        [1, 2, -1],
+        [0, -6, 6]
+      ],
+      "dimensions": "3x3",
+      "image_path": "images/15-001.png"
+    },
+    "hints": [
+      "Set up the vector equation $c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + c_3\\mathbf{v}_3 = \\mathbf{0}$.",
+      "Form the augmented matrix $[\\mathbf{v}_1 \\ \\mathbf{v}_2 \\ \\mathbf{v}_3 \\ | \\ \\mathbf{0}]$ and row-reduce it.",
+      "The vectors are linearly independent if and only if the equation has only the trivial solution ($c_1=c_2=c_3=0$). A pivot in every column indicates linear independence."
+    ],
+    "solution": "The vectors are **linearly dependent**.\n\n**Justification:** The vector $\\mathbf{v}_3$ is a linear combination of $\\mathbf{v}_1$ and $\\mathbf{v}_2$. Specifically, $\\mathbf{v}_3 = -1(\\mathbf{v}_2 - \\mathbf{v}_1)$, which simplifies to $\\mathbf{v}_1 - \\mathbf{v}_2 + \\mathbf{v}_3 = \\mathbf{0}$.\n\nAlternatively, forming the matrix $\\mathbf{A}$ and row-reducing shows there is a free variable (no pivot in the third column), which means there are non-trivial solutions to $\\mathbf{A}\\mathbf{c} = \\mathbf{0}$.",
+    "validation_status": "verified",
+    "flags": []
   },
-  "hints": [
-    "Set up the vector equation $c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + c_3\\mathbf{v}_3 = \\mathbf{0}$.",
-    "Form the augmented matrix $[\\mathbf{v}_1 \\ \\mathbf{v}_2 \\ \\mathbf{v}_3 \\ | \\ \\mathbf{0}]$ and row-reduce it.",
-    "The vectors are linearly independent if and only if the equation has only the trivial solution ($c_1=c_2=c_3=0$). A pivot in every column indicates linear independence."
-  ],
-  "solution": "The vectors are **linearly dependent**.\n\n**Justification:** The vector $\\mathbf{v}_3$ is a linear combination of $\\mathbf{v}_1$ and $\\mathbf{v}_2$. Specifically, $\\mathbf{v}_3 = -1(\\mathbf{v}_2 - \\mathbf{v}_1)$, which simplifies to $\\mathbf{v}_1 - \\mathbf{v}_2 + \\mathbf{v}_3 = \\mathbf{0}$.\n\nAlternatively, forming the matrix $\\mathbf{A}$ and row-reducing shows there is a free variable (no pivot in the third column), which means there are non-trivial solutions to $\\mathbf{A}\\mathbf{c} = \\mathbf{0}$.",
-  "validation_status": "verified",
-  "flags": []
-},
-{
-  "problem_id": "15-002",
+  {
+    "problem_id": "15-002",
     "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": "SIXTH EDITION",
+      "chapter": 1,
+      "page": 34
+    },
+    "subfield": [
+      "15"
     ],
-    "edition": "SIXTH EDITION",
-    "chapter": 1,
-    "page": 34
-  },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "systems_of_linear_equations",
-    "intersection_of_lines"
-  ],
-  "gradelevel": [
-    "High-School",
-    "College-level"
-  ],
-  "statement": "Find the point $(x_1, x_2)$ that lies on the line $x_1 + 5x_2 = 7$ and on the line $x_1 - 2x_2 = -2$.",
-  "diagram_data": {
-    "type": "graph",
-    "description": "A 2D graph with an $x_1$-axis and an $x_2$-axis. Two lines are plotted on the graph, representing the given equations. The two lines intersect at a single point, which is the solution to the system.",
-    "equations": [
-      "x1 + 5x2 = 7",
-      "x1 - 2x2 = -2"
-    ]
-  },
-  "hints": [
-    "The problem asks you to solve the system of two linear equations.",
-    "You can use the elimination method by subtracting the second equation from the first.",
-    "Once you find the value of $x_2$, substitute it back into either equation to find $x_1$."
-  ],
-  "solution": "The point is $(3, 4/5)$ or $(3, 0.8)$.\n\n**Calculation:**\nWe have the system:\n1. $x_1 + 5x_2 = 7$\n2. $x_1 - 2x_2 = -2$\n\nSubtract Equation (2) from Equation (1):\n$(x_1 + 5x_2) - (x_1 - 2x_2) = 7 - (-2)$\n$7x_2 = 9$\n$x_2 = 9/7$\n\nSubstitute $x_2 = 9/7$ into Equation (1):\n$x_1 + 5(9/7) = 7$\n$x_1 + 45/7 = 49/7$\n$x_1 = 49/7 - 45/7$\n$x_1 = 4/7$\n\nTherefore, the intersection point is $(4/7, 9/7)$.\n\n*(Note: The solution for $(x_1, x_2)$ is $(4/7, 9/7)$. The example solution in the prompt may have a typo as it refers to a different problem.)*",
-  "validation_status": "unverified",
-  "flags": []
-}
-
-
+    "topic": [
+      "linear_algebra",
+      "systems_of_linear_equations",
+      "intersection_of_lines"
+    ],
+    "gradelevel": [
+      "High-School",
+      "College-level"
+    ],
+    "statement": "Find the point $(x_1, x_2)$ that lies on the line $x_1 + 5x_2 = 7$ and on the line $x_1 - 2x_2 = -2$.",
+    "diagram_data": {
+      "type": "graph",
+      "description": "A 2D graph with an $x_1$-axis and an $x_2$-axis. Two lines are plotted on the graph, representing the given equations. The two lines intersect at a single point, which is the solution to the system.",
+      "equations": [
+        "x1 + 5x2 = 7",
+        "x1 - 2x2 = -2"
+      ],
+      "image_path": "images/15-002.png"
+    },
+    "hints": [
+      "The problem asks you to solve the system of two linear equations.",
+      "You can use the elimination method by subtracting the second equation from the first.",
+      "Once you find the value of $x_2$, substitute it back into either equation to find $x_1$."
+    ],
+    "solution": "The point is $(4/7, 9/7)$.\n\n**Calculation:**\nWe have the system:\n1. $x_1 + 5x_2 = 7$\n2. $x_1 - 2x_2 = -2$\n\nSubtract Equation (2) from Equation (1):\n$(x_1 + 5x_2) - (x_1 - 2x_2) = 7 - (-2)$\n$7x_2 = 9$\n$x_2 = 9/7$\n\nSubstitute $x_2 = 9/7$ into Equation (1):\n$x_1 + 5(9/7) = 7$\n$x_1 + 45/7 = 49/7$\n$x_1 = 49/7 - 45/7$\n$x_1 = 4/7$\n\nTherefore, the intersection point is $(4/7, 9/7)$.",
+    "validation_status": "unverified",
+    "flags": []
+  }
 ]
