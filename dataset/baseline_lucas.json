@@ -1,6 +1,7 @@
 [
   {
     "problem_id": "15-001",
+    "question_type":"short_answer",
     "source": {
       "type": "extract",
       "book_title": "Linear Algebra and Its Applications",
@@ -46,6 +47,7 @@
   },
   {
     "problem_id": "15-002",
+    "question_type":"short_answer",
     "source": {
       "type": "extract",
       "book_title": "Linear Algebra and Its Applications",
@@ -88,5 +90,48 @@
     "solution": "The point is $(4/7, 9/7)$.\n\n**Calculation:**\nWe have the system:\n1. $x_1 + 5x_2 = 7$\n2. $x_1 - 2x_2 = -2$\n\nSubtract Equation (2) from Equation (1):\n$(x_1 + 5x_2) - (x_1 - 2x_2) = 7 - (-2)$\n$7x_2 = 9$\n$x_2 = 9/7$\n\nSubstitute $x_2 = 9/7$ into Equation (1):\n$x_1 + 5(9/7) = 7$\n$x_1 + 45/7 = 49/7$\n$x_1 = 49/7 - 45/7$\n$x_1 = 4/7$\n\nTherefore, the intersection point is $(4/7, 9/7)$.",
     "validation_status": "unverified",
     "flags": []
-  }
+  },
+  {
+  "problem_id": "15-003",
+  "question_type":"true_false",
+  "source": {
+    "type": "extract",
+    "book_title": "Linear Algebra and Its Applications",
+    "authors": [
+      "David C. Lay",
+      "Steven R. Lay",
+      "Judi J. McDonald"
+    ],
+    "edition": "SIXTH EDITION",
+    "chapter": 1,
+    "page": "Implicit from image, likely in section on Row Reduction",
+    "exercise_number": 25
+  },
+  "subfield": [
+    "15"
+  ],
+  "topic": [
+    "linear_algebra",
+    "matrix_operations",
+    "row_reduction",
+    "reduced_echelon_form"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "In some cases, a matrix may be row reduced to more than one matrix in reduced echelon form, using different sequences of row operations.",
+  "diagram_data": {
+    "type": "textual_statement",
+    "description": "A True/False statement regarding the uniqueness of reduced echelon form.",
+    "image_path": "images/15-003.png"
+  },
+  "hints": [
+    "Recall the definition and properties of reduced echelon form.",
+    "Consider whether the positions of leading 1s and zeros in a reduced echelon form are fixed or can vary.",
+    "Think about the 'uniqueness of the reduced echelon form' theorem."
+  ],
+  "solution": "False.\n\n**Justification:** A fundamental theorem in linear algebra states that each matrix is row equivalent to **one and only one** reduced echelon matrix. While different sequences of row operations can be used to reach the reduced echelon form, the final reduced echelon form itself is unique for any given matrix. This uniqueness is crucial for many applications of linear algebra, such as determining the solution set of a linear system or finding the basis for a vector space.",
+  "validation_status": "verified",
+  "flags": []
+}
 ]
