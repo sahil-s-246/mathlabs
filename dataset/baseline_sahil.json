@@ -1,0 +1,45 @@
+[
+
+  {"problem_id": "62-001",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Probability and Statistics for Data Science",
+    "authors": [
+      "Carlos Fernandez-Granda"
+    ],
+    "edition": null,
+    "chapter": 11,
+    "page": "11",
+    "exercise_number": "551"
+  },
+  "subfield": [
+    "statistics"
+  ],
+  "topic": [
+    "probability",
+    "variance",
+    "covariance",
+    "decision_theory"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "11.2 (Basketball team) The coach of a basketball team needs to select two out of three players to complete the line-up for the last quarter of a game. The covariance matrix of the points scored by the players per quarter is the following:\n\n<table id=\"0-1\">\n<tr><td></td><td>Player A</td><td>Player B</td><td>Player C</td></tr>\n<tr><td>Player A</td><td>100</td><td>-80</td><td>10</td></tr>\n<tr><td>Player B</td><td>-80</td><td>81</td><td>50</td></tr>\n<tr><td>Player C</td><td>10</td><td>50</td><td>100</td></tr>\n</table>\n\nCompute the variance of the total number of points, if the coach plays the three possible combinations of two players. Assuming all three players score the same number of points on average, which combination would you recommend to the coach, if they are winning by a wide margin? Which would you recommend, if they are losing by a wide margin?",
+  "diagram_data": {
+    "type": "table",
+    "description": "A covariance matrix for the points scored by three basketball players (A, B, C).",
+    "image_path": "images/62-001.png"
+  },
+  "hints": [
+    "Recall the formula for the variance of the sum of two random variables, X and Y: $Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)$.",
+    "The diagonal entries of the covariance matrix represent the variance of each player's score. For example, $Var(A) = 100$. The off-diagonal entries represent the covariance between two players.",
+    "Think about what variance represents in a real-world scenario. Low variance implies a more predictable and consistent outcome, while high variance implies a less predictable outcome with higher potential for both very good and very bad results.",
+    "If the team is winning by a wide margin, the coach likely wants to minimize risk and secure the win. If the team is losing by a wide margin, the coach might need to take a risk on a high-potential but less predictable outcome."
+  ],
+  "solution": "**1. Compute the variance for each combination:**\nLet A, B, and C be the random variables representing the points scored by each player. The variance of the sum of points for any two players is given by the formula $Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)$.\n\n* **Combination (A, B):**\n    $Var(A + B) = Var(A) + Var(B) + 2 Cov(A, B)$\n    $Var(A + B) = 100 + 81 + 2(-80) = 181 - 160 = 21$\n\n* **Combination (A, C):**\n    $Var(A + C) = Var(A) + Var(C) + 2 Cov(A, C)$\n    $Var(A + C) = 100 + 100 + 2(10) = 200 + 20 = 220$\n\n* **Combination (B, C):**\n    $Var(B + C) = Var(B) + Var(C) + 2 Cov(B, C)$\n    $Var(B + C) = 81 + 100 + 2(50) = 181 + 100 = 281$\n\n**Summary of Variances:**\n* Pair (A, B): Variance = 21\n* Pair (A, C): Variance = 220\n* Pair (B, C): Variance = 281\n\n**2. Recommendations:**\nSince all players score the same on average, the decision should be based on the variance, which measures the risk or unpredictability of the outcome.\n\n* **Winning by a wide margin:** The coach should choose the most predictable, lowest-risk option to maintain the lead. This corresponds to the pair with the **lowest variance**.\n    * **Recommendation: Players A and B** (Variance = 21). The strong negative covariance means that if one player has an off-quarter, the other tends to compensate, leading to a very consistent total score.\n\n* **Losing by a wide margin:** The coach needs a high-risk, high-reward strategy to have a chance at a comeback. This corresponds to the pair with the **highest variance**, as this combination has the greatest potential for an exceptionally high-scoring quarter (though also the greatest risk of a very low-scoring one).\n    * **Recommendation: Players B and C** (Variance = 281). The large positive covariance means their performances are positively correlated, making a \"boom or bust\" outcome more likely.",
+  "validation_status": "verified",
+  "flags": []
+}
+
+]
