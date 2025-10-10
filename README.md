@@ -71,6 +71,7 @@ Use validated dataset to benchmark LLMs or other models:
 ```json
 {
   "problem_id": "prob-venn-001",
+  "question_type": "short_answer",
   "source": {
     "type": "generated"
   },
@@ -87,7 +88,8 @@ Use validated dataset to benchmark LLMs or other models:
     "intersections": [
       { "labels": ["Math", "Physics"], "size": 10 }
     ],
-    "universal_set": 50
+    "universal_set": 50,
+    "image_path": "images/60-001.png"
   },
   "hints": [
     "Use the principle of inclusion-exclusion: |A ∪ B| = |A| + |B| - |A ∩ B|.",
