@@ -155,4 +155,292 @@
   "solution": "Let $x \\equiv 3^y \\pmod{17}$. Then the equation $x^{12} \\equiv 13 \\pmod{17}$ becomes $3^{12y} \\equiv 13 \\pmod{17}$. Using the table, $\\operatorname{ind}_3(13)=9$, so $12y \\equiv 9 \\pmod{16}$.\n\nThe gcd is $\\gcd(12,16)=4$, and 4 divides 9, so the equation has no solution unless 4 divides 9 — which it does not. $4 \\nmid 9$, so **no solution exists**.\n\n(Alternative check: dividing both sides by 4 gives $3y \\equiv 9/4 \\pmod{4}$, which is not meaningful, so no solution exists.)\n\nTherefore, the congruence $x^{12} \\equiv 13 \\pmod{17}$ has **no solution**.",
   "validation_status": "unverified",
   "flags": []
+},
+{
+  "problem_id": "62-001",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Introduction to Mathematical Statistics",
+    "authors": [
+      "Robert V. Hogg",
+      "Joseph W. McKean",
+      "Allen T. Craig"
+    ],
+    "edition": "EIGHTH EDITION",
+    "chapter": 2,
+    "page": 124
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "independence",
+    "joint_pdf",
+    "continuous_random_variables"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "Show that the random variables $X_1$ and $X_2$ with joint pdf \n$$ f(x_1, x_2) = \\begin{cases} 12 x_1 x_2 (1 - x_2), & 0 < x_1 < 1,\\ 0 < x_2 < 1 \\\\ 0, & \\text{elsewhere} \\end{cases} $$\nare independent.",
+  "diagram_data": {
+    "type": "formula",
+    "image_path": "images/62-001.png"
+  },
+  "hints": [
+    "Compute the marginal $f_{X_1}(x_1)=\\int_0^1 12\\,x_1 x_2(1-x_2)\\,dx_2$ for $0<x_1<1$.",
+    "Compute the marginal $f_{X_2}(x_2)=\\int_0^1 12\\,x_1 x_2(1-x_2)\\,dx_1$ for $0<x_2<1$.",
+    "Simplify both integrals to get $f_{X_1}(x_1)$ and $f_{X_2}(x_2)$; also check each integrates to $1$ on $(0,1)$.",
+    "Verify factorization: $f(x_1,x_2)=f_{X_1}(x_1)\\,f_{X_2}(x_2)$ for $0<x_1<1,\\ 0<x_2<1$."
+  ],
+  "solution": "For $0<x_1<1$,\n$\\displaystyle f_{X_1}(x_1)=\\int_0^1 12\\,x_1 x_2(1-x_2)\\,dx_2=12x_1\\Big[\\tfrac{x_2^2}{2}-\\tfrac{x_2^3}{3}\\Big]_0^1=12x_1\\cdot\\tfrac{1}{6}=2x_1.$\nFor $0<x_2<1$,\n$\\displaystyle f_{X_2}(x_2)=\\int_0^1 12\\,x_1 x_2(1-x_2)\\,dx_1=12x_2(1-x_2)\\int_0^1 x_1\\,dx_1=12x_2(1-x_2)\\cdot\\tfrac{1}{2}=6x_2(1-x_2).$\nBoth marginals integrate to $1$ on $(0,1)$. Moreover,\n$\\displaystyle f_{X_1}(x_1)f_{X_2}(x_2)=(2x_1)\\cdot\\big(6x_2(1-x_2)\\big)=12x_1x_2(1-x_2)=f(x_1,x_2)$\nfor $0<x_1<1,\\ 0<x_2<1$ (and all are $0$ elsewhere). Hence $X_1$ and $X_2$ are independent.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-002",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Introduction to Mathematical Statistics",
+    "authors": [
+      "Robert V. Hogg",
+      "Joseph W. McKean",
+      "Allen T. Craig"
+    ],
+    "edition": "EIGHTH EDITION",
+    "chapter": 3,
+    "page": 163
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "expectation",
+    "variance",
+    "binomial_distribution"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "If $X \\sim b(n, p)$, show that \n$$ E\\left( \\frac{X}{n} \\right) = p $$\nand\n$$ E\\left[ \\left( \\frac{X}{n} - p \\right)^2 \\right] = \\frac{p(1 - p)}{n}. $$",
+  "diagram_data": {
+    "type": "formula",
+    "image_path": "images/62-002.png"
+  },
+  "hints": [
+    "Recall that if $X\\sim b(n,p)$ then $E[X]=np$ and $\\operatorname{Var}(X)=np(1-p)$. You can use these directly.",
+    "For the first identity, use linearity of expectation on $E\\big[\\frac{X}{n}\\big]$.",
+    "For the second identity, recognize that $E\\big[\\big(\\frac{X}{n}-p\\big)^2\\big]$ is the variance of $\\frac{X}{n}$.",
+    "Use the scaling property of variance: $\\operatorname{Var}(aX)=a^2\\operatorname{Var}(X)$."
+  ],
+  "solution": "For the first part, by linearity of expectation:\n\\[\nE\\left[\\frac{X}{n}\\right]=\\frac{1}{n}E[X]=\\frac{1}{n}(np)=p.\n\\]\nFor the second part,\n\\[\nE\\left[\\left(\\frac{X}{n}-p\\right)^2\\right]=\\operatorname{Var}\\left(\\frac{X}{n}\\right)=\\frac{1}{n^2}\\operatorname{Var}(X)=\\frac{1}{n^2}\\big(np(1-p)\\big)=\\frac{p(1-p)}{n}.\n\\]\nThus both identities are verified.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-003",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Introduction to Mathematical Statistics",
+    "authors": [
+      "Robert V. Hogg",
+      "Joseph W. McKean",
+      "Allen T. Craig"
+    ],
+    "edition": "EIGHTH EDITION",
+    "chapter": 3,
+    "page": 197
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "normal_distribution",
+    "independence",
+    "sum_of_random_variables"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "A certain job is completed in three steps in series. The means and standard deviations for the steps are given in the table below (in minutes). Assuming independent steps and normal distributions, compute the probability that the job takes less than $40$ minutes to complete.",
+  "diagram_data": {
+    "type": "table",
+    "description": "3-column table used to describe the distribution of the three steps of a job.",
+    "image_path": "images/62-003.png"
+  },
+  "hints": [
+    "Model each step time as normal and independent: $X_1\\sim N(17,2^2)$, $X_2\\sim N(13,1^2)$, $X_3\\sim N(13,2^2)$.",
+    "Use closure of normals: $T=X_1+X_2+X_3\\sim N\\big(\\mu_T,\\sigma_T^2\\big)$ with $\\mu_T=17+13+13$ and $\\sigma_T^2=2^2+1^2+2^2$.",
+    "Standardize: compute $z=\\dfrac{40-\\mu_T}{\\sigma_T}$.",
+    "Evaluate $\\Phi(z)$ (standard normal CDF) to get the probability."
+  ],
+  "solution": "Since the steps are independent normals, the total time $T=X_1+X_2+X_3$ is normal with $\\mu_T=17+13+13=43$ and $\\sigma_T^2=2^2+1^2+2^2=9$, i.e., $T\\sim N(43,3^2)$. Therefore\n\\[\nP(T<40)=\\Phi\\!\\left(\\frac{40-43}{3}\\right)=\\Phi(-1)\\approx 0.1587.\n\\]\nSo the job finishes in less than $40$ minutes with probability about $0.159$.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-004",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Introduction to Mathematical Statistics",
+    "authors": [
+      "Robert V. Hogg",
+      "Joseph W. McKean",
+      "Allen T. Craig"
+    ],
+    "edition": "EIGHTH EDITION",
+    "chapter": 5,
+    "page": 327
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "asymptotic_theory",
+    "confidence_interval",
+    "variance_estimation"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "Using the assumptions behind the confidence interval given in expression (4.2.9), show that\n$$\n\\frac{\\sqrt{\\frac{S_1^2}{n_1} + \\frac{S_2^2}{n_2}}}{\\sqrt{\\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}} \\xrightarrow{P} 1.\n$$",
+  "diagram_data": {
+    "type": "formula",
+    "image_path": "images/62-004.png"
+  },
+  "hints": [
+    "Let $A_n=\\dfrac{S_1^2}{n_1}+\\dfrac{S_2^2}{n_2}$ and $B_n=\\dfrac{\\sigma_1^2}{n_1}+\\dfrac{\\sigma_2^2}{n_2}$ (deterministic).",
+    "Use the consistency of sample variances: $S_i^2 \\xrightarrow{P} \\sigma_i^2$ under the CI assumptions (i.i.d., finite variance).",
+    "Write $\\dfrac{A_n-B_n}{B_n}=w_1\\dfrac{S_1^2-\\sigma_1^2}{\\sigma_1^2}+w_2\\dfrac{S_2^2-\\sigma_2^2}{\\sigma_2^2}$ with $w_i=\\dfrac{\\sigma_i^2/n_i}{\\sigma_1^2/n_1+\\sigma_2^2/n_2}$; then each term $\\to_P 0$.",
+    "Conclude $\\dfrac{A_n}{B_n}=1+o_P(1)$ and apply the continuous mapping theorem to $x\\mapsto\\sqrt{x}$ to get $\\sqrt{A_n}/\\sqrt{B_n}\\xrightarrow{P}1$."
+  ],
+  "solution": "Define $A_n=\\dfrac{S_1^2}{n_1}+\\dfrac{S_2^2}{n_2}$ and $B_n=\\dfrac{\\sigma_1^2}{n_1}+\\dfrac{\\sigma_2^2}{n_2}$. Since $S_i^2\\xrightarrow{P}\\sigma_i^2$, we have\n\\[\n\\frac{A_n-B_n}{B_n}\n= \\frac{\\frac{S_1^2-\\sigma_1^2}{n_1}+\\frac{S_2^2-\\sigma_2^2}{n_2}}{\\frac{\\sigma_1^2}{n_1}+\\frac{\\sigma_2^2}{n_2}}\n= w_1\\frac{S_1^2-\\sigma_1^2}{\\sigma_1^2}+w_2\\frac{S_2^2-\\sigma_2^2}{\\sigma_2^2}\n\\xrightarrow{P}0,\n\\]\nwhere $w_i=\\dfrac{\\sigma_i^2/n_i}{\\sigma_1^2/n_1+\\sigma_2^2/n_2}\\in(0,1)$ and $w_1+w_2=1$. Hence $\\dfrac{A_n}{B_n}=1+o_P(1)$. By the continuous mapping theorem,\n\\[\n\\frac{\\sqrt{A_n}}{\\sqrt{B_n}} = \\sqrt{\\frac{A_n}{B_n}} \\xrightarrow{P} \\sqrt{1}=1.\n\\]\nTherefore, $\\sqrt{\\dfrac{S_1^2}{n_1}+\\dfrac{S_2^2}{n_2}}\\big/\\sqrt{\\dfrac{\\sigma_1^2}{n_1}+\\dfrac{\\sigma_2^2}{n_2}}\\xrightarrow{P}1$ as required.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "11-005",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Elementary Number Theory",
+    "authors": [
+      "David M. Burton"
+    ],
+    "edition": "SEVENTH EDITION",
+    "chapter": 14,
+    "page": 291
+  },
+  "subfield": [
+    "11"
+  ],
+  "topic": [
+    "number_theory",
+    "fibonacci_numbers",
+    "series"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "Show that the sum of the squares of the first $n$ Fibonacci numbers is given by the formula\n$$\nu_1^2 + \nu_2^2 + \nu_3^2 + \\cdots + \nu_n^2 = \nu_n \nu_{n+1}.$$",
+  "diagram_data": {
+    "type": "formula",
+    "image_path": "images/11-005.png"
+  },
+  "hints": [
+    "Recall Fibonacci: $u_{n+1}=u_n+u_{n-1}$ with $u_0=0$, $u_1=1$.",
+    "Use the given identity for $k\\ge2$: $u_k^2 = u_k u_{k+1} - u_{k-1} u_k$ (it follows from $u_{k+1}-u_{k-1}=u_k$).",
+    "Sum from $k=1$ to $n$: write $\\sum_{k=1}^n u_k^2 = \\sum_{k=1}^n (u_ku_{k+1}-u_{k-1}u_k)$.",
+    "Recognize the telescoping pattern and cancel adjacent terms to obtain the boundary term $u_nu_{n+1}$."
+  ],
+  "solution": "Let $(u_n)$ be Fibonacci with $u_0=0$, $u_1=1$, and $u_{n+1}=u_n+u_{n-1}$. Since $u_{k+1}-u_{k-1}=u_k$, we have for $k\\ge2$ that $u_k^2 = u_k(u_{k+1}-u_{k-1}) = u_k u_{k+1} - u_{k-1} u_k$. Also the formula holds for $k=1$ because $u_0=0$.\nTherefore,\n\\[\n\\sum_{k=1}^{n} u_k^2 \n= \\sum_{k=1}^{n} \\big(u_k u_{k+1} - u_{k-1} u_k\\big)\n= (u_1u_2 - u_0u_1) + (u_2u_3 - u_1u_2) + \\cdots + (u_nu_{n+1} - u_{n-1}u_n)\n= u_nu_{n+1}.\n\\]\nHence the sum of the squares of the first $n$ Fibonacci numbers equals $u_nu_{n+1}$.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "11-006",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Elementary Number Theory",
+    "authors": [
+      "David M. Burton"
+    ],
+    "edition": "SEVENTH EDITION",
+    "chapter": 14,
+    "page": 302
+  },
+  "subfield": [
+    "11"
+  ],
+  "topics": [
+    "number_theory",
+    "fibonacci_numbers",
+    "binomial_coefficients",
+    "combinatorics",
+    "algebraic_identities"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "In 1876, Lucas discovered the following formula for the Fibonacci numbers in terms of the binomial coefficients:\n$$\nu_n \\,=\\, \\binom{n-1}{0} \\, + \\, \\binom{n-2}{1} \\, + \\, \\binom{n-3}{2} \\, + \\, \\cdots \\, + \\, \\binom{n-j}{\\,j-1\\,} \\, + \\, \\binom{n-j-1}{\\,j\\,},\n$$\nwhere $j$ is the largest integer less than or equal to $(n-1)/2$. Derive this result.",
+  "diagram_data": {
+    "type": "formula",
+    "image_path": "images/11-006.png"
+  },
+  "hints": [
+    "Define $a_n=\\sum_{k=0}^{\\lfloor (n-1)/2\\rfloor} \\binom{n-1-k}{k}$. Aim to show $a_{n+1}=a_n+a_{n-1}$ with $a_1=a_2=1$.",
+    "Use Pascal's identity: $\\binom{m}{r}=\\binom{m-1}{r}+\\binom{m-1}{r-1}$ to expand $\\binom{n-k}{k}$.",
+    "Write $a_{n+1}=\\sum_{k=0}^{\\lfloor n/2\\rfloor} \\binom{n-k}{k}=\\sum_{k=0}^{\\lfloor n/2\\rfloor}\\big[\\binom{n-1-k}{k}+\\binom{n-1-k}{k-1}\\big]$ and split the sum.",
+    "Recognize the first sum equals $a_n$; reindex the second ($r=k-1$) to obtain $a_{n-1}$, completing $a_{n+1}=a_n+a_{n-1}$."
+  ],
+  "solution": "Let $a_n=\\sum_{k=0}^{\\lfloor (n-1)/2\\rfloor} \\binom{n-1-k}{k}$. Note that $a_1=\\binom{0}{0}=1$ and $a_2=\\binom{1}{0}=1$. For $n\\ge2$, using Pascal's identity,\n\\[\na_{n+1}=\\sum_{k=0}^{\\lfloor n/2\\rfloor} \\binom{n-k}{k}\n=\\sum_{k=0}^{\\lfloor n/2\\rfloor}\\Big(\\binom{n-1-k}{k}+\\binom{n-1-k}{k-1}\\Big)\n=\\underbrace{\\sum_{k=0}^{\\lfloor n/2\\rfloor} \\binom{n-1-k}{k}}_{=\\,a_n}\n+\\underbrace{\\sum_{k=1}^{\\lfloor n/2\\rfloor} \\binom{n-1-k}{k-1}}_{\\text{set }r=k-1}\\,.\n\\]\nIn the second sum set $r=k-1$, giving $\\sum_{r=0}^{\\lfloor n/2\\rfloor-1} \\binom{n-2-r}{r}=a_{n-1}$. Hence $a_{n+1}=a_n+a_{n-1}$ with $a_1=a_2=1$, so $(a_n)$ is the Fibonacci sequence. Therefore\n\\[\n u_n = \\sum_{k=0}^{\\lfloor (n-1)/2\\rfloor} \\binom{n-1-k}{k}\n=\\binom{n-1}{0}+\\binom{n-2}{1}+\\binom{n-3}{2}+\\cdots+\\binom{n-j}{j-1}+\\binom{n-j-1}{j},\n\\]\nwhere $j=\\lfloor (n-1)/2\\rfloor$, which is Lucas's binomial formula for $u_n$.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-005",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Introduction to Mathematical Statistics",
+    "authors": [
+      "Robert V. Hogg",
+      "Joseph W. McKean",
+      "Allen T. Craig"
+    ],
+    "edition": "EIGHTH EDITION",
+    "chapter": 7,
+    "page": 434
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "sufficiency",
+    "completeness",
+    "mvue",
+    "exponential_family",
+    "bernoulli_distribution"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "Let $X_1, X_2, \\ldots, X_n$ represent a random sample from the discrete distribution having the pmf\n$$\nf(x;\\theta)=\\begin{cases}\n\\theta^{x}(1-\\theta)^{1-x}, & x=0,1,\\ 0<\\theta<1,\\\\\n0, & \\text{elsewhere.}\n\\end{cases}\n$$\nShow that $Y_1=\\sum_{i=1}^n X_i$ is a complete sufficient statistic for $\\theta$. Find the unique function of $Y_1$ that is the MVUE of $\\theta$. ",
+  "diagram_data": {
+    "type": "formula",
+    "image_path": "images/62-005.png"
+  },
+  "hints": [
+    "Write the joint pmf as $\\prod_{i=1}^n \\theta^{x_i}(1-\\theta)^{1-x_i}=\\theta^{\\sum x_i}(1-\\theta)^{n-\\sum x_i}$ and invoke the factorization theorem to show sufficiency of $Y_1=\\sum_{i=1}^n X_i$.",
+    "Recognize $Y_1\\sim\\mathrm{Bin}(n,\\theta)$. To prove completeness, assume $\\mathbb E_\\theta[g(Y_1)]=0$ for all $\\theta\\in(0,1)$.",
+    "Use $\\sum_{y=0}^n g(y)\\binom{n}{y}\\theta^y(1-\\theta)^{n-y}=0$ and divide by $(1-\\theta)^n$ to get a polynomial in $t=\\theta/(1-\\theta)$ with all coefficients zero.",
+    "Since $\\mathbb E[Y_1]=n\\theta$, conclude $\\mathbb E[Y_1/n]=\\theta$; by Lehmann–Scheffé, $Y_1/n$ is the unique MVUE."
+  ],
+  "solution": "Because $X_i\\in\\{0,1\\}$ with $\\mathbb P(X_i=1)=\\theta$, the joint pmf is\n$\\displaystyle f(\\mathbf x;\\theta)=\\prod_{i=1}^n \\theta^{x_i}(1-\\theta)^{1-x_i}=\\theta^{\\sum x_i}(1-\\theta)^{n-\\sum x_i}\\cdot 1_{\\{x_i\\in\\{0,1\\}\\}}.$\nThis factors through $Y_1=\\sum_{i=1}^n X_i$, so by the factorization theorem $Y_1$ is sufficient for $\\theta$.\n\nNext, $Y_1\\sim\\mathrm{Bin}(n,\\theta)$. Suppose $\\mathbb E_\\theta[g(Y_1)]=0$ for all $\\theta\\in(0,1)$. Then\n$\\displaystyle 0=\\sum_{y=0}^n g(y)\\binom{n}{y}\\theta^y(1-\\theta)^{n-y}$ for all $\\theta\\in(0,1)$. Dividing by $(1-\\theta)^n$ gives\n$\\displaystyle \\sum_{y=0}^n g(y)\\binom{n}{y}\\bigg(\\frac{\\theta}{1-\\theta}\\bigg)^y=0$ for all $t=\\theta/(1-\\theta)>0$.\nThis is a polynomial in $t$ that is identically zero on $(0,\\infty)$, hence all coefficients vanish: $g(y)\\binom{n}{y}=0$ for each $y$, so $g(y)=0$ for all $y$. Therefore $Y_1$ is complete.\n\nFinally, since $\\mathbb E[Y_1]=n\\theta$, we have $\\mathbb E[Y_1/n]=\\theta$. The estimator $\\hat\\theta=Y_1/n$ is a function of the complete sufficient statistic and is unbiased; by the Lehmann–Scheffé theorem it is the **unique MVUE** of $\\theta$.",
+  "validation_status": "unverified",
+  "flags": []
 }]
