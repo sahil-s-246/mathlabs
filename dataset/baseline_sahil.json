@@ -1,51 +1,58 @@
 [
-
-  {"problem_id": "62-001",
-  "question_type": "short_answer",
-  "source": {
-    "type": "extract",
-    "book_title": "Probability and Statistics for Data Science",
-    "authors": [
-      "Carlos Fernandez-Granda"
-    ],
-    "edition": null,
-    "chapter": 11,
-    "page": "11",
-    "exercise_number": "551"
-  },
-  "subfield": [
-    "statistics"
-  ],
-  "topic": [
-    "probability",
-    "variance",
-    "covariance",
-    "decision_theory"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "11.2 (Basketball team) The coach of a basketball team needs to select two out of three players to complete the line-up for the last quarter of a game. The covariance matrix of the points scored by the players per quarter is the following:\n\n<table id=\"0-1\">\n<tr><td></td><td>Player A</td><td>Player B</td><td>Player C</td></tr>\n<tr><td>Player A</td><td>100</td><td>-80</td><td>10</td></tr>\n<tr><td>Player B</td><td>-80</td><td>81</td><td>50</td></tr>\n<tr><td>Player C</td><td>10</td><td>50</td><td>100</td></tr>\n</table>\n\nCompute the variance of the total number of points, if the coach plays the three possible combinations of two players. Assuming all three players score the same number of points on average, which combination would you recommend to the coach, if they are winning by a wide margin? Which would you recommend, if they are losing by a wide margin?",
-  "diagram_data": {
-    "type": "table",
-    "description": "A covariance matrix for the points scored by three basketball players (A, B, C).",
-    "image_path": "images/62-001.png"
-  },
-  "hints": [
-    "Recall the formula for the variance of the sum of two random variables, X and Y: $Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)$.",
-    "The diagonal entries of the covariance matrix represent the variance of each player's score. For example, $Var(A) = 100$. The off-diagonal entries represent the covariance between two players.",
-    "Think about what variance represents in a real-world scenario. Low variance implies a more predictable and consistent outcome, while high variance implies a less predictable outcome with higher potential for both very good and very bad results.",
-    "If the team is winning by a wide margin, the coach likely wants to minimize risk and secure the win. If the team is losing by a wide margin, the coach might need to take a risk on a high-potential but less predictable outcome."
-  ],
-  "solution": "**1. Compute the variance for each combination:**\nLet A, B, and C be the random variables representing the points scored by each player. The variance of the sum of points for any two players is given by the formula $Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)$.\n\n* **Combination (A, B):**\n    $Var(A + B) = Var(A) + Var(B) + 2 Cov(A, B)$\n    $Var(A + B) = 100 + 81 + 2(-80) = 181 - 160 = 21$\n\n* **Combination (A, C):**\n    $Var(A + C) = Var(A) + Var(C) + 2 Cov(A, C)$\n    $Var(A + C) = 100 + 100 + 2(10) = 200 + 20 = 220$\n\n* **Combination (B, C):**\n    $Var(B + C) = Var(B) + Var(C) + 2 Cov(B, C)$\n    $Var(B + C) = 81 + 100 + 2(50) = 181 + 100 = 281$\n\n**Summary of Variances:**\n* Pair (A, B): Variance = 21\n* Pair (A, C): Variance = 220\n* Pair (B, C): Variance = 281\n\n**2. Recommendations:**\nSince all players score the same on average, the decision should be based on the variance, which measures the risk or unpredictability of the outcome.\n\n* **Winning by a wide margin:** The coach should choose the most predictable, lowest-risk option to maintain the lead. This corresponds to the pair with the **lowest variance**.\n    * **Recommendation: Players A and B** (Variance = 21). The strong negative covariance means that if one player has an off-quarter, the other tends to compensate, leading to a very consistent total score.\n\n* **Losing by a wide margin:** The coach needs a high-risk, high-reward strategy to have a chance at a comeback. This corresponds to the pair with the **highest variance**, as this combination has the greatest potential for an exceptionally high-scoring quarter (though also the greatest risk of a very low-scoring one).\n    * **Recommendation: Players B and C** (Variance = 281). The large positive covariance means their performances are positively correlated, making a \"boom or bust\" outcome more likely.",
-  "validation_status": "verified",
-  "flags": []
-},
+    {
+        "problem_id": "62-001",
+        "question_type": "short_answer",
+        "source": {
+            "type": "extract",
+            "book_title": "Probability and Statistics for Data Science",
+            "authors": [
+                "Carlos Fernandez-Granda"
+            ],
+            "edition": null,
+            "chapter": 11,
+            "page": "11",
+            "exercise_number": "551"
+        },
+        "subfield": [
+            "statistics"
+        ],
+        "topic": [
+            "probability",
+            "variance",
+            "covariance",
+            "decision_theory"
+        ],
+        "gradelevel": [
+            "College-level"
+        ],
+        "statement": "11.2 (Basketball team) The coach of a basketball team needs to select two out of three players to complete the line-up for the last quarter of a game. The covariance matrix of the points scored by the players per quarter is the following:\n\n<table id=\"0-1\">\n<tr><td></td><td>Player A</td><td>Player B</td><td>Player C</td></tr>\n<tr><td>Player A</td><td>100</td><td>-80</td><td>10</td></tr>\n<tr><td>Player B</td><td>-80</td><td>81</td><td>50</td></tr>\n<tr><td>Player C</td><td>10</td><td>50</td><td>100</td></tr>\n</table>\n\nCompute the variance of the total number of points, if the coach plays the three possible combinations of two players. Assuming all three players score the same number of points on average, which combination would you recommend to the coach, if they are winning by a wide margin? Which would you recommend, if they are losing by a wide margin?",
+        "diagram_data": {
+            "type": "table",
+            "description": "A covariance matrix for the points scored by three basketball players (A, B, C).",
+            "image_path": "images/62-001.png"
+        },
+        "hints": [
+            "Recall the formula for the variance of the sum of two random variables, X and Y: $Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)$.",
+            "The diagonal entries of the covariance matrix represent the variance of each player's score. For example, $Var(A) = 100$. The off-diagonal entries represent the covariance between two players.",
+            "Think about what variance represents in a real-world scenario. Low variance implies a more predictable and consistent outcome, while high variance implies a less predictable outcome with higher potential for both very good and very bad results.",
+            "If the team is winning by a wide margin, the coach likely wants to minimize risk and secure the win. If the team is losing by a wide margin, the coach might need to take a risk on a high-potential but less predictable outcome."
+        ],
+        "solution": "**1. Compute the variance for each combination:**\nLet A, B, and C be the random variables representing the points scored by each player. The variance of the sum of points for any two players is given by the formula $Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)$.\n\n* **Combination (A, B):**\n    $Var(A + B) = Var(A) + Var(B) + 2 Cov(A, B)$\n    $Var(A + B) = 100 + 81 + 2(-80) = 181 - 160 = 21$\n\n* **Combination (A, C):**\n    $Var(A + C) = Var(A) + Var(C) + 2 Cov(A, C)$\n    $Var(A + C) = 100 + 100 + 2(10) = 200 + 20 = 220$\n\n* **Combination (B, C):**\n    $Var(B + C) = Var(B) + Var(C) + 2 Cov(B, C)$\n    $Var(B + C) = 81 + 100 + 2(50) = 181 + 100 = 281$\n\n**Summary of Variances:**\n* Pair (A, B): Variance = 21\n* Pair (A, C): Variance = 220\n* Pair (B, C): Variance = 281\n\n**2. Recommendations:**\nSince all players score the same on average, the decision should be based on the variance, which measures the risk or unpredictability of the outcome.\n\n* **Winning by a wide margin:** The coach should choose the most predictable, lowest-risk option to maintain the lead. This corresponds to the pair with the **lowest variance**.\n    * **Recommendation: Players A and B** (Variance = 21). The strong negative covariance means that if one player has an off-quarter, the other tends to compensate, leading to a very consistent total score.\n\n* **Losing by a wide margin:** The coach needs a high-risk, high-reward strategy to have a chance at a comeback. This corresponds to the pair with the **highest variance**, as this combination has the greatest potential for an exceptionally high-scoring quarter (though also the greatest risk of a very low-scoring one).\n    * **Recommendation: Players B and C** (Variance = 281). The large positive covariance means their performances are positively correlated, making a \"boom or bust\" outcome more likely.",
+        "validation_status": "verified",
+        "flags": []
+    },
     {
         "problem_id": "94-001",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design Course Exercises"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -75,7 +82,14 @@
         "problem_id": "94-002",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -105,7 +119,14 @@
         "problem_id": "68-001",
         "source": {
             "type": "extract",
-            "name": "Theory of Computation"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -136,7 +157,14 @@
         "problem_id": "68-002",
         "source": {
             "type": "extract",
-            "name": "Theory of Computation Textbook"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Theoretical Computer Science"
@@ -167,7 +195,14 @@
         "problem_id": "94-003",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Digital Logic"
@@ -197,7 +232,14 @@
         "problem_id": "68-003",
         "source": {
             "type": "extract",
-            "name": "Introduction to Automata Theory"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Theory of Computation"
@@ -227,7 +269,14 @@
         "problem_id": "94-004",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -258,7 +307,14 @@
         "problem_id": "94-005",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -288,7 +344,14 @@
         "problem_id": "68-004",
         "source": {
             "type": "extract",
-            "name": "Theory of Computation"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Theoretical Computer Science"
@@ -319,7 +382,14 @@
         "problem_id": "94-006",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Engineering"
@@ -350,37 +420,14 @@
         "problem_id": "68-005",
         "source": {
             "type": "extract",
-            "name": "Automata Theory and Formal Languages"
-        },
-        "subfield": [
-            "Computer Science"
-        ],
-        "topic": [
-            "Deterministic Finite Automata",
-            "Formal Languages",
-            "Regular Languages"
-        ],
-        "gradelevel": [],
-        "statement": "Find the language recognized by the given deterministic finite-state automaton.",
-        "diagram_data": {
-            "type": "none",
-            "code": ""
-        },
-        "hints": [
-            "Try tracing the paths for a few simple binary strings like '11', '101', and '110'. Note which strings end in the accepting state and which do not.",
-            "Consider the binary strings as numbers. Calculate the decimal value for the strings you tested. Do you see a mathematical property that all the accepted strings share?",
-            "Analyze the purpose of each state. If the accepting state `q0` represents numbers with the property you found, what might states `q1` and `q2` represent? Think about division and remainders."
-        ],
-        "solution": "Since no specific automaton was provided, let's analyze a classic example to demonstrate the process. We will find the language recognized by the following Deterministic Finite-State Automaton (DFA).\n\n**Automaton Definition:**\n*   **States (Q):** `{q0, q1, q2}`\n*   **Alphabet (\u03a3):** `{0, 1}`\n*   **Start State:** `q0`\n*   **Accepting States (F):** `{q0}`\n*   **Transition Function (\u03b4):**\n\n| State | Input '0' | Input '1' |\n|-------|-----------|-----------|\n| `->q0*` | `q0`      | `q1`      |\n| `q1`  | `q2`      | `q0`      |\n| `q2`  | `q1`      | `q2`      |\n\n*(The `->` indicates the start state, and `*` indicates an accepting state.)*\n\n### Step-by-Step Solution:\n\n**Step 1: Understand the Goal**\nOur goal is to find a simple description for the set of all binary strings that are accepted by this automaton. A string is accepted if, starting from `q0`, the sequence of transitions corresponding to the characters in the string leads to an accepting state (in this case, back to `q0`).\n\n**Step 2: Test Sample Strings**\nLet's trace a few strings to see which ones are accepted and rejected. We will also look at their decimal values.\n\n*   **\u03b5 (empty string):** The machine starts in `q0`, which is an accepting state. So, \u03b5 is **accepted**. Its value is 0.\n*   **\"1\":** `q0 --1--> q1`. We end in `q1` (not accepting). **Rejected**. Value = 1.\n*   **\"0\":** `q0 --0--> q0`. We end in `q0`. **Accepted**. Value = 0.\n*   **\"10\":** `q0 --1--> q1 --0--> q2`. End in `q2`. **Rejected**. Value = 2.\n*   **\"11\":** `q0 --1--> q1 --1--> q0`. End in `q0`. **Accepted**. Value = 3.\n*   **\"100\":** `q0 --1--> q1 --0--> q2 --0--> q1`. End in `q1`. **Rejected**. Value = 4.\n*   **\"101\":** `q0 --1--> q1 --0--> q2 --1--> q2`. End in `q2`. **Rejected**. Value = 5.\n*   **\"110\":** `q0 --1--> q1 --1--> q0 --0--> q0`. End in `q0`. **Accepted**. Value = 6.\n\n**Summary of tests:**\n*   Accepted strings (decimal values): \u03b5 (0), \"0\" (0), \"11\" (3), \"110\" (6)\n*   Rejected strings (decimal values): \"1\" (1), \"10\" (2), \"100\" (4), \"101\" (5)\n\nA clear pattern emerges: the automaton seems to accept binary strings that represent numbers divisible by 3.\n\n**Step 3: Formulate a Hypothesis**\nLet `val(w)` be the integer value of a binary string `w`. Our hypothesis is that a string `w` will end in state `qi` if and only if `val(w) mod 3 = i`.\n\n*   State `q0` corresponds to numbers where `val(w) mod 3 = 0`.\n*   State `q1` corresponds to numbers where `val(w) mod 3 = 1`.\n*   State `q2` corresponds to numbers where `val(w) mod 3 = 2`.\n\nSince `q0` is the only accepting state, this hypothesis would mean the automaton accepts exactly those strings whose values are divisible by 3.\n\n**Step 4: Prove the Hypothesis by Induction**\nLet's prove that after reading a string `w`, the automaton is in state `q_i` where `i = val(w) mod 3`.\n\n*   **Base Case:** For the empty string \u03b5, `val(\u03b5) = 0`. `0 mod 3 = 0`. The automaton starts in state `q0`. The hypothesis holds.\n\n*   **Inductive Step:** Assume the hypothesis is true for a string `w`. Let `val(w) = n`, and the automaton is in state `q_i` where `i = n mod 3`.\n    We need to show it also holds for strings `w0` and `w1`.\n\n    1.  **Consider the string `w0`:**\n        The new value is `val(w0) = 2 * val(w) = 2n`.\n        The new state is `\u03b4(q_i, 0) = \u03b4(q_(n mod 3), 0)`.\n        We need to show that this new state is `q_((2n) mod 3)`. Let's check for each possible value of `n mod 3`:\n        *   If `n mod 3 = 0` (in `q0`): The new state is `\u03b4(q0, 0) = q0`. The new value's remainder is `(2*0) mod 3 = 0`. This matches.\n        *   If `n mod 3 = 1` (in `q1`): The new state is `\u03b4(q1, 0) = q2`. The new value's remainder is `(2*1) mod 3 = 2`. This matches.\n        *   If `n mod 3 = 2` (in `q2`): The new state is `\u03b4(q2, 0) = q1`. The new value's remainder is `(2*2) mod 3 = 4 mod 3 = 1`. This matches.\n\n    2.  **Consider the string `w1`:**\n        The new value is `val(w1) = 2 * val(w) + 1 = 2n + 1`.\n        The new state is `\u03b4(q_i, 1) = \u03b4(q_(n mod 3), 1)`.\n        We need to show that this new state is `q_((2n+1) mod 3)`. Let's check for each possible value of `n mod 3`:\n        *   If `n mod 3 = 0` (in `q0`): The new state is `\u03b4(q0, 1) = q1`. The new value's remainder is `(2*0 + 1) mod 3 = 1`. This matches.\n        *   If `n mod 3 = 1` (in `q1`): The new state is `\u03b4(q1, 1) = q0`. The new value's remainder is `(2*1 + 1) mod 3 = 3 mod 3 = 0`. This matches.\n        *   If `n mod 3 = 2` (in `q2`): The new state is `\u03b4(q2, 1) = q2`. The new value's remainder is `(2*2 + 1) mod 3 = 5 mod 3 = 2`. This matches.\n\nThe hypothesis holds for appending a '0' or a '1'. By the principle of induction, it is true for all strings.\n\n**Step 5: State the Final Conclusion**\nThe automaton reaches state `q0` if and only if the binary string `w` represents a number whose value `val(w)` satisfies `val(w) mod 3 = 0`. Since `q0` is the only accepting state, the language recognized by the automaton is the set of all binary strings representing a non-negative integer that is divisible by 3.\n\n**Language Description:**\nL = { w \u2208 {0, 1}* | the integer represented by w is divisible by 3 }",
-        "validation_status": "unverified",
-        "flags": [],
-        "question_type": "short_answer"
-    },
-    {
-        "problem_id": "68-006",
-        "source": {
-            "type": "extract",
-            "name": "Discrete Mathematics"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -408,10 +455,17 @@
         "question_type": "short_answer"
     },
     {
-        "problem_id": "68-007",
+        "problem_id": "68-006",
         "source": {
             "type": "extract",
-            "name": "Automata Theory"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -441,7 +495,14 @@
         "problem_id": "94-007",
         "source": {
             "type": "extract",
-            "name": "Digital Logic Design Textbook"
+            "book_title": "Discrete Mathematics and Its Applications",
+            "authors": [
+                "Kenneth Rosen"
+            ],
+            "edition": null,
+            "chapter": null,
+            "page": null,
+            "exercise_number": null
         },
         "subfield": [
             "Computer Science"
@@ -468,5 +529,4 @@
         "flags": [],
         "question_type": "short_answer"
     }
-
 ]
