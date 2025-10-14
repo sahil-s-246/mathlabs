@@ -157,7 +157,7 @@
   "flags": []
 },
 {
-  "problem_id": "62-001",
+  "problem_id": "62-006",
   "question_type": "short_answer",
   "source": {
     "type": "extract",
@@ -185,7 +185,7 @@
   "statement": "Show that the random variables $X_1$ and $X_2$ with joint pdf \n$$ f(x_1, x_2) = \\begin{cases} 12 x_1 x_2 (1 - x_2), & 0 < x_1 < 1,\\ 0 < x_2 < 1 \\\\ 0, & \\text{elsewhere} \\end{cases} $$\nare independent.",
   "diagram_data": {
     "type": "formula",
-    "image_path": "images/62-001.png"
+    "image_path": "images/62-006.png"
   },
   "hints": [
     "Compute the marginal $f_{X_1}(x_1)=\\int_0^1 12\\,x_1 x_2(1-x_2)\\,dx_2$ for $0<x_1<1$.",
@@ -376,7 +376,7 @@
   "subfield": [
     "11"
   ],
-  "topics": [
+  "topic": [
     "number_theory",
     "fibonacci_numbers",
     "binomial_coefficients",
