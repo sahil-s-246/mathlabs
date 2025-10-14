@@ -1,0 +1,5 @@
+.idea/
+.venv/
+input_images/
+.env
+parsed_documents/
