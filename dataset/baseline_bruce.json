@@ -443,4 +443,169 @@
   "solution": "Because $X_i\\in\\{0,1\\}$ with $\\mathbb P(X_i=1)=\\theta$, the joint pmf is\n$\\displaystyle f(\\mathbf x;\\theta)=\\prod_{i=1}^n \\theta^{x_i}(1-\\theta)^{1-x_i}=\\theta^{\\sum x_i}(1-\\theta)^{n-\\sum x_i}\\cdot 1_{\\{x_i\\in\\{0,1\\}\\}}.$\nThis factors through $Y_1=\\sum_{i=1}^n X_i$, so by the factorization theorem $Y_1$ is sufficient for $\\theta$.\n\nNext, $Y_1\\sim\\mathrm{Bin}(n,\\theta)$. Suppose $\\mathbb E_\\theta[g(Y_1)]=0$ for all $\\theta\\in(0,1)$. Then\n$\\displaystyle 0=\\sum_{y=0}^n g(y)\\binom{n}{y}\\theta^y(1-\\theta)^{n-y}$ for all $\\theta\\in(0,1)$. Dividing by $(1-\\theta)^n$ gives\n$\\displaystyle \\sum_{y=0}^n g(y)\\binom{n}{y}\\bigg(\\frac{\\theta}{1-\\theta}\\bigg)^y=0$ for all $t=\\theta/(1-\\theta)>0$.\nThis is a polynomial in $t$ that is identically zero on $(0,\\infty)$, hence all coefficients vanish: $g(y)\\binom{n}{y}=0$ for each $y$, so $g(y)=0$ for all $y$. Therefore $Y_1$ is complete.\n\nFinally, since $\\mathbb E[Y_1]=n\\theta$, we have $\\mathbb E[Y_1/n]=\\theta$. The estimator $\\hat\\theta=Y_1/n$ is a function of the complete sufficient statistic and is unbiased; by the Lehmann–Scheffé theorem it is the **unique MVUE** of $\\theta$.",
   "validation_status": "unverified",
   "flags": []
+},
+{
+  "problem_id": "62-007",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Probability and Statistics for Data Science",
+    "authors": [
+      "Carlos Fernandez-Granda"
+    ],
+    "edition": "FIRST EDITION",
+    "chapter": 9,
+    "page": 431
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "statistics",
+    "contingency_table",
+    "categorical_data",
+    "polling"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "(Participation) The participants in a poll are asked about their voting preferences, and whether they actually intend to vote in the election. Here are the results:",
+  "diagram_data": {
+    "type": "table",
+    "image_path": "images/62-007.png",
+    "description": "A 4-by-3 table denoting the number of participants and their voting preferences within the election."
+  },
+  "hints": [
+    "Compute the observed test statistic $T_{obs}$ = (median of ill) − (median of healthy).",
+    "For each provided permutation of labels, reassign the 6 cholesterol values to 'H' and 'I', compute both medians, and find the difference $T$.",
+    "Compare each permuted $T$ to $T_{obs}$; count how many are greater than or equal to $T_{obs}$.",
+    "The p-value is (number of permuted $T\\ge T_{obs}$) divided by the total number of permutations (here, 5)."
+  ],
+  "solution": "Original data: Healthy = {150, 250, 260}, Ill = {400, 240, 300}. Medians: $M_H=250$, $M_I=300$, so $T_{obs}=50$.\n\nCompute for the 5 permutations:\n1. **H I H I H H** → Ill = {250,400}, median = 325; Healthy = {150,260,240,300}, median = 255 → $T=70$.\n2. **I I H H H I** → Ill = {150,250,260}, median = 250; Healthy = {400,240,300}, median = 300 → $T=-50$.\n3. **I H H H H I** → Ill = {150,300}, median = 225; Healthy = {250,260,400,240}, median = 255 → $T=-30$.\n4. **I H H H I H** → Ill = {150,300}, median = 225; Healthy = {250,260,400,240}, median = 255 → $T=-30$.\n5. **H H I I I H** → Ill = {260,400,240}, median = 260; Healthy = {150,250,300}, median = 250 → $T=10$.\n\nOnly one permutation (the first) has $T\\ge T_{obs}$, so $p=1/5=0.20$.\n\n**Result:** p-value = 0.20.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-008",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Probability and Statistics for Data Science",
+    "authors": [
+      "Carlos Fernandez-Granda"
+    ],
+    "edition": "FIRST EDITION",
+    "chapter": 10,
+    "page": 484
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "statistics",
+    "hypothesis_testing",
+    "p_values",
+    "publication_bias",
+    "p_hacking"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "The histogram of the $p$ values in the publications of a research group looks like this: What does this suggest?",
+  "diagram_data": {
+    "type": "graph",
+    "image_path": "images/62-008.png",
+    "description": "A histogram of the p values in the publications of a research group. X-axis denotes the P values, and the y-axis denotes the normalized counts"
+  },
+  "hints": [
+    "Under true null hypotheses, p-values should be approximately uniformly distributed on $[0,1]$.",
+    "A strong concentration of p-values just below 0.05 suggests that results are selectively reported when significant.",
+    "This pattern may indicate p-hacking, data dredging, or publication bias.",
+    "Discuss that the distribution of p-values can reveal questionable research practices if it deviates from uniformity."
+  ],
+  "solution": "The histogram shows that nearly all reported p-values are very small (around $0$–$0.05$) rather than uniformly spread. Under honest sampling with true nulls, p-values should be roughly uniform on $[0,1]$. The sharp excess of p-values just below 0.05 suggests selective reporting or manipulation—known as **p-hacking** or **publication bias**—where only significant results are published or emphasized.",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-009",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Probability and Statistics for Data Science",
+    "authors": [
+      "Carlos Fernandez-Granda"
+    ],
+    "edition": "FIRST EDITION",
+    "chapter": 11,
+    "page": 551
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "covariance_matrix",
+    "variance_of_sum",
+    "correlation",
+    "decision_making"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "(Basketball team) The coach of a basketball team needs to select two out of three players to complete the line-up for the last quarter of a game. The covariance matrix of the points scored by the players per quarter is the following: Compute the variance of the total number of points, if the coach plays the three possible combinations of two players. Assuming all three players score the same number of points on average, which combination would you recommend to the coach, if they are winning by a wide margin? Which would you recommend, if they are losing by a wide margin?",
+  "diagram_data": {
+    "type": "table",
+    "image_path": "images/62-009.png",
+    "description": "A table showing the covariance matrix of the points scored by the players per quarter"
+  },
+  "hints": [
+    "Use $\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+2\\,\\operatorname{Cov}(X,Y)$.",
+    "Read variances and covariances from the matrix: $\\operatorname{Var}(A)=100$, $\\operatorname{Var}(B)=81$, $\\operatorname{Var}(C)=100$, $\\operatorname{Cov}(A,B)=-80$, $\\operatorname{Cov}(A,C)=10$, $\\operatorname{Cov}(B,C)=50$.",
+    "Compute $\\operatorname{Var}(A+B)$, $\\operatorname{Var}(A+C)$, and $\\operatorname{Var}(B+C)$ by the formula.",
+    "Recommend the lowest-variance pair if protecting a lead, and the highest-variance pair if trying to catch up (assuming equal means)."
+  ],
+  "solution": "Let $T_{ij}=X_i+X_j$. Then $\\operatorname{Var}(T_{ij})=\\operatorname{Var}(X_i)+\\operatorname{Var}(X_j)+2\\,\\operatorname{Cov}(X_i,X_j)$.\n\\[\n\\begin{aligned}\n\\operatorname{Var}(A+B) &= 100+81+2(-80)=21,\\\\\n\\operatorname{Var}(A+C) &= 100+100+2(10)=220,\\\\\n\\operatorname{Var}(B+C) &= 81+100+2(50)=281.\n\\end{aligned}\n\\]\nAssuming equal average points for all players, if the team is **winning by a wide margin**, choose the **lowest variance** pair to reduce risk: **$(A,B)$** (variance $21$). If the team is **losing by a wide margin**, choose the **highest variance** pair to maximize upside: **$(B,C)$** (variance $281$).",
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "problem_id": "62-010",
+  "question_type": "short_answer",
+  "source": {
+    "type": "extract",
+    "book_title": "Probability and Statistics for Data Science",
+    "authors": [
+      "Carlos Fernandez-Granda"
+    ],
+    "edition": "FIRST EDITION",
+    "chapter": 12,
+    "page": 666
+  },
+  "subfield": [
+    "62"
+  ],
+  "topic": [
+    "regression_tree",
+    "decision_tree",
+    "categorical_features",
+    "predictive_modeling"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "(Tree with categorical features) Tree models can be easily adapted to use categorical features. Keith is a technician at a center for biomedical imaging. He wants to predict the duration of imaging sessions to improve scheduling at the center. He has gathered the data in the table below from past sessions. Each session has either an animal (A) or human (H) subject, and between 1 and 3 scans. Fit a regression tree with three leaves to the data in order to estimate duration from the type of subject and the number of scans.",
+  "diagram_data": {
+    "type": "table",
+    "image_path": "images/62-010.png",
+    "description": "A table showing the subject, number of scans, and the duration in minutes"
+  },
+  "hints": [
+    "Use squared-error (SSE) as the split criterion for a regression tree.",
+    "Try a first split on the numeric feature: $\\text{scans}=3$ vs. $\\text{scans}\\in\\{1,2\\}$.",
+    "For the $\\{1,2\\}$ branch, split by the categorical feature Subject (A vs. H).",
+    "Leaf predictions are the means within each leaf."
+  ],
+  "solution": "Denote duration by $Y$. Data (Subject, scans, $Y$): A–1–30, H–2–20, A–3–50, H–1–15, H–3–40, A–2–40, A–1–40, H–2–30.\n\n**Tree (3 leaves):**\n1) Root split: $\\text{scans}=3$ vs. $\\text{scans}\\in\\{1,2\\}$.\n   - **Leaf L1 (scans=3):** values $\\{50,40\\}$, prediction $\\hat y_{L1}=\\frac{50+40}{2}=45$.\n2) For the branch $\\text{scans}\\in\\{1,2\\}$, split by Subject:\n   - **Leaf L2 (scans\\in\\{1,2\\}, Subject=A):** values $\\{30,40,40\\}$, prediction $\\hat y_{L2}=\\frac{30+40+40}{3}=\\frac{110}{3}\\approx 36.7$.\n   - **Leaf L3 (scans\\in\\{1,2\\}, Subject=H):** values $\\{20,15,30\\}$, prediction $\\hat y_{L3}=\\frac{20+15+30}{3}=\\frac{65}{3}\\approx 21.7$.\n\nThis yields three leaves and the smallest total SSE among such 3-leaf trees. (Intuition: isolating $\\text{scans}=3$ reduces variance; within $\\{1,2\\}$, A and H have distinct means, so splitting by Subject further lowers SSE.)",
+  "validation_status": "unverified",
+  "flags": []
 }]
