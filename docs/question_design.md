@@ -24,6 +24,7 @@ Each problem entry should contain the following fields:
 
 Field | Purpose
 ------|--------
+schema_version | Version of the schema
 problem_id | Unique identifier for the problem
 source | Tracks if the problem is generated or extracted
 subfield | MSC classification code(s)
@@ -31,8 +32,11 @@ topic | High-level topic codes (e.g., probability, geometry)
 gradelevel | Target education level (High-School, College-level, Infinity)
 statement | Full text of the problem
 diagram_data | Structured information for plotting/visuals
+answer | Answer to the question, including the rationale for distractors
+randomization | Randomization to the parameters of the sampling
 hints | Optional stepwise hints for solving
-solution | Canonical answer, formula, or method
+difficulty | Difficulty of the question
+bloom_taxonomy | Bloom taxonomy category (e.g. 'Analyze', 'Apply', etc.)
 validation_status | verified or unverified
 flags | Issues or errors such as vision_extraction_error, metadata_missing, solvability_issue
 
@@ -40,18 +44,78 @@ Example JSON snippet:
 
 ```json
 {
-  "problem_id": "prob-venn-001",
-  "source": { "type": "generated" },
-  "subfield": ["60"],
-  "topic": ["probability", "venn_diagram"],
-  "gradelevel": ["High-School", "College-level"],
-  "statement": "In a class of 50 students, 30 study Math, 25 study Physics, and 10 study both Math and Physics. How many students study neither Math nor Physics?",
-  "diagram_data": { ...},
-  "hints": ["Use inclusion-exclusion formula", "Subtract total in union from total students"],
-  "solution": "50 - (30 + 25 - 10) = 5",
+  "schema_version": "mcq-1.0",
+  "problem_id": "11-006",
+  "question_type": "multiple_choice", 
+  "source": {
+    "type": "extract",
+    "book_title": "Elementary Number Theory",
+    "authors": ["David M. Burton"],
+    "edition": 7,
+    "chapter": 1,
+    "page": 302
+  },
+  "subfield": ["11"],
+  "topic": [
+	  "number_theory",
+    "fibonacci_numbers",
+    "binomial_coefficients",
+    "combinatorics",
+    "algebraic_identities"
+    ],
+  "gradelevel": ["College-level"],
+  "statement": "Lucas showed in 1876 that each Fibonacci number $F_n$ can be written as a sum of binomial coefficients. Which of the following correctly expresses $F_n$ in terms of binomial coefficients?",
+  "diagram_data": {
+    "type": "formula|image|table",
+    "image_path": "images/11-006.png"
+  },
+
+  "choices": [
+    { "id": "A", 
+	    "text": "$F_n = \\sum_{k=0}^{\\lfloor (n-1)/2 \\rfloor} \\binom{n-1-k}{k}$"
+	  },
+    { "id": "B", 
+	    "text": "$F_n = \\sum_{k=0}^{n} \\binom{n}{k}$" 
+	  },
+    { "id": "C", 
+	    "text": "$F_n = \\sum_{k=0}^{\\lfloor n/2 \\rfloor} \\binom{n-k}{k}$" 
+	  },
+    { "id": "D", 
+	    "text": "$F_n = \\sum_{k=1}^{n-1} \\binom{n}{2k}$" 
+	  }
+  ],
+
+  "answer": {
+    "correct_ids": ["A"],                  
+    "explanation": "Define $a_n = \\sum_{k=0}^{\\lfloor (n-1)/2 \\rfloor} \\binom{n-1-k}{k}$. Using Pascal’s identity $\\binom{m}{r}=\\binom{m-1}{r}+\\binom{m-1}{r-1}$, one can show that $a_{n+1}=a_n+a_{n-1}$ with $a_1=a_2=1$, implying $a_n$ satisfies the Fibonacci recurrence. Hence $F_n = a_n = \\sum_{k=0}^{\\lfloor (n-1)/2 \\rfloor} \\binom{n-1-k}{k}$, known as Lucas’s binomial formula.",
+    "distractor_rationales": {             // optional: discussion why the distractors are wrong
+      "B": "This sum equals $2^n$, not the $n$-th Fibonacci number.",
+      "C": "This looks close but the upper limit and indices differ; it defines $F_{n+1}$, not $F_n$.",
+      "D": "Even-indexed binomial terms do not follow the Fibonacci recurrence; this expression relates to central binomial coefficients, not Fibonacci numbers."
+    },
+  },
+
+  "evaluation": {
+    "scoring": { "type": "all_or_nothing", "points": 1 },
+    "allow_partial_credit": false          // may be true for MCQs allowing more than one answers
+  },
+
+  "randomization": {
+    "shuffle_choices": true,               // whether or not some choicees should be shuffled
+    "lock_ids": [],                        // questions that require to be locked in place
+    "group_shuffle": []                    // question ids that should be shuffled together (that they are similar)
+  "hints": 
+  [
+		"Try expressing $F_n$ recursively as $F_{n+1}=F_n+F_{n-1}$.",
+    "Define $a_n=\\sum_{k=0}^{\\lfloor (n-1)/2\\rfloor} \\binom{n-1-k}{k}$ and verify it satisfies the same recurrence.",
+    "Use Pascal's identity to expand $\\binom{n-k}{k}$ and split into two sums." 
+   ],
+  "difficulty": "medium",
+  "bloom_taxonomy": ['Comprehend', 'Analyze'],
   "validation_status": "unverified",
   "flags": []
 }
+
 ```
 ---
 
