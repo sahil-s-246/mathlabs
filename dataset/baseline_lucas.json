@@ -1,7 +1,8 @@
 [
   {
+    "schema_version": "mcq-1.0",
     "problem_id": "15-001",
-    "question_type":"short_answer",
+    "question_type": "multiple_choice",
     "source": {
       "type": "extract",
       "book_title": "Linear Algebra and Its Applications",
@@ -10,53 +11,7 @@
         "Steven R. Lay",
         "Judi J. McDonald"
       ],
-      "edition": "SIXTH EDITION",
-      "chapter": 1,
-      "page": 89
-    },
-    "subfield": [
-      "15"
-    ],
-    "topic": [
-      "linear_algebra",
-      "linear_independence",
-      "vectors"
-    ],
-    "gradelevel": [
-      "College-level"
-    ],
-    "statement": "Determine if the following vectors are linearly independent. Justify your answer.\n\\mathbf{v}_1 = \\begin{bmatrix} 5 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\mathbf{v}_2 = \\begin{bmatrix} 7 \\\\ 2 \\\\ -6 \\end{bmatrix}, \\mathbf{v}_3 = \\begin{bmatrix} -2 \\\\ -1 \\\\ 6 \\end{bmatrix}",
-    "diagram_data": {
-      "type": "matrix_representation",
-      "matrix": [
-        [5, 7, -2],
-        [1, 2, -1],
-        [0, -6, 6]
-      ],
-      "dimensions": "3x3",
-      "image_path": "images/15-001.png"
-    },
-    "hints": [
-      "Set up the vector equation $c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + c_3\\mathbf{v}_3 = \\mathbf{0}$.",
-      "Form the augmented matrix $[\\mathbf{v}_1 \\ \\mathbf{v}_2 \\ \\mathbf{v}_3 \\ | \\ \\mathbf{0}]$ and row-reduce it.",
-      "The vectors are linearly independent if and only if the equation has only the trivial solution ($c_1=c_2=c_3=0$). A pivot in every column indicates linear independence."
-    ],
-    "solution": "The vectors are **linearly dependent**.\n\n**Justification:** The vector $\\mathbf{v}_3$ is a linear combination of $\\mathbf{v}_1$ and $\\mathbf{v}_2$. Specifically, $\\mathbf{v}_3 = -1(\\mathbf{v}_2 - \\mathbf{v}_1)$, which simplifies to $\\mathbf{v}_1 - \\mathbf{v}_2 + \\mathbf{v}_3 = \\mathbf{0}$.\n\nAlternatively, forming the matrix $\\mathbf{A}$ and row-reducing shows there is a free variable (no pivot in the third column), which means there are non-trivial solutions to $\\mathbf{A}\\mathbf{c} = \\mathbf{0}$.",
-    "validation_status": "verified",
-    "flags": []
-  },
-  {
-    "problem_id": "15-002",
-    "question_type":"short_answer",
-    "source": {
-      "type": "extract",
-      "book_title": "Linear Algebra and Its Applications",
-      "authors": [
-        "David C. Lay",
-        "Steven R. Lay",
-        "Judi J. McDonald"
-      ],
-      "edition": "SIXTH EDITION",
+      "edition": 6,
       "chapter": 1,
       "page": 34
     },
@@ -69,378 +24,1403 @@
       "intersection_of_lines"
     ],
     "gradelevel": [
-      "High-School",
       "College-level"
     ],
     "statement": "Find the point $(x_1, x_2)$ that lies on the line $x_1 + 5x_2 = 7$ and on the line $x_1 - 2x_2 = -2$.",
     "diagram_data": {
       "type": "graph",
-      "description": "A 2D graph with an $x_1$-axis and an $x_2$-axis. Two lines are plotted on the graph, representing the given equations. The two lines intersect at a single point, which is the solution to the system.",
-      "equations": [
-        "x1 + 5x2 = 7",
-        "x1 - 2x2 = -2"
+      "description": "A 2D graph with an $x_1$-axis and an $x_2$-axis showing two intersecting lines.",
+      "image_path": "images/15-001.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$(4/7, 9/7)$$"
+      },
+      {
+        "id": "B",
+        "text": "$$(9/7, 4/7)$$"
+      },
+      {
+        "id": "C",
+        "text": "$$(1, 1)$$"
+      },
+      {
+        "id": "D",
+        "text": "$$(-3, 2)$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
       ],
-      "image_path": "images/15-002.png"
+      "explanation": "We solve the system of equations:\\n$$\\begin{cases} x_1 + 5x_2 = 7 \\\\ x_1 - 2x_2 = -2 \\end{cases}$$\\nSubtracting the second equation from the first yields: $$(x_1 + 5x_2) - (x_1 - 2x_2) = 7 - (-2) \\\\implies 7x_2 = 9 \\\\implies x_2 = 9/7$$\\nSubstituting $x_2$ back into the first equation: $x_1 + 5(9/7) = 7 \\implies x_1 = 49/7 - 45/7 = 4/7$.\\nThe intersection point is $$(4/7, 9/7)$$.",
+      "distractor_rationales": {
+        "B": "Reversed the coordinates $x_1$ and $x_2$.",
+        "C": "Incorrectly assumed a simple integer solution.",
+        "D": "Result of an incorrect calculation."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
     },
     "hints": [
-      "The problem asks you to solve the system of two linear equations.",
-      "You can use the elimination method by subtracting the second equation from the first.",
-      "Once you find the value of $x_2$, substitute it back into either equation to find $x_1$."
+      "Use the elimination or substitution method to solve the system of linear equations.",
+      "Subtracting the two equations will eliminate $x_1$ and allow you to solve for $x_2$."
     ],
-    "solution": "The point is $(4/7, 9/7)$.\n\n**Calculation:**\nWe have the system:\n1. $x_1 + 5x_2 = 7$\n2. $x_1 - 2x_2 = -2$\n\nSubtract Equation (2) from Equation (1):\n$(x_1 + 5x_2) - (x_1 - 2x_2) = 7 - (-2)$\n$7x_2 = 9$\n$x_2 = 9/7$\n\nSubstitute $x_2 = 9/7$ into Equation (1):\n$x_1 + 5(9/7) = 7$\n$x_1 + 45/7 = 49/7$\n$x_1 = 49/7 - 45/7$\n$x_1 = 4/7$\n\nTherefore, the intersection point is $(4/7, 9/7)$.",
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
     "validation_status": "unverified",
     "flags": []
   },
   {
-  "problem_id": "15-003",
-  "question_type":"true_false",
-  "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-002",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 1,
+      "page": 58
+    },
+    "subfield": [
+      "15"
     ],
-    "edition": "SIXTH EDITION",
-    "chapter": 1,
-    "page": "Implicit from image, likely in section on Row Reduction",
-    "exercise_number": 25
+    "topic": [
+      "linear_algebra",
+      "matrix_operations",
+      "reduced_echelon_form"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine the truth of the following statement: In some cases, a matrix may be row reduced to more than one matrix in reduced echelon form, using different sequences of row operations.",
+    "diagram_data": {
+      "type": "textual_statement",
+      "description": "A statement regarding the uniqueness of reduced echelon form.",
+      "image_path": "images/15-002.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      },
+      {
+        "id": "C",
+        "text": "Only if the matrix has a column without a pivot position."
+      },
+      {
+        "id": "D",
+        "text": "Only if the matrix is an elementary matrix."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "This statement is **False**. A fundamental theorem in linear algebra guarantees that each matrix is row equivalent to **one and only one** matrix in reduced echelon form. While the process (sequence of row operations) is not unique, the final reduced echelon form itself is unique for any given matrix.",
+      "distractor_rationales": {
+        "A": "The reduced echelon form is always unique, regardless of the sequence of row operations.",
+        "C": "The uniqueness theorem applies to all matrices, regardless of pivot positions.",
+        "D": "The uniqueness theorem applies to all matrices, including elementary matrices."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Recall the 'Uniqueness of the Reduced Echelon Form' theorem."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Remember",
+      "Comprehend"
+    ],
+    "validation_status": "verified",
+    "flags": []
   },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "matrix_operations",
-    "row_reduction",
-    "reduced_echelon_form"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "In some cases, a matrix may be row reduced to more than one matrix in reduced echelon form, using different sequences of row operations.",
-  "diagram_data": {
-    "type": "textual_statement",
-    "description": "A True/False statement regarding the uniqueness of reduced echelon form.",
-    "image_path": "images/15-003.png"
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-003",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 2,
+      "page": 141
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "matrix_inverse",
+      "row_reduction"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the inverse of the matrix $\\mathbf{A}$, if it exists, where $$\\mathbf{A} = \\begin{bmatrix} 0 & 1 & 2 \\\\ 1 & 0 & 3 \\\\ 4 & -3 & 8 \\end{bmatrix}$$",
+    "diagram_data": {
+      "type": "matrix_representation",
+      "dimensions": "3x3",
+      "image_path": "images/15-003.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\mathbf{A}^{-1} = \\begin{bmatrix} -9 & 7 & -3 \\\\ 2 & -4 & 1 \\\\ 3 & -4 & 1 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\mathbf{A}^{-1} = \\begin{bmatrix} 0 & 1 & 4 \\\\ 1 & 0 & -3 \\\\ 2 & 3 & 8 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "The inverse does not exist."
+      },
+      {
+        "id": "D",
+        "text": "$$\\mathbf{A}^{-1} = \\begin{bmatrix} 9 & -7 & 3 \\\\ -2 & 4 & -1 \\\\ -3 & 4 & -1 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "We find the inverse by row reducing the augmented matrix $[\\mathbf{A} \\mid \\mathbf{I}]$ to $[\\mathbf{I} \\mid \\mathbf{A}^{-1}]$.\\nThe determinant of $\\mathbf{A}$ is $\\text{det}(\\mathbf{A}) = -2 \\neq 0$, so the inverse exists.\\nRow reduction of $[\\mathbf{A} \\mid \\mathbf{I}]$ yields:\\n$$\\mathbf{A}^{-1} = \\begin{bmatrix} -9 & 7 & -3 \\\\ 2 & -4 & 1 \\\\ 3 & -4 & 1 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "B": "This matrix is not the inverse; it contains original elements of $\\mathbf{A}$ in incorrect positions.",
+        "C": "The determinant of $\\mathbf{A}$ is $-2$, so the inverse does exist.",
+        "D": "This is the negative of the correct inverse, due to sign errors during row reduction."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Use the row reduction algorithm on the augmented matrix $[\\mathbf{A} \\mid \\mathbf{I}]$ to find the inverse.",
+      "Check the determinant of $\\mathbf{A}$ first: $\\text{det}(\\mathbf{A}) = 0(0-3(-3)) - 1(8-12) + 2(-3-0) = -2$."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "verified",
+    "flags": []
   },
-  "hints": [
-    "Recall the definition and properties of reduced echelon form.",
-    "Consider whether the positions of leading 1s and zeros in a reduced echelon form are fixed or can vary.",
-    "Think about the 'uniqueness of the reduced echelon form' theorem."
-  ],
-  "solution": "False.\n\n**Justification:** A fundamental theorem in linear algebra states that each matrix is row equivalent to **one and only one** reduced echelon matrix. While different sequences of row operations can be used to reach the reduced echelon form, the final reduced echelon form itself is unique for any given matrix. This uniqueness is crucial for many applications of linear algebra, such as determining the solution set of a linear system or finding the basis for a vector space.",
-  "validation_status": "verified",
-  "flags": []
-},
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-004",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 2,
+      "page": 142
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "matrix_inverse",
+      "matrix_properties"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "If $\\mathbf{A}$ is an invertible matrix, determine the relationship between $\\mathbf{A}$ and the inverse of $\\mathbf{A}^{-1}$.",
+    "diagram_data": {
+      "type": "textual_statement",
+      "description": "A statement regarding the inverse of an inverse matrix.",
+      "image_path": "images/15-004.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The inverse of $\\mathbf{A}^{-1}$ is $\\mathbf{A}$, i.e., $ (\\mathbf{A}^{-1})^{-1} = \\mathbf{A}$."
+      },
+      {
+        "id": "B",
+        "text": "The inverse of $\\mathbf{A}^{-1}$ is $\\mathbf{A}^T$ (the transpose of $\\mathbf{A}$)."
+      },
+      {
+        "id": "C",
+        "text": "The inverse of $\\mathbf{A}^{-1}$ is the identity matrix $\\mathbf{I}$."
+      },
+      {
+        "id": "D",
+        "text": "The inverse of $\\mathbf{A}^{-1}$ is $\\mathbf{A}^{-1}$ itself."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "This is a direct property of invertible matrices. By the definition of the inverse, $\\mathbf{A}$ is the unique matrix that satisfies $\\mathbf{A}^{-1}\\mathbf{A} = \\mathbf{I}$ and $\\mathbf{A}\\mathbf{A}^{-1} = \\mathbf{I}$. This means $\\mathbf{A}$ satisfies the definition of the inverse of $\\mathbf{A}^{-1}$, thus $ (\\mathbf{A}^{-1})^{-1} = \\mathbf{A} $.",
+      "distractor_rationales": {
+        "B": "The inverse of a matrix is only its transpose if the matrix is orthogonal.",
+        "C": "The product $\\mathbf{A}^{-1}\\mathbf{A}$ is $\\mathbf{I}$, but $\\mathbf{I}$ is not the inverse of $\\mathbf{A}^{-1}$ unless $\\mathbf{A}=\\mathbf{I}$.",
+        "D": "Only the identity matrix is its own inverse."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Recall the definition: a matrix $\\mathbf{B}$ is the inverse of $\\mathbf{C}$ if $\\mathbf{BC} = \\mathbf{CB} = \\mathbf{I}$."
+    ],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Remember"
+    ],
+    "validation_status": "verified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-005",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 2,
+      "page": 142
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "matrix_inverse",
+      "determinant",
+      "invertibility_criteria"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For a $2 \\times 2$ matrix $ \\mathbf{A} = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} $, what condition on its entries guarantees that $\\mathbf{A}$ is invertible?",
+    "diagram_data": {
+      "type": "textual_statement",
+      "description": "A statement regarding the invertibility of a 2x2 matrix based on its determinant.",
+      "image_path": "images/15-005.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$ad - bc = 0$"
+      },
+      {
+        "id": "B",
+        "text": "$ad - bc \\neq 0$"
+      },
+      {
+        "id": "C",
+        "text": "$a, b, c, d$ are all non-zero."
+      },
+      {
+        "id": "D",
+        "text": "$a = d$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "A square matrix is invertible if and only if its **determinant** is non-zero. For a $2 \\times 2$ matrix, the determinant is $ad - bc$. Therefore, the condition that guarantees invertibility is $ad - bc \\neq 0$.",
+      "distractor_rationales": {
+        "A": "If $ad - bc = 0$, the determinant is zero, and the matrix is singular (not invertible).",
+        "C": "This is a necessary condition for some matrices, but not sufficient. For example, $\\begin{bmatrix} 1 & 1 \\\\ 2 & 2 \\end{bmatrix}$ has non-zero entries but $ad-bc=0$.",
+        "D": "This is a special case (a symmetric matrix) but doesn't guarantee invertibility. For example, $\\begin{bmatrix} 1 & 2 \\\\ 3 & 1 \\end{bmatrix}$ is invertible, but $\\begin{bmatrix} 1 & 2 \\\\ 2 & 1 \\end{bmatrix}$ is also invertible. This condition is irrelevant for the general case."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "A matrix is invertible if and only if its determinant is non-zero.",
+      "For a $2 \\times 2$ matrix, the determinant is $ad - bc$."
+    ],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Remember"
+    ],
+    "validation_status": "verified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-006",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 1,
+      "page": 58
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "linear_combinations",
+      "span",
+      "vector_geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{u}$ and $\\mathbf{v}$ be non-parallel vectors in $\\mathbb{R}^2$. If the vector $\\mathbf{c}$ is defined by taking one step in the opposite $\\mathbf{u}$ direction and one step in the positive $\\mathbf{v}$ direction, what is $\\mathbf{c}$ and what is the span of $\\{\\mathbf{u}, \\mathbf{v}\\}$?",
+    "diagram_data": {
+      "type": "vector_grid_graph",
+      "description": "A 2D coordinate system overlaid with a parallelogram grid defined by the base vectors $\\mathbf{u}$ and $\\mathbf{v}$.",
+      "image_path": "images/15-006.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\mathbf{c} = -\\mathbf{u} + \\mathbf{v}; \\text{ Span} = \\mathbb{R}^2$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\mathbf{c} = \\mathbf{u} + \\mathbf{v}; \\text{ Span} = \\text{A line through the origin}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\mathbf{c} = \\mathbf{u} - \\mathbf{v}; \\text{ Span} = \\mathbb{R}^3$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\mathbf{c} = -\\mathbf{u} - \\mathbf{v}; \\text{ Span} = \\mathbb{R}^2$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "1.  **Linear Combination:** 'One step in the opposite $\\mathbf{u}$ direction' is $-1\\mathbf{u}$, and 'one step in the positive $\\mathbf{v}$ direction' is $1\\mathbf{v}$. Thus, $\\mathbf{c} = -\\mathbf{u} + \\mathbf{v}$.\\n2.  **Span:** Two non-parallel vectors in $\\mathbb{R}^2$ are linearly independent and span the entire two-dimensional space, $\\mathbb{R}^2$.",
+      "distractor_rationales": {
+        "B": "Incorrect linear combination (sign error) and incorrect span (non-parallel vectors span $\\mathbb{R}^2$).",
+        "C": "Incorrect linear combination and incorrect space dimension for the span (it is $\\mathbb{R}^2$).",
+        "D": "Incorrect linear combination (sign error)."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "The 'opposite direction' corresponds to a scalar of $-1$.",
+      "Two linearly independent vectors in $\\mathbb{R}^2$ span all of $\\mathbb{R}^2$."
+    ],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-007",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 1,
+      "page": 60
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "linear_combinations",
+      "span",
+      "solution_uniqueness"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider vectors $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$, and $\\mathbf{b}$ in $\\mathbb{R}^2$, where the $\\mathbf{v}$ vectors are not collinear. Does the equation $x_1\\mathbf{v}_1 + x_2\\mathbf{v}_2 + x_3\\mathbf{v}_3 = \\mathbf{b}$ have a solution, and is that solution unique?",
+    "diagram_data": {
+      "type": "vector_plot",
+      "description": "A 2D plot showing four vectors $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$, and $\\mathbf{b}$ in $\\mathbb{R}^2$.",
+      "image_path": "images/15-007.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "A solution exists and is unique."
+      },
+      {
+        "id": "B",
+        "text": "A solution exists but is not unique."
+      },
+      {
+        "id": "C",
+        "text": "A solution does not exist."
+      },
+      {
+        "id": "D",
+        "text": "The solution is unique, but existence is not guaranteed."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "1.  **Existence:** Since the three non-collinear vectors $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$ are in $\\mathbb{R}^2$, their span is all of $\\mathbb{R}^2$. Since $\\mathbf{b} \\in \\mathbb{R}^2$, a solution exists.\\n2.  **Uniqueness:** A set of three vectors in the two-dimensional space $\\mathbb{R}^2$ is always linearly dependent. Linear dependence of the columns of the coefficient matrix implies that the homogeneous system has free variables, meaning the solution is **not unique** (there are infinitely many solutions).",
+      "distractor_rationales": {
+        "A": "The solution is not unique because there are more vectors than dimensions ($3>2$), which guarantees linear dependence.",
+        "C": "The solution must exist because the $\\mathbf{v}$ vectors span $\\mathbb{R}^2$.",
+        "D": "Existence is guaranteed, and the solution is not unique."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Existence relates to the span of the column vectors.",
+      "Uniqueness relates to the linear independence of the column vectors.",
+      "Any set of 3 vectors in $\\mathbb{R}^2$ is linearly dependent."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-008",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 4,
+      "page": 261
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "basis",
+      "coordinate_vectors",
+      "vector_spaces"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $ \\mathbf{v}_1 = \\begin{bmatrix} 3 \\\\ 6 \\\\ 2 \\end{bmatrix} $, $ \\mathbf{v}_2 = \\begin{bmatrix} -1 \\\\ 0 \\\\ 1 \\end{bmatrix} $, and $ \\mathbf{x} = \\begin{bmatrix} 3 \\\\ 12 \\\\ 7 \\end{bmatrix} $. If $\\mathbf{x}$ is in $H = \\text{Span}\\{\\mathbf{v}_1, \\mathbf{v}_2\\}$, find the coordinate vector of $\\mathbf{x}$ relative to the basis $\\mathcal{B} = \\{\\mathbf{v}_1, \\mathbf{v}_2\\}$.",
+    "diagram_data": {
+      "type": "vector_representation",
+      "dimensions": "3x1",
+      "image_path": "images/15-008.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "The coordinate vector is undefined because $\\mathbf{x}$ is not in $H$."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "We solve the vector equation $c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 = \\mathbf{x}$.\\nFrom the system $\\begin{bmatrix} 3 & -1 & 3 \\\\ 6 & 0 & 12 \\\\ 2 & 1 & 7 \\end{bmatrix}$, the second equation is $6c_1 = 12$, so $c_1 = 2$. Substituting $c_1=2$ into the first equation: $3(2) - c_2 = 3 \\implies c_2 = 3$. The third equation is checked: $2(2) + 1(3) = 7$, which is consistent.\\nThe coordinate vector is $$\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} c_1 \\\\ c_2 \\end{bmatrix} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "B": "Reversed the order of the coordinates $c_1$ and $c_2$. The order must match the basis $\\mathcal{B}=\\{\\mathbf{v}_1, \\mathbf{v}_2\\}$.",
+        "C": "Incorrectly found the coordinates; these coordinates only work if $\\mathbf{x}=\\mathbf{v}_1$.",
+        "D": "The system is consistent, so $\\mathbf{x}$ is in $H$, and the coordinate vector is defined."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "The coordinate vector $[\\mathbf{x}]_{\\mathcal{B}}$ is the unique solution vector $\\mathbf{c}$ to the equation $\\mathbf{v}_1 c_1 + \\mathbf{v}_2 c_2 = \\mathbf{x}$.",
+      "Solve the linear system to find the coefficients $c_1$ and $c_2$."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "verified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-009",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 4,
+      "page": 271
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "subspace",
+      "basis",
+      "dimension",
+      "span"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For the subspace $W = \\left\\{ \\begin{bmatrix} s - 2t \\\\ s + t \\\\ 3t \\end{bmatrix} : s, t \\in \\mathbb{R} \\right\\}$, find a basis for $W$ and state its dimension.",
+    "diagram_data": {
+      "type": "vector_definition",
+      "description": "A definition of a subspace $W$ in $\\mathbb{R}^3$ parameterized by scalars $s$ and $t$.",
+      "image_path": "images/15-009.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Basis: $\\left\\{ \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix} \\right\\}$; Dimension: $2$"
+      },
+      {
+        "id": "B",
+        "text": "Basis: $\\left\\{ \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix} \\right\\}$; Dimension: $3$"
+      },
+      {
+        "id": "C",
+        "text": "Basis: $\\left\\{ \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} \\right\\}$; Dimension: $1$"
+      },
+      {
+        "id": "D",
+        "text": "Basis: $\\left\\{ \\begin{bmatrix} s-2t \\\\ s+t \\\\ 3t \\end{bmatrix} \\right\\}$; Dimension: $1$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "Decompose the general vector in $W$ by separating the parameters $s$ and $t$:\\n$$\\begin{bmatrix} s - 2t \\\\ s + t \\\\ 3t \\end{bmatrix} = s\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} + t\\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix}$$\\nThe set $\\mathcal{B} = \\left\\{ \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix} \\right\\}$ spans $W$. Since the vectors are linearly independent, they form a basis. The dimension is the number of vectors in the basis, which is $2$.",
+      "distractor_rationales": {
+        "B": "The basis is correct, but the dimension is 2, not 3.",
+        "C": "This basis is incomplete, as it only accounts for the $s$ parameter.",
+        "D": "This is a single vector, not a basis for a 2-dimensional subspace, and still contains parameters."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Factor the vector definition into a linear combination based on the free parameters $s$ and $t$.",
+      "The dimension is the number of linearly independent vectors needed to span the subspace."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze",
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-010",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 5,
+      "page": 334
+    },
+    "subfield": [
+      "15"
+    ],
+    "topic": [
+      "linear_algebra",
+      "eigenvalues",
+      "characteristic_equation"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the eigenvalues of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "type": "matrix_representation",
+      "dimensions": "2x2",
+      "description": "The matrix A for which eigenvalues must be calculated.",
+      "image_path": "images/15-010.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\lambda_1 = 5, \\lambda_2 = -1$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\lambda_1 = 2, \\lambda_2 = 3$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\lambda_1 = 1, \\lambda_2 = 5$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\lambda_1 = 4, \\lambda_2 = 0$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The eigenvalues are found by solving the characteristic equation $\\det(\\mathbf{A} - \\lambda\\mathbf{I}) = 0$. \n$$\\det\\begin{bmatrix} 2-\\lambda & 3 \\\\ 3 & 2-\\lambda \\end{bmatrix} = (2-\\lambda)(2-\\lambda) - 3(3) = 0$$\n$$ (2-\\lambda)^2 - 9 = 0 \\implies (2-\\lambda)^2 = 9$$\n$$ 2-\\lambda = \\pm 3$$\nFor $2-\\lambda = 3$, $\\lambda_1 = 2-3 = -1$.\nFor $2-\\lambda = -3$, $\\lambda_2 = 2+3 = 5$.\nThe eigenvalues are $\\lambda_1 = 5$ and $\\lambda_2 = -1$.",
+      "distractor_rationales": {
+        "B": "Mistakenly used the diagonal and off-diagonal entries as eigenvalues.",
+        "C": "Incorrect solution to the characteristic equation.",
+        "D": "Result of an incorrect calculation or misidentification of the characteristic polynomial."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Set the determinant of $(\\mathbf{A} - \\lambda\\mathbf{I})$ equal to zero.",
+      "For a $2\\times 2$ matrix, the characteristic equation is $\\lambda^2 - \\text{Tr}(\\mathbf{A})\\lambda + \\det(\\mathbf{A}) = 0$."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-011",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 5,
+      "page": 334
+    },
+    "subfield": [
+      "linear_algebra"
+    ],
+    "topic": [
+      "complex_vectors",
+      "symmetric_matrices",
+      "quadratic_forms"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{A}$ be an $n \\times n$ **real symmetric matrix** (i.e., $\\mathbf{A}^T = \\mathbf{A}$). Let $\\mathbf{x}$ be any vector in $\\mathbb{C}^n$, and let $q = \\overline{\\mathbf{x}}^T \\mathbf{A} \\mathbf{x}$. The equalities below show that $q$ is a real number by verifying that $\\overline{q} = q$. Give the reasons for the steps (a) through (e).\n\n$$\\overline{q} = \\overline{\\overline{\\mathbf{x}}^T \\mathbf{A} \\mathbf{x}} \\stackrel{(a)}{=} \\overline{\\mathbf{\\overline{\\mathbf{x}}}^T} \\overline{\\mathbf{A}} \\overline{\\mathbf{x}} \\stackrel{(b)}{=} \\mathbf{x}^T \\mathbf{A} \\overline{\\mathbf{x}} \\stackrel{(c)}{=} (\\mathbf{x}^T \\mathbf{A} \\overline{\\mathbf{x}})^T \\stackrel{(d)}{=} \\overline{\\mathbf{x}}^T \\mathbf{A}^T (\\mathbf{x}^T)^T \\stackrel{(e)}{=} \\overline{\\mathbf{x}}^T \\mathbf{A} \\mathbf{x} = q$$",
+    "diagram_data": {
+      "type": "proof_steps",
+      "description": "A sequence of equalities showing that the conjugate of a Hermitian/symmetric quadratic form equals itself.",
+      "image_path": "images/15-011.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "(a) Conjugate of a product; (b) $\\overline{\\overline{\\mathbf{x}}^T} = \\mathbf{x}^T$ and $\\overline{\\mathbf{A}}=\\mathbf{A}$; (c) Transpose of a scalar is the scalar itself; (d) $(BC)^T = C^T B^T$; (e) $\\mathbf{A}^T = \\mathbf{A}$ and $(\\mathbf{x}^T)^T=\\mathbf{x}$"
+      },
+      {
+        "id": "B",
+        "text": "(a) $\\overline{abc} = \\overline{a}\\, \\overline{b}\\, \\overline{c}$; (b) $\\overline{\\overline{\\mathbf{x}}^T} = \\mathbf{x}^T$ and $\\mathbf{A}$ is real; (c) $q$ is a $1\\times 1$ matrix; (d) $(\\mathbf{A} \\mathbf{x})^T = \\mathbf{x}^T \\mathbf{A}^T$; (e) $\\mathbf{A}$ is symmetric and $\\mathbf{x}$ is a vector"
+      },
+      {
+        "id": "C",
+        "text": "(a) Conjugate of a product; (b) $\\overline{\\overline{\\mathbf{x}}^T} = \\mathbf{x}^T$ and $\\mathbf{A}$ is real ($\\overline{\\mathbf{A}}=\\mathbf{A}$); (c) The expression is a scalar (a $1\\times 1$ matrix); (d) $(BC)^T = C^T B^T$ (Reverse order property for Transpose); (e) Given $\\mathbf{A}^T = \\mathbf{A}$ and $\\mathbf{x}$ is $n\\times 1$ which makes $(\\overline{\\mathbf{x}}^T)^T=\\overline{\\mathbf{x}}$"
+      },
+      {
+        "id": "D",
+        "text": "(a) Conjugate of a product; (b) $\\overline{\\overline{\\mathbf{x}}^T} = \\mathbf{x}^T$; (c) Transpose of a scalar is the scalar itself; (d) Transpose of a product; (e) $\\mathbf{A}^T = \\mathbf{A}$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "Here are the justifications for each step:\n(a) **Conjugate of a Product:** The conjugate of a product is the product of the conjugates: $\\overline{BC} = \\overline{B}\\, \\overline{C}$.\n(b) **Properties of Conjugate:** Since $\\overline{\\overline{z}} = z$, we have $\\overline{\\overline{\\mathbf{x}}^T} = \\mathbf{x}^T$. Since $\\mathbf{A}$ is a real matrix, $\\overline{\\mathbf{A}} = \\mathbf{A}$.\n(c) **Transpose of a Scalar:** The expression $\\mathbf{x}^T \\mathbf{A} \\overline{\\mathbf{x}}$ is a $1\\times 1$ matrix (a scalar), and the transpose of a scalar is the scalar itself.\n(d) **Reverse Order Rule for Transpose:** The transpose of a product reverses the order of the terms: $(BC D)^T = D^T C^T B^T$. Applying this to $(\\mathbf{x}^T \\mathbf{A} \\overline{\\mathbf{x}})^T$ (where we view this as a product of three terms: $\\mathbf{x}^T$, $\\mathbf{A}$, and $\\overline{\\mathbf{x}}$) gives $\\overline{\\mathbf{x}}^T \\mathbf{A}^T (\\mathbf{x}^T)^T$.\n(e) **Symmetric Property and Transpose of a Transpose:** Use the given property $\\mathbf{A}^T = \\mathbf{A}$, and note that $(\\mathbf{x}^T)^T = \\mathbf{x}$. This yields $\\overline{\\mathbf{x}}^T \\mathbf{A} \\mathbf{x} = q$.",
+      "distractor_rationales": {}
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "The key properties are the transpose of a product, the fact that the expression is a scalar, and the property that $\\mathbf{A}$ is a real matrix.",
+      "The conjugate of a real matrix is the matrix itself."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze",
+      "Comprehend"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-012",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 6,
+      "page": 376
+    },
+    "subfield": [
+      "linear_algebra"
+    ],
+    "topic": [
+      "vectors",
+      "unit_vectors",
+      "norm"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{v} = (1, -2, 2, 0)$. Find a unit vector $\\mathbf{u}$ in the same direction as $\\mathbf{v}$.",
+    "diagram_data": {
+      "type": "vector_definition",
+      "description": "Definition of a 4-dimensional vector v.",
+      "image_path": "images/15-012.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\mathbf{u} = \\left( \\frac{1}{3}, -\\frac{2}{3}, \\frac{2}{3}, 0 \\right)$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\mathbf{u} = \\left( \\frac{1}{\\sqrt{11}}, -\\frac{2}{\\sqrt{11}}, \\frac{2}{\\sqrt{11}}, 0 \\right)$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\mathbf{u} = (1, -2, 2, 0)$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\mathbf{u} = \\left( 1, -\\frac{1}{2}, \\frac{1}{2}, 0 \\right)$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To find a unit vector $\\mathbf{u}$ in the same direction as $\\mathbf{v}$, we divide $\\mathbf{v}$ by its magnitude (norm), $|\\!|\\mathbf{v}|\\!|$.\n\n1.  **Calculate the magnitude of $\\mathbf{v}$:**\n    $$|\\!|\\mathbf{v}|\\!| = \\sqrt{1^2 + (-2)^2 + 2^2 + 0^2} = \\sqrt{1 + 4 + 4 + 0} = \\sqrt{9} = 3$$\n\n2.  **Divide $\\mathbf{v}$ by its magnitude:**\n    $$\\mathbf{u} = \\frac{1}{|\\!|\\mathbf{v}|\\!|} \\mathbf{v} = \\frac{1}{3} (1, -2, 2, 0) = \\left( \\frac{1}{3}, -\\frac{2}{3}, \\frac{2}{3}, 0 \\right)$$\n\nThus, the unit vector is $\\mathbf{u} = \\left( \\frac{1}{3}, -\\frac{2}{3}, \\frac{2}{3}, 0 \\right)$.",
+      "distractor_rationales": {
+        "B": "Incorrectly calculated the magnitude, possibly by adding absolute values instead of squares or by a calculation error.",
+        "C": "This is the original vector, not a unit vector (its magnitude is 3, not 1).",
+        "D": "Incorrect scaling or misunderstanding of unit vector calculation."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "A unit vector has a magnitude (length) of 1.",
+      "To find a unit vector in the same direction as a given vector $\\mathbf{v}$, divide $\\mathbf{v}$ by its magnitude, $|\\!|\\mathbf{v}|\\!|$."
+    ],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-013",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Linear Algebra and Its Applications",
+      "authors": [
+        "David C. Lay",
+        "Steven R. Lay",
+        "Judi J. McDonald"
+      ],
+      "edition": 6,
+      "chapter": 6,
+      "page": 384
+    },
+    "subfield": [
+      "linear_algebra"
+    ],
+    "topic": [
+      "orthogonal_projection",
+      "vector_decomposition",
+      "inner_product"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{y} = \\begin{bmatrix} 7 \\\\ 6 \\end{bmatrix}$ and $\\mathbf{u} = \\begin{bmatrix} 4 \\\\ 2 \\end{bmatrix}$. Find the orthogonal projection of $\\mathbf{y}$ onto $\\mathbf{u}$ and then write $\\mathbf{y}$ as the sum of two orthogonal vectors, one in $\\text{Span}\\{\\mathbf{u}\\}$ and one orthogonal to $\\mathbf{u}$.",
+    "diagram_data": {
+      "type": "vector_definition",
+      "description": "Two 2D vectors, y and u, for orthogonal projection.",
+      "image_path": "images/15-013.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Projection: $\\text{proj}_{\\mathbf{u}}\\mathbf{y} = \\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix}$; Decomposition: $\\mathbf{y} = \\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix} + \\begin{bmatrix} -1 \\\\ 2 \\end{bmatrix}$"
+      },
+      {
+        "id": "B",
+        "text": "Projection: $\\text{proj}_{\\mathbf{u}}\\mathbf{y} = \\begin{bmatrix} 7 \\\\ 6 \\end{bmatrix}$; Decomposition: $\\mathbf{y} = \\begin{bmatrix} 7 \\\\ 6 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}$"
+      },
+      {
+        "id": "C",
+        "text": "Projection: $\\text{proj}_{\\mathbf{u}}\\mathbf{y} = \\begin{bmatrix} 4 \\\\ 2 \\end{bmatrix}$; Decomposition: $\\mathbf{y} = \\begin{bmatrix} 4 \\\\ 2 \\end{bmatrix} + \\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}$"
+      },
+      {
+        "id": "D",
+        "text": "Projection: $\\text{proj}_{\\mathbf{u}}\\mathbf{y} = \\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix}$; Decomposition: $\\mathbf{y} = \\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix} + \\begin{bmatrix} 5 \\\\ 5 \\end{bmatrix}$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To find the orthogonal projection of $\\mathbf{y}$ onto $\\mathbf{u}$ (let's call it $\\hat{\\mathbf{y}}$), use the formula:\n$$\\hat{\\mathbf{y}} = \\text{proj}_{\\mathbf{u}}\\mathbf{y} = \\frac{\\mathbf{y} \\cdot \\mathbf{u}}{|\\!|\\mathbf{u}|\\!|^2} \\mathbf{u}$$\n\n1.  **Calculate the dot product $\\mathbf{y} \\cdot \\mathbf{u}$:**\n    $$\\mathbf{y} \\cdot \\mathbf{u} = (7)(4) + (6)(2) = 28 + 12 = 40$$\n\n2.  **Calculate the squared magnitude of $\\mathbf{u}$:**\n    $$|\\!|\\mathbf{u}|\\!|^2 = 4^2 + 2^2 = 16 + 4 = 20$$\n\n3.  **Calculate the projection $\\hat{\\mathbf{y}}$:**\n    $$\\hat{\\mathbf{y}} = \\frac{40}{20} \\mathbf{u} = 2 \\begin{bmatrix} 4 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix}$$\n\n4.  **Find the component of $\\mathbf{y}$ orthogonal to $\\mathbf{u}$ (let's call it $\\mathbf{z}$):**\n    $$\\mathbf{z} = \\mathbf{y} - \\hat{\\mathbf{y}} = \\begin{bmatrix} 7 \\\\ 6 \\end{bmatrix} - \\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix} = \\begin{bmatrix} -1 \\\\ 2 \\end{bmatrix}$$\n\n5.  **Write $\\mathbf{y}$ as the sum of two orthogonal vectors:**\n    $$\\mathbf{y} = \\hat{\\mathbf{y}} + \\mathbf{z} = \\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix} + \\begin{bmatrix} -1 \\\\ 2 \\end{bmatrix}$$\n\n    *Check orthogonality: $\\hat{\\mathbf{y}} \\cdot \\mathbf{z} = (8)(-1) + (4)(2) = -8 + 8 = 0$. The vectors are orthogonal.*",
+      "distractor_rationales": {
+        "B": "Incorrectly stated that the projection is the vector itself, implying u and y are scalar multiples, which is not true. The decomposition is also incorrect.",
+        "C": "Incorrectly stated the projection is u itself. The decomposition shows y - u, but it's not guaranteed that y-u is orthogonal to u unless u itself is the projection.",
+        "D": "Incorrect calculation of the scalar multiple for the projection, leading to an incorrect projection and decomposition."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "The formula for the orthogonal projection of $\\mathbf{y}$ onto $\\mathbf{u}$ is $\\text{proj}_{\\mathbf{u}}\\mathbf{y} = \\frac{\\mathbf{y} \\cdot \\mathbf{u}}{|\\!|\\mathbf{u}|\\!|^2} \\mathbf{u}$.",
+      "Once you have the projection, the orthogonal component is $\\mathbf{y} - \\text{proj}_{\\mathbf{u}}\\mathbf{y}$."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "15-014",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "hypothetical_textbook_problem",
+      "book_title": "Linear Algebra and Its Applications (Hypothetical)",
+      "chapter": 6,
+      "page": 386
+    },
+    "subfield": [
+      "linear_algebra"
+    ],
+    "topic": [
+      "orthogonal_projection",
+      "orthogonal_basis",
+      "subspace"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{W}$ be the subspace of $\\mathbb{R}^3$ spanned by the orthogonal basis $\\mathcal{B} = \\{\\mathbf{u}_1, \\mathbf{u}_2\\}$, where: $$\\mathbf{u}_1 = \\begin{bmatrix} 1 \\\\ 2 \\\\ 1 \\end{bmatrix}, \\quad \\mathbf{u}_2 = \\begin{bmatrix} -1 \\\\ 1 \\\\ -1 \\end{bmatrix}$$. Let $\\mathbf{y} = \\begin{bmatrix} 6 \\\\ 4 \\\\ 2 \\end{bmatrix}$. Find the orthogonal projection of $\\mathbf{y}$ onto $\\mathbf{W}$, which is $\\text{proj}_{\\mathbf{W}}\\mathbf{y}$.",
+    "diagram_data": {
+      "type": "vector_definition",
+      "description": "Projection of a vector y onto a 2D subspace W in 3D space.",
+      "image_path": "images/15-014.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\begin{bmatrix} 4 \\\\ 4 \\\\ 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\begin{bmatrix} 2 \\\\ 0 \\\\ -2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\begin{bmatrix} 6 \\\\ 4 \\\\ 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\begin{bmatrix} 3 \\\\ 3 \\\\ 3 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "Since $\\{\\mathbf{u}_1, \\mathbf{u}_2\\}$ is an orthogonal basis for $\\mathbf{W}$, the projection of $\\mathbf{y}$ onto $\\mathbf{W}$ is the sum of the projections onto each basis vector:\n$$\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\frac{\\mathbf{y} \\cdot \\mathbf{u}_1}{|\\!|\\mathbf{u}_1|\\!|^2} \\mathbf{u}_1 + \\frac{\\mathbf{y} \\cdot \\mathbf{u}_2}{|\\!|\\mathbf{u}_2|\\!|^2} \\mathbf{u}_2$$\n\n1.  **Calculate the component along $\\mathbf{u}_1$:**\n    $$\\mathbf{y} \\cdot \\mathbf{u}_1 = (6)(1) + (4)(2) + (2)(1) = 6 + 8 + 2 = 16$$\n    $$|\\!|\\mathbf{u}_1|\\!|^2 = 1^2 + 2^2 + 1^2 = 6$$\n    $$\\hat{\\mathbf{y}}_1 = \\frac{16}{6} \\mathbf{u}_1 = \\frac{8}{3} \\begin{bmatrix} 1 \\\\ 2 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 8/3 \\\\ 16/3 \\\\ 8/3 \\end{bmatrix}$$\n\n2.  **Calculate the component along $\\mathbf{u}_2$:**\n    $$\\mathbf{y} \\cdot \\mathbf{u}_2 = (6)(-1) + (4)(1) + (2)(-1) = -6 + 4 - 2 = -4$$\n    $$|\\!|\\mathbf{u}_2|\\!|^2 = (-1)^2 + 1^2 + (-1)^2 = 3$$\n    $$\\hat{\\mathbf{y}}_2 = \\frac{-4}{3} \\mathbf{u}_2 = -\\frac{4}{3} \\begin{bmatrix} -1 \\\\ 1 \\\\ -1 \\end{bmatrix} = \\begin{bmatrix} 4/3 \\\\ -4/3 \\\\ 4/3 \\end{bmatrix}$$\n\n3.  **Sum the projections:**\n    $$\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\hat{\\mathbf{y}}_1 + \\hat{\\mathbf{y}}_2 = \\begin{bmatrix} 8/3 + 4/3 \\\\ 16/3 - 4/3 \\\\ 8/3 + 4/3 \\end{bmatrix} = \\begin{bmatrix} 12/3 \\\\ 12/3 \\\\ 12/3 \\end{bmatrix} = \\begin{bmatrix} 4 \\\\ 4 \\\\ 4 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "B": "This is the orthogonal component $\\mathbf{z} = \\mathbf{y} - \\text{proj}_{\\mathbf{W}}\\mathbf{y}$.",
+        "C": "This is the original vector $\\mathbf{y}$, not the projection.",
+        "D": "Incorrect calculation of the scalar coefficients in the projection formula."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Use the formula: $\\text{proj}_{\\mathbf{W}}\\mathbf{y} = \\frac{\\mathbf{y} \\cdot \\mathbf{u}_1}{|\\!|\\mathbf{u}_1|\\!|^2} \\mathbf{u}_1 + \\frac{\\mathbf{y} \\cdot \\mathbf{u}_2}{|\\!|\\mathbf{u}_2|\\!|^2} \\mathbf{u}_2$."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
 {
-  "problem_id": "15-004",
-  "question_type": "short_answer",
+  "schema_version": "mcq-1.0",
+  "problem_id": "15-0115_c",
+  "question_type": "multiple_choice",
   "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 2,
-    "page": 141
+    "type": "hypothetical_textbook_problem",
+    "book_title": "Linear Algebra and Its Applications (Hypothetical)",
+    "chapter": 6,
+    "page": 399
   },
   "subfield": [
-    "15"
+    "linear_algebra"
   ],
   "topic": [
-    "linear_algebra",
-    "matrix_inverse",
-    "row_reduction"
+    "orthogonal_subspaces",
+    "dimension_theorem"
   ],
   "gradelevel": [
     "College-level"
   ],
-  "statement": "Find the inverse of the matrix $\\mathbf{A}$, if it exists, where $\\mathbf{A} = \\begin{bmatrix} 0 & 1 & 2 \\\\ 1 & 0 & 3 \\\\ 4 & -3 & 8 \\end{bmatrix}$.",
+  "statement": "Let $W$ be a subspace of $\\mathbb{R}^n$ with dimension $p$, and let $W^{\\perp}$ be its orthogonal complement with dimension $q$. Which of the following relationships is correct?",
   "diagram_data": {
-    "type": "matrix_representation",
-    "matrix": [
-      [0, 1, 2],
-      [1, 0, 3],
-      [4, -3, 8]
+    "type": "subspace_diagram",
+    "description": "Diagram showing the relationship between a subspace W and its orthogonal complement W-perp in R^n.",
+    "image_path": "images/15-0115.png"
+  },
+  "choices": [
+    {
+      "id": "A",
+      "text": "$$p - q = 0$$"
+    },
+    {
+      "id": "B",
+      "text": "$$p \\cdot q = n$$"
+    },
+    {
+      "id": "C",
+      "text": "$$p + q = n$$"
+    },
+    {
+      "id": "D",
+      "text": "$$p + q = 2n$$"
+    }
+  ],
+  "answer": {
+    "correct_ids": [
+      "C"
     ],
-    "dimensions": "3x3",
-    "image_path": "images/15-004.png"
+    "explanation": "The Orthogonal Decomposition Theorem and the properties of orthogonal bases imply that the set formed by combining an orthogonal basis for $W$ and an orthogonal basis for $W^{\\perp}$ is a basis for $\\mathbb{R}^n$. The number of vectors in this combined set is $p+q$. Since the dimension of $\\mathbb{R}^n$ is $n$, the number of basis vectors must be $n$. Therefore, $\\text{dim } W + \\text{dim } W^{\\perp} = p + q = n$."
+  },
+  "evaluation": {
+    "scoring": {
+      "type": "all_or_nothing",
+      "points": 1
+    },
+    "allow_partial_credit": false
+  },
+  "randomization": {
+    "shuffle_choices": true,
+    "lock_ids": [],
+    "group_shuffle": []
   },
   "hints": [
-    "Form the augmented matrix $[\\mathbf{A} \\mid \\mathbf{I}]$, where $\\mathbf{I}$ is the $3 \\times 3$ identity matrix.",
-    "Use elementary row operations to row reduce the augmented matrix to the form $[\\mathbf{I} \\mid \\mathbf{A}^{-1}]$.",
-    "If the matrix $\\mathbf{A}$ is row-equivalent to an identity matrix, the inverse $\\mathbf{A}^{-1}$ exists. If a row of zeros appears in the left side, the inverse does not exist."
+    "Recall the relationship between the dimension of a subspace and the dimension of its orthogonal complement in $\\mathbb{R}^n$."
   ],
-  "solution": "The inverse of the matrix $\\mathbf{A}$ exists and is given by:\n$$\\mathbf{A}^{-1} = \\begin{bmatrix} -9 & 7 & -3 \\\\ 2 & -4 & 1 \\\\ 3 & -4 & 1 \\end{bmatrix}$$\n\n**Calculation:**\nStart with the augmented matrix $[\\mathbf{A} \\mid \\mathbf{I}]$:\n$$\\begin{bmatrix} 0 & 1 & 2 & 1 & 0 & 0 \\\\ 1 & 0 & 3 & 0 & 1 & 0 \\\\ 4 & -3 & 8 & 0 & 0 & 1 \\end{bmatrix}$$ \n\nRow operations to reduce the left side to $\\mathbf{I}$:\n1. Swap $R_1$ and $R_2$.\n2. $R_3 \\to R_3 - 4R_1$.\n3. $R_3 \\to R_3 + 3R_2$.\n4. $R_3 \\to \\frac{1}{2}R_3$ (Correction: The solution's steps 4 and 5 in the original JSON were simplified, but for a detailed calculation, $R_3$ is scaled by $1/2$ before the final steps).\n5. $R_1 \\to R_1 - 3R_3$ and $R_2 \\to R_2 - 2R_3$.\n\nThe final reduced form $[\\mathbf{I} \\mid \\mathbf{A}^{-1}]$ is:\n$$\\begin{bmatrix} 1 & 0 & 0 & -9 & 7 & -3 \\\\ 0 & 1 & 0 & 2 & -4 & 1 \\\\ 0 & 0 & 1 & 3 & -4 & 1 \\end{bmatrix}$$",
-  "validation_status": "verified",
-  "flags": []
-},
-{
-  "problem_id": "15-005",
-  "question_type": "true_false",
-  "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 2,
-    "page": 142,
-    "exercise_number": 14
-  },
-  "subfield": [
-    "15"
+  "difficulty": "easy",
+  "bloom_taxonomy": [
+    "Recall"
   ],
-  "topic": [
-    "linear_algebra",
-    "matrix_inverse",
-    "matrix_properties"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "If $\\mathbf{A}$ is invertible, then the inverse of $\\mathbf{A}^{-1}$ is $\\mathbf{A}$ itself.",
-  "diagram_data": {
-    "type": "textual_statement",
-    "description": "A True/False statement regarding the inverse of an inverse matrix.",
-    "image_path": "images/15-005.png"
-  },
-  "hints": [
-    "Recall the definition of an inverse matrix: $\\mathbf{A}\\mathbf{A}^{-1} = \\mathbf{I}$ and $\\mathbf{A}^{-1}\\mathbf{A} = \\mathbf{I}$.",
-    "Consider what matrix, when multiplied by $\\mathbf{A}^{-1}$, yields the identity matrix $\\mathbf{I}$.",
-    "Think about the property $(\\mathbf{A}^{-1})^{-1}$."
-  ],
-  "solution": "True.\n\n**Justification:** By definition, if $\\mathbf{A}$ is an invertible matrix, its inverse $\\mathbf{A}^{-1}$ satisfies the property $\\mathbf{A}\\mathbf{A}^{-1} = \\mathbf{I}$ and $\\mathbf{A}^{-1}\\mathbf{A} = \\mathbf{I}$.\n\nNow, if we consider $\\mathbf{A}^{-1}$ as a matrix itself, its inverse, denoted as $(\\mathbf{A}^{-1})^{-1}$, is the matrix that satisfies:\n$(\\mathbf{A}^{-1})(\\mathbf{A}^{-1})^{-1} = \\mathbf{I}$ and $(\\mathbf{A}^{-1})^{-1}(\\mathbf{A}^{-1}) = \\mathbf{I}$.\n\nFrom the original definition, we already know that $\\mathbf{A}$ fulfills these conditions for $\\mathbf{A}^{-1}$. That is, $\\mathbf{A}^{-1}\\mathbf{A} = \\mathbf{I}$ and $\\mathbf{A}\\mathbf{A}^{-1} = \\mathbf{I}$.\n\nSince the inverse of a matrix is unique, it must be that $(\\mathbf{A}^{-1})^{-1} = \\mathbf{A}$.",
-  "validation_status": "verified",
-  "flags": []
-},
-{
-  "problem_id": "15-006",
-  "question_type": "true_false",
-  "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 2,
-    "page": 142,
-    "exercise_number": 15
-  },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "matrix_inverse",
-    "determinant",
-    "invertibility_criteria"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "If $\\mathbf{A} = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ and $ad - bc \\neq 0$, then $\\mathbf{A}$ is invertible.",
-  "diagram_data": {
-    "type": "textual_statement",
-    "description": "A True/False statement regarding the invertibility of a 2x2 matrix based on its determinant.",
-    "image_path": "images/15-006.png"
-  },
-  "hints": [
-    "Recall the formula for the inverse of a $2 \\times 2$ matrix.",
-    "The scalar term in front of the formula for $\\mathbf{A}^{-1}$ is the reciprocal of $ad - bc$.",
-    "A matrix is invertible if and only if its determinant is non-zero. For a $2 \\times 2$ matrix, the determinant is $ad - bc$."
-  ],
-  "solution": "True.\n\n**Justification:** The matrix $\\mathbf{A} = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is invertible if and only if its **determinant**, $\\det(\\mathbf{A})$, is non-zero. For a $2 \\times 2$ matrix, the determinant is calculated as $ad - bc$.\n\nSince the problem states that $ad - bc \\neq 0$, the determinant is non-zero, which immediately implies that the matrix $\\mathbf{A}$ is invertible. Furthermore, its inverse is given by the explicit formula:\n$$\\mathbf{A}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
-  "validation_status": "verified",
-  "flags": []
-},{
-  "problem_id": "15-007",
-  "question_type": "short_answer",
-  "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 1,
-    "page": 58,
-    "exercise_number": 7
-  },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "linear_combinations",
-    "span",
-    "vector_geometry"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "Use the accompanying figure (the grid based on vectors $\\mathbf{u}$ and $\\mathbf{v}$) to write each vector $\\mathbf{a}, \\mathbf{b}, \\mathbf{c}$, and $\\mathbf{d}$ as a linear combination of $\\mathbf{u}$ and $\\mathbf{v}$. Is every vector in $\\mathbb{R}^2$ a linear combination of $\\mathbf{u}$ and $\\mathbf{v}$? ",
-  "diagram_data": {
-    "type": "vector_grid_graph",
-    "description": "A 2D coordinate system overlaid with a parallelogram grid defined by the basis vectors $\\mathbf{u}$ and $\\mathbf{v}$. Several points/vectors ($\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d}, \\mathbf{w}, \\mathbf{x}, \\mathbf{y}, \\mathbf{z}$) are marked on the grid.",
-    "base_vectors_shown": ["u", "v"],
-    "image_path": "images/15-007.png"
-  },
-  "hints": [
-    "Treat the grid lines parallel to $\\mathbf{u}$ and $\\mathbf{v}$ as a new coordinate system.",
-    "To find the coefficients $c_1$ and $c_2$ in $c_1\\mathbf{u} + c_2\\mathbf{v}$, count how many steps in the $\\mathbf{u}$ direction and $\\mathbf{v}$ direction are needed to reach the tip of the vector from the origin.",
-    "For the conceptual question: If $\\mathbf{u}$ and $\\mathbf{v}$ are not parallel (i.e., linearly independent), they span all of $\\mathbb{R}^2$."
-  ],
-  "solution": "The linear combinations for the vectors are:\n\n* $$\\mathbf{a} = 1\\mathbf{u} + 0\\mathbf{v} = \\mathbf{u}$$\n* $$\\mathbf{b} = 1\\mathbf{u} + 1\\mathbf{v}$$\n* $$\\mathbf{c} = -1\\mathbf{u} + 1\\mathbf{v}$$\n* $$\\mathbf{d} = 0\\mathbf{u} + 2\\mathbf{v} = 2\\mathbf{v}$$\n\n**Conceptual Question Answer:**\nYes, every vector in $\\mathbb{R}^2$ is a linear combination of $\\mathbf{u}$ and $\\mathbf{v}$. \n\n**Justification:** The vectors $\\mathbf{u}$ and $\\mathbf{v}$ in the figure are not parallel (they are linearly independent), which means they span the entire two-dimensional space ($\\\\mathbb{R}^2$). Every point on the grid (and off the grid) can be reached by a combination of steps in the $\\mathbf{u}$ and $\\mathbf{v}$ directions.",
   "validation_status": "unverified",
   "flags": []
 },
 {
-  "problem_id": "15-008",
-  "question_type": "short_answer",
+  "schema_version": "mcq-1.0",
+  "problem_id": "15-016",
+  "question_type": "multiple_choice",
   "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 1,
-    "page": 60,
-    "exercise_number": 40
+    "type": "hypothetical_textbook_problem",
+    "book_title": "Linear Algebra and Its Applications (Hypothetical)",
+    "chapter": 6,
+    "page": 400
   },
   "subfield": [
-    "15"
+    "linear_algebra"
   ],
   "topic": [
-    "linear_algebra",
-    "linear_combinations",
-    "span",
-    "vector_equations",
-    "solution_uniqueness"
+    "gram_schmidt_process",
+    "orthogonal_basis",
+    "subspace"
   ],
   "gradelevel": [
     "College-level"
   ],
-  "statement": "Consider the vectors $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$, and $\\mathbf{b}$ in $\\mathbb{R}^2$, shown in the figure. Does the equation $x_1\\mathbf{v}_1 + x_2\\mathbf{v}_2 + x_3\\mathbf{v}_3 = \\mathbf{b}$ have a solution? Is the solution unique? Use the figure to explain your answers.",
-  "diagram_data": {
-    "type": "vector_plot",
-    "description": "A 2D plot showing four vectors $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$, and $\\mathbf{b}$ originating from the origin (0). All four vectors lie in the plane, and $\\mathbf{b}$ appears to be within the cone spanned by the $\\mathbf{v}$ vectors.",
-    "vectors_plotted": ["v1", "v2", "v3", "b"],
-    "image_path": "images/15-008.png"
-  },
-  "hints": [
-    "The equation $x_1\\mathbf{v}_1 + x_2\\mathbf{v}_2 + x_3\\mathbf{v}_3 = \\mathbf{b}$ has a solution if and only if $\\mathbf{b}$ is in the span of $\\{\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3\\}$.",
-    "In $\\mathbb{R}^2$, a set of three vectors is always linearly dependent. This fact relates to the uniqueness of the solution.",
-    "The span of the three vectors is the entire plane $\\mathbb{R}^2$ since they are not collinear."
-  ],
-  "solution": "Does the equation have a solution? Yes.\\n\\nJustification (Existence): The set of vectors $\\{\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3\\}$ are all non-zero and are not collinear (they don't all lie on the same line). Since $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$ are vectors in $\\mathbb{R}^2$, and two of them (e.g., $\\mathbf{v}_1$ and $\\mathbf{v}_3$) are linearly independent, their span is all of $\\mathbb{R}^2$. Since $\\mathbf{b}$ is in $\\mathbb{R}^2$, it must be in the span of $\\{\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3\\}$, so a solution exists.\\n\\nIs the solution unique? No.\\n\\nJustification (Uniqueness): The solution is not unique because the three vectors $\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3$ are in $\\mathbb{R}^2$ and any set of more than two vectors in $\\mathbb{R}^2$ must be linearly dependent. Being linearly dependent means the homogeneous equation $x_1\\mathbf{v}_1 + x_2\\mathbf{v}_2 + x_3\\mathbf{v}_3 = \\mathbf{0}$ has non-trivial solutions. If $c_1, c_2, c_3$ is a non-trivial solution to the homogeneous equation, and $x_1, x_2, x_3$ is a solution to the original equation, then $(x_1+c_1), (x_2+c_2), (x_3+c_3)$ is another, different solution. Therefore, the solution is not unique."
-  ,
-  "validation_status": "unverified",
-  "flags": []
-},
-{
-  "problem_id": "15-009",
-  "question_type": "short_answer",
-  "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 4,
-    "page": 261,
-    "exercise_number": 7
-  },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "basis",
-    "span",
-    "coordinate_vectors",
-    "vector_spaces"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "Let $\\mathbf{v}_1 = \\begin{bmatrix} 3 \\\\ 6 \\\\ 2 \\end{bmatrix}$, $\\mathbf{v}_2 = \\begin{bmatrix} -1 \\\\ 0 \\\\ 1 \\end{bmatrix}$, and $\\mathbf{x} = \\begin{bmatrix} 3 \\\\ 12 \\\\ 7 \\end{bmatrix}$. Let $\\mathcal{B} = \\{\\mathbf{v}_1, \\mathbf{v}_2\\}$ be a basis for $H = \\text{Span}\\{\\mathbf{v}_1, \\mathbf{v}_2\\}$. Determine if $\\mathbf{x}$ is in $H$, and if it is, find the coordinate vector of $\\mathbf{x}$ relative to $\\mathcal{B}$.",
-  "diagram_data": {
-    "type": "vector_representation",
-    "description": "The problem defines three 3-dimensional vectors, $\\mathbf{v}_1$, $\\mathbf{v}_2$, and $\\mathbf{x}$, and asks if $\\mathbf{x}$ is in the span of $\\mathbf{v}_1$ and $\\mathbf{v}_2$, and to find the coordinates.",
-    "vectors_defined": ["v1", "v2", "x"],
-    "dimensions": "3x1",
-    "image_path": "images/15-009.png"
-  },
-  "hints": [
-    "To determine if $\\mathbf{x}$ is in $H = \\text{Span}\\{\\mathbf{v}_1, \\mathbf{v}_2\\}$, check if the vector equation $c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 = \\mathbf{x}$ is consistent.",
-    "Form the augmented matrix $[\\mathbf{v}_1 \\ \\mathbf{v}_2 \\mid \\mathbf{x}]$ and row reduce it.",
-    "If the system is consistent, the solution $(c_1, c_2)$ gives the coordinates $[\\mathbf{x}]_{\\mathcal{B}} = \\begin{bmatrix} c_1 \\\\ c_2 \\end{bmatrix}$."
-  ],
-  "solution": "The vector $\\mathbf{x}$ **is** in $H$, and its coordinate vector relative to $\\mathcal{B}$ is: $$\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} 4 \\\\ 9 \\end{bmatrix}$$\n\n**Calculation:**\nWe test for consistency of $c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 = \\mathbf{x}$ by forming the augmented matrix and row reducing:\n$$\\begin{bmatrix} 3 & -1 & \\mid & 3 \\\\ 6 & 0 & \\mid & 12 \\\\ 2 & 1 & \\mid & 7 \\end{bmatrix}$$\n\n1. $R_2 \\to R_2 - 2R_1$: \n$$\\begin{bmatrix} 3 & -1 & \\mid & 3 \\\\ 0 & 2 & \\mid & 6 \\\\ 2 & 1 & \\mid & 7 \\end{bmatrix}$$\n\n2. $R_2 \\to \\frac{1}{2}R_2$: $\\implies c_2 = 3$\n$$\\begin{bmatrix} 3 & -1 & \\mid & 3 \\\\ 0 & 1 & \\mid & 3 \\\\ 2 & 1 & \\mid & 7 \\end{bmatrix}$$\n\n3. Back-substitute $c_2 = 3$ into $R_1$: $3c_1 - 1(3) = 3 \\implies 3c_1 = 6 \\implies c_1 = 2$\n\n4. Check consistency with $R_3$: $2c_1 + 1c_2 = 2(2) + 1(3) = 4 + 3 = 7$. Since $7=7$, the system is consistent, and $\\mathbf{x}$ is in $H$.\n\n*Note: The calculated solution is $c_1=2, c_2=3$. The example solution in the textbook is $c_1=4, c_2=9$. Let's re-examine the textbook solution.* \n\n**Following the textbook solution $\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} 4 \\\\ 9 \\end{bmatrix}$:**\n$$4\\mathbf{v}_1 + 9\\mathbf{v}_2 = 4\\begin{bmatrix} 3 \\\\ 6 \\\\ 2 \\end{bmatrix} + 9\\begin{bmatrix} -1 \\\\ 0 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 12 \\\\ 24 \\\\ 8 \\end{bmatrix} + \\begin{bmatrix} -9 \\\\ 0 \\\\ 9 \\end{bmatrix} = \\begin{bmatrix} 3 \\\\ 24 \\\\ 17 \\end{bmatrix}$$\n\nThis result $\\begin{bmatrix} 3 \\\\ 24 \\\\ 17 \\end{bmatrix}$ **does not** equal $\\mathbf{x} = \\begin{bmatrix} 3 \\\\ 12 \\\\ 7 \\end{bmatrix}$. The textbook's stated solution (which is for a different $\\mathbf{x}$ or different $\\mathbf{v}$ vectors) is incorrect for the stated problem vectors. \n\n**The correct coordinate vector for the given vectors is $c_1=2, c_2=3$.**\n\n$$\\left[\\mathbf{x}\\right]_{\\mathcal{B}} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$$",
-  "validation_status": "verified",
-  "flags": ["solution_mismatch_to_textbook_example"]
-},
-{
-  "problem_id": "15-010",
-  "question_type": "short_answer",
-  "source": {
-    "type": "extract",
-    "book_title": "Linear Algebra and Its Applications",
-    "authors": [
-      "David C. Lay",
-      "Steven R. Lay",
-      "Judi J. McDonald"
-    ],
-    "edition": "SIXTH EDITION",
-    "chapter": 4,
-    "page": 271
-  },
-  "subfield": [
-    "15"
-  ],
-  "topic": [
-    "linear_algebra",
-    "subspace",
-    "basis",
-    "dimension",
-    "span"
-  ],
-  "gradelevel": [
-    "College-level"
-  ],
-  "statement": "For the subspace $W = \\left\\{ \\begin{bmatrix} s - 2t \\\\ s + t \\\\ 3t \\end{bmatrix} : s, t \\in \\mathbb{R} \\right\\}$, (a) find a basis, and (b) state the dimension.",
+  "statement": "Let $W = \\text{Span } \\{\\mathbf{x}_1, \\mathbf{x}_2\\}$, where: $$\\mathbf{x}_1 = \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix}, \\quad \\mathbf{x}_2 = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix}$$. Construct an orthogonal basis $\\{\\mathbf{v}_1, \\mathbf{v}_2\\}$ for $W$ using the Gram-Schmidt process, setting $\\mathbf{v}_1 = \\mathbf{x}_1$.",
   "diagram_data": {
     "type": "vector_definition",
-    "description": "A definition of a subspace $W$ in $\\mathbb{R}^3$ as the set of all linear combinations of two parameters $s$ and $t$.",
-    "image_path": "images/15-010.png"
+    "description": "Two vectors x1 and x2 that span a 2D subspace W in R^3.",
+    "image_path": "images/15-016.png"
+  },
+  "choices": [
+    {
+      "id": "A",
+      "text": "$$\\left\\{ \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 6 \\\\ -3 \\end{bmatrix} \\right\\}$$"
+    },
+    {
+      "id": "B",
+      "text": "$$\\left\\{ \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix} \\right\\}$$"
+    },
+    {
+      "id": "C",
+      "text": "$$\\left\\{ \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 2 \\end{bmatrix} \\right\\}$$"
+    },
+    {
+      "id": "D",
+      "text": "$$\\left\\{ \\begin{bmatrix} 1 \\\\ 2 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix} \\right\\}$$"
+    }
+  ],
+  "answer": {
+    "correct_ids": [
+      "C"
+    ],
+    "explanation": "We use the Gram-Schmidt process with $\\mathbf{v}_1 = \\mathbf{x}_1$:\n\n1.  **Set $\\mathbf{v}_1$:**\n    $$\\mathbf{v}_1 = \\mathbf{x}_1 = \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix}$$\n\n2.  **Calculate $\\mathbf{v}_2$:**\n    $$\\mathbf{v}_2 = \\mathbf{x}_2 - \\text{proj}_{\\mathbf{v}_1}\\mathbf{x}_2 = \\mathbf{x}_2 - \\frac{\\mathbf{x}_2 \\cdot \\mathbf{v}_1}{|\\!|\\mathbf{v}_1|\\!|^2} \\mathbf{v}_1$$\n    * **Dot Product:** $\\mathbf{x}_2 \\cdot \\mathbf{v}_1 = (1)(3) + (2)(6) + (2)(0) = 3 + 12 + 0 = 15$\n    * **Squared Norm:** $|\\!|\\mathbf{v}_1|\\!|^2 = 3^2 + 6^2 + 0^2 = 9 + 36 = 45$\n    * **Projection:**\n        $$\\mathbf{v}_2 = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix} - \\frac{15}{45} \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix} - \\frac{1}{3} \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 2 \\end{bmatrix} - \\begin{bmatrix} 1 \\\\ 2 \\\\ 0 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 2 \\end{bmatrix}$$\n\nThus, the orthogonal basis is $\\left\\{ \\begin{bmatrix} 3 \\\\ 6 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 2 \\end{bmatrix} \\right\\}$.",
+    "distractor_rationales": {
+      "A": "Incorrect calculation in the Gram-Schmidt process.",
+      "B": "This is the original set $\\{\\mathbf{x}_1, \\mathbf{x}_2\\}$, which is linearly independent but not orthogonal, as $\\mathbf{x}_1 \\cdot \\mathbf{x}_2 = 15 \\neq 0$.",
+      "D": "This is an orthogonal set, but the first vector is a scalar multiple of $\\mathbf{x}_1$, and the set spans a different subspace, or it's a normalized version of an intermediate step but doesn't follow the $\\mathbf{v}_1 = \\mathbf{x}_1$ requirement directly."
+    }
+  },
+  "evaluation": {
+    "scoring": {
+      "type": "all_or_nothing",
+      "points": 1
+    },
+    "allow_partial_credit": false
+  },
+  "randomization": {
+    "shuffle_choices": true,
+    "lock_ids": [],
+    "group_shuffle": []
   },
   "hints": [
-    "Decompose the general vector into a linear combination of vectors multiplied by the free parameters $s$ and $t$.",
-    "The vectors you find in the decomposition span the subspace $W$. Check if they are linearly independent to form a basis.",
-    "The dimension of $W$ is the number of vectors in any basis for $W$."
+    "Use the Gram-Schmidt process. The first vector is $\\mathbf{v}_1 = \\mathbf{x}_1$.",
+    "Calculate the second vector as $\\mathbf{v}_2 = \\mathbf{x}_2 - \\text{proj}_{\\mathbf{v}_1}\\mathbf{x}_2$."
   ],
-  "solution": "(a) **Basis:** The general vector in $W$ can be written as a linear combination of vectors associated with $s$ and $t$:\n$$\\begin{bmatrix} s - 2t \\\\ s + t \\\\ 3t \\end{bmatrix} = s\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} + t\\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix}$$\n\nLet $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and $\\mathbf{v}_2 = \\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix}$. The set $\\mathcal{B} = \\{\\mathbf{v}_1, \\mathbf{v}_2\\}$ spans $W$. Since $\\mathbf{v}_1$ and $\\mathbf{v}_2$ are not scalar multiples of each other, they are linearly independent. Thus, a basis for $W$ is:\n$$\\mathcal{B} = \\left\\{ \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix} \\right\\}$$\n\n(b) **Dimension:** Since the basis $\\mathcal{B}$ contains two vectors, the dimension of the subspace $W$ is 2.\n$$\\text{dim}(W) = 2$$\n",
+  "difficulty": "medium",
+  "bloom_taxonomy": [
+    "Apply"
+  ],
+  "validation_status": "unverified",
+  "flags": []
+},
+{
+  "schema_version": "mcq-1.0",
+  "problem_id": "15-017",
+  "question_type": "multiple_choice",
+  "source": {
+    "type": "hypothetical_textbook_problem",
+    "book_title": "Linear Algebra and Its Applications (Hypothetical)",
+    "chapter": 6,
+    "page": 430
+  },
+  "subfield": [
+    "linear_algebra"
+  ],
+  "topic": [
+    "norm_properties",
+    "parallelogram_law"
+  ],
+  "gradelevel": [
+    "College-level"
+  ],
+  "statement": "The Parallelogram Law for vectors $\\mathbf{u}$ and $\\mathbf{v}$ in an inner product space is given by the identity: $$\\mathbf{||u + v||}^2 + \\mathbf{||u - v||}^2 = 2\\mathbf{||u||}^2 + 2\\mathbf{||v||}^2$$\nWhich of the following expressions represents the expanded form of the left side, $\\mathbf{||u + v||}^2 + \\mathbf{||u - v||}^2$, using dot products ($\\cdot$)?",
+  "diagram_data": {
+    "type": "geometric_identity",
+    "description": "The Parallelogram Law relating vector norms.",
+    "image_path": "images/15-017.png"
+  },
+  "choices": [
+    {
+      "id": "A",
+      "text": "$$2(\\mathbf{u} \\cdot \\mathbf{u} + \\mathbf{v} \\cdot \\mathbf{v} + 2\\mathbf{u} \\cdot \\mathbf{v})$$"
+    },
+    {
+      "id": "B",
+      "text": "$$2(\\mathbf{u} \\cdot \\mathbf{u} + \\mathbf{v} \\cdot \\mathbf{v})$$"
+    },
+    {
+      "id": "C",
+      "text": "$$2(\\mathbf{u} \\cdot \\mathbf{u} - \\mathbf{v} \\cdot \\mathbf{v})$$"
+    },
+    {
+      "id": "D",
+      "text": "$$4\\mathbf{u} \\cdot \\mathbf{v}$$"
+    }
+  ],
+  "answer": {
+    "correct_ids": [
+      "B"
+    ],
+    "explanation": "We use the property that $\\mathbf{||x||}^2 = \\mathbf{x} \\cdot \\mathbf{x}$:\n\n1.  **Expand the first term:**\n    $$\\mathbf{||u + v||}^2 = (\\mathbf{u} + \\mathbf{v}) \\cdot (\\mathbf{u} + \\mathbf{v}) = \\mathbf{u} \\cdot \\mathbf{u} + \\mathbf{u} \\cdot \\mathbf{v} + \\mathbf{v} \\cdot \\mathbf{u} + \\mathbf{v} \\cdot \\mathbf{v} = \\mathbf{||u||}^2 + 2(\\mathbf{u} \\cdot \\mathbf{v}) + \\mathbf{||v||}^2$$\n\n2.  **Expand the second term:**\n    $$\\mathbf{||u - v||}^2 = (\\mathbf{u} - \\mathbf{v}) \\cdot (\\mathbf{u} - \\mathbf{v}) = \\mathbf{u} \\cdot \\mathbf{u} - \\mathbf{u} \\cdot \\mathbf{v} - \\mathbf{v} \\cdot \\mathbf{u} + \\mathbf{v} \\cdot \\mathbf{v} = \\mathbf{||u||}^2 - 2(\\mathbf{u} \\cdot \\mathbf{v}) + \\mathbf{||v||}^2$$\n\n3.  **Sum the terms:**\n    $$\\mathbf{||u + v||}^2 + \\mathbf{||u - v||}^2 = \\left[\\mathbf{||u||}^2 + 2(\\mathbf{u} \\cdot \\mathbf{v}) + \\mathbf{||v||}^2\\right] + \\left[\\mathbf{||u||}^2 - 2(\\mathbf{u} \\cdot \\mathbf{v}) + \\mathbf{||v||}^2\\right]$$\n    The $2(\\mathbf{u} \\cdot \\mathbf{v})$ terms cancel out, leaving:\n    $$\\mathbf{||u||}^2 + \\mathbf{||u||}^2 + \\mathbf{||v||}^2 + \\mathbf{||v||}^2 = 2\\mathbf{||u||}^2 + 2\\mathbf{||v||}^2$$\n\nIn terms of dot products (as asked in the choices, where $\\mathbf{||x||}^2 = \\mathbf{x} \\cdot \\mathbf{x}$), this is $2(\\mathbf{u} \\cdot \\mathbf{u} + \\mathbf{v} \\cdot \\mathbf{v})$.",
+    "distractor_rationales": {
+      "A": "This is the expansion of $2\\mathbf{||u + v||}^2$ but not the sum of squares.",
+      "C": "Incorrect signs, suggests subtraction rather than addition of the norms squared.",
+      "D": "This is the result of subtracting the two norms squared, $\\mathbf{||u + v||}^2 - \\mathbf{||u - v||}^2$, which is the Polarization Identity."
+    }
+  },
+  "evaluation": {
+    "scoring": {
+      "type": "all_or_nothing",
+      "points": 1
+    },
+    "allow_partial_credit": false
+  },
+  "randomization": {
+    "shuffle_choices": true,
+    "lock_ids": [],
+    "group_shuffle": []
+  },
+  "hints": [
+    "Recall that $\\mathbf{||x||}^2 = \\mathbf{x} \\cdot \\mathbf{x}$.",
+    "Expand $(\\mathbf{u} + \\mathbf{v}) \\cdot (\\mathbf{u} + \\mathbf{v})$ and $(\\mathbf{u} - \\mathbf{v}) \\cdot (\\mathbf{u} - \\mathbf{v})$ and then add the results."
+  ],
+  "difficulty": "medium",
+  "bloom_taxonomy": [
+    "Apply"
+  ],
   "validation_status": "unverified",
   "flags": []
 }
 ]
+
+
