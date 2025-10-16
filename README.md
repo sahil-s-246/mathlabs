@@ -70,34 +70,75 @@ Use validated dataset to benchmark LLMs or other models:
 
 ```json
 {
-  "problem_id": "prob-venn-001",
-  "question_type": "short_answer",
+  "schema_version": "mcq-1.0",
+  "problem_id": "XX-YYY",
+  "question_type": "multiple_choice", 
   "source": {
-    "type": "generated"
+    "type": "extract|generation",
+    "book_title": "Title_of_the_Book",
+    "authors": ["Author_1_Name", "Author_2_Name", "..."],
+    "edition": 1,
+    "chapter": 1,
+    "page": 111
   },
-  "subfield": ["60"],
-  "topic": ["probability", "venn_diagram"],
-  "gradelevel": ["High-School", "College-level"],
-  "statement": "In a class of 50 students, 30 study Math, 25 study Physics, and 10 study both Math and Physics. How many students study neither Math nor Physics?",
+  "subfield": ["XX"],
+  "topic": [
+	  "topic_1",
+    "topic_2",
+    "..."
+    ],
+  "gradelevel": ["College-level|High-school-level|Graduate-level|Above-graduate"],
+  "statement": "Statement-of-the-prompt, make sure to use $...$ or $$...$$ to wrap around $$\\LaTeX$$ expressions.",
   "diagram_data": {
-    "type": "venn_diagram",
-    "circles": [
-      { "label": "Math", "size": 30, "position": [100, 100], "radius": 50 },
-      { "label": "Physics", "size": 25, "position": [150, 100], "radius": 50 }
-    ],
-    "intersections": [
-      { "labels": ["Math", "Physics"], "size": 10 }
-    ],
-    "universal_set": 50,
-    "image_path": "images/60-001.png"
+    "type": "formula|image|table|...",
+    "image_path": "images/XX-YYY.png"
   },
-  "hints": [
-    "Use the principle of inclusion-exclusion: |A ∪ B| = |A| + |B| - |A ∩ B|.",
-    "Subtract |A ∪ B| from total students to find students in neither."
+
+  "choices": [
+    { "id": "A", 
+	    "text": "Choice_A_text"
+	  },
+    { "id": "B", 
+	    "text": "$Choice_B_text$" 
+	  },
+    { "id": "C", 
+	    "text": "$Choice_C_text$" 
+	  },
+    { "id": "D", 
+	    "text": "$Choice_D_text$" 
+	  }
   ],
-  "solution": "Number studying neither = Total - |Math ∪ Physics| = 50 - (30 + 25 - 10) = 50 - 45 = 5",
+
+  "answer": {
+    "correct_ids": ["A"],                  
+    "explanation": "Explanation-of-the-answer, make sure to use $...$ or $$...$$ to wrap around $$\\LaTeX$$ expressions.",
+    "distractor_rationales": {             // optional: discussion why the distractors are wrong
+      "B": "Explanation to why B is wrong.",
+      "C": "Explanation to why C is wrong.",
+      "D": "Explanation to why D is wrong."
+    },
+  },
+
+  "evaluation": {
+    "scoring": { "type": "all_or_nothing", "points": 1 },
+    "allow_partial_credit": false|true          // may be true for MCQs allowing more than one answers
+  },
+
+  "randomization": {
+    "shuffle_choices": true|false,               // whether or not some choicees should be shuffled
+    "lock_ids": [],                        // questions that require to be locked in place
+    "group_shuffle": []                    // question ids that should be shuffled together (that they are similar)
+  "hints": 
+  [
+		"No.1 Hint",
+		"No.2 Hint",
+		"..."
+   ],
+  "difficulty": "hard|medium|easy",
+  "bloom_taxonomy": ["Create", "Evaluate", "Analyze", "Apply", "Comprehend", "Remember"] // due to the nature of MCQs, the Create type is going to be very hard to achieve
   "validation_status": "unverified",
   "flags": []
 }
+
 ```
 Team: MathLABS -> (L)ucas Yao, (A)khilesh Vangala, (B)ruce Zhang, (S)ahil Parupudi; NYU | CDS
