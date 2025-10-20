@@ -9,7 +9,6 @@ import google.generativeai as genai
 from landingai_ade import LandingAIADE
 
 dotenv.load_dotenv()
-
 # --- Configuration: MSC 2020 Codes ---
 MSC_CODE_MAP = {
     "statistics": "62",

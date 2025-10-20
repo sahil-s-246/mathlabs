@@ -1,0 +1,587 @@
+[
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "62-001",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generation",
+      "book_title": "Probability and Statistics for Data Science",
+      "authors": [
+        "Carlos Fernandez-Granda"
+      ],
+      "edition": 1,
+      "chapter": 11,
+      "page": 11
+    },
+    "subfield": [
+      "statistics"
+    ],
+    "topic": [
+      "probability",
+      "variance",
+      "covariance",
+      "decision_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "A basketball coach needs to select two of three players (A, B, C) for the final quarter. The players have the same average score, but their performances vary. The variances of their scores are $Var(A)=100$, $Var(B)=81$, and $Var(C)=100$. The covariances between players are $Cov(A,B)=-80$, $Cov(A,C)=10$, and $Cov(B,C)=50$. If the team is winning by a large margin, the coach wants to choose the pair with the most consistent combined score to minimize risk. Which pair of players should be chosen?",
+    "diagram_data": {
+      "type": "none",
+      "image_path": ""
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Players A and B"
+      },
+      {
+        "id": "B",
+        "text": "Players A and C"
+      },
+      {
+        "id": "C",
+        "text": "Players B and C"
+      },
+      {
+        "id": "D",
+        "text": "Any pair is equally suitable since their average scores are the same."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To find the most consistent pair, we need to calculate the variance of the sum of scores for each possible pair. The formula is $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$. A lower variance indicates a more consistent (less risky) outcome. \n\n1. **Pair (A, B):** $Var(A+B) = Var(A) + Var(B) + 2Cov(A,B) = 100 + 81 + 2(-80) = 181 - 160 = 21$.\n2. **Pair (A, C):** $Var(A+C) = Var(A) + Var(C) + 2Cov(A,C) = 100 + 100 + 2(10) = 200 + 20 = 220$.\n3. **Pair (B, C):** $Var(B+C) = Var(B) + Var(C) + 2Cov(B,C) = 81 + 100 + 2(50) = 181 + 100 = 281$.\n\nThe pair (A, B) has the lowest variance (21), making them the most predictable and least risky choice for protecting a lead.",
+      "distractor_rationales": {
+        "B": "This pair has a combined variance of 220. While this is more consistent than pair (B, C), it is not the lowest variance option available.",
+        "C": "This pair has the highest combined variance (281). A high variance implies high risk and unpredictability. This combination would be a better choice if the team were losing and needed a chance at a very high score, not when protecting a lead.",
+        "D": "This is incorrect. While the expected value (average) of the combined scores may be the same, the risk associated with each pair is different. Variance measures this risk, and the coach's decision in this scenario should be based on minimizing it."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "The consistency of a combined score is measured by its variance. A lower variance means a more consistent and predictable outcome.",
+      "Recall the formula for the variance of the sum of two random variables: $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$.",
+      "Calculate the total variance for each of the three possible pairs of players and choose the pair with the minimum value."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "94-002",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Discrete Mathematics and Its Applications",
+      "authors": [
+        "Kenneth Rosen"
+      ],
+      "edition": 8,
+      "chapter": 12,
+      "page": 817
+    },
+    "subfield": [
+      "Computer Science"
+    ],
+    "topic": [
+      "Logic Gates",
+      "Boolean Algebra",
+      "Digital Circuits"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine the Boolean expression for the final output of the digital logic circuit described. The circuit has two inputs, $x$ and $y$. Both $x$ and $y$ are inputs to an OR gate. Input $y$ is also connected to a NOT gate. The output from the OR gate and the output from the NOT gate are then used as inputs for a final AND gate.",
+    "diagram_data": {
+      "type": "none",
+      "image_path": "images/94-001.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$(x \\lor y) \\land (\\neg y)$"
+      },
+      {
+        "id": "B",
+        "text": "$(x \\land y) \\lor (\\neg y)$"
+      },
+      {
+        "id": "C",
+        "text": "$(x \\lor y) \\land (\\neg x)$"
+      },
+      {
+        "id": "D",
+        "text": "$(x \\lor y) \\lor (\\neg y)$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To determine the output, we trace the signals through the circuit. First, the inputs $x$ and $y$ go into an OR gate, producing the output $(x \\lor y)$. Concurrently, the input $y$ goes through a NOT gate, producing the output $\\neg y$. Finally, these two intermediate results, $(x \\lor y)$ and $\\neg y$, are fed into an AND gate. The final output is therefore the AND of these two expressions: $(x \\lor y) \\land (\\neg y)$. This expression can be simplified using Boolean algebra to $x \\land \\neg y$.",
+      "distractor_rationales": {
+        "B": "This expression would result if the first gate were an AND gate instead of an OR gate.",
+        "C": "This expression incorrectly applies the NOT operation to input $x$ instead of input $y$.",
+        "D": "This expression would be correct if the final gate were an OR gate instead of an AND gate."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "First, write down the Boolean expression for the output of the OR gate, which takes $x$ and $y$ as inputs.",
+      "Next, write down the expression for the output of the NOT gate, which takes $y$ as its input.",
+      "Finally, combine the two expressions from the previous steps using the operator for the final AND gate."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "68-003",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Discrete Mathematics and Its Applications",
+      "authors": [
+        "Kenneth Rosen"
+      ],
+      "edition": 8,
+      "chapter": 13,
+      "page": 865
+    },
+    "subfield": [
+      "Theory of Computation"
+    ],
+    "topic": [
+      "Deterministic Finite Automata (DFA)",
+      "Regular Languages",
+      "Formal Languages"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the deterministic finite-state automaton (DFA) shown below. Which of the following descriptions accurately defines the set of strings recognized by this automaton?",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "images/68-003.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The set of strings containing zero or more $b$'s, followed by one or more $a$'s."
+      },
+      {
+        "id": "B",
+        "text": "The set of all strings that contain at least one $a$."
+      },
+      {
+        "id": "C",
+        "text": "The set of all strings that start with an $a$."
+      },
+      {
+        "id": "D",
+        "text": "The set of all strings that end with an $a$."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "A string is accepted if the automaton ends in an accepting state after processing the entire string. The only accepting state is $q_1$. To reach $q_1$, the automaton must process an $a$ from state $q_0$. From the start state $q_0$, any number of initial $b$'s will keep the automaton in $q_0$. The first $a$ transitions it to the accepting state $q_1$. Once in $q_1$, any subsequent $a$'s will keep it in $q_1$. However, if a $b$ is read while in state $q_1$, the automaton moves to the non-accepting 'trap' state $q_2$, from which it can never leave. Therefore, an accepted string must consist of zero or more $b$'s followed by one or more $a$'s. This corresponds to the regular expression $b^*a^+$.",
+      "distractor_rationales": {
+        "B": "This is incorrect. While all accepted strings must contain at least one $a$, not all strings containing an $a$ are accepted. For example, the string 'aba' is rejected because the final $b$ moves the automaton from the accepting state $q_1$ to the trap state $q_2$.",
+        "C": "This is incorrect because the automaton can accept strings that start with $b$. The loop on the start state $q_0$ for input $b$ allows for any number of leading $b$'s before the required $a$. For example, 'bba' is an accepted string.",
+        "D": "This is incorrect. Although every string accepted by the automaton does end with an $a$, not every string ending with an $a$ is accepted. For instance, the string 'aba' ends with $a$ but is rejected because it enters the trap state $q_2$ after processing the $b$."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Identify the start state, the accepting state(s), and any 'trap' states (states from which no accepting state can be reached).",
+      "A string is accepted only if it ends in an accepting state. Trace the path required to reach and remain in the accepting state $q_1$.",
+      "Consider what happens if a $b$ appears in the input string after the first $a$ has been read."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "94-004",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "extract",
+      "book_title": "Discrete Mathematics and Its Applications",
+      "authors": [
+        "Kenneth Rosen"
+      ],
+      "edition": 8,
+      "chapter": 12,
+      "page": 815
+    },
+    "subfield": [
+      "Computer Science"
+    ],
+    "topic": [
+      "Logic Gates",
+      "Universal Gates",
+      "NAND Gate",
+      "Boolean Algebra",
+      "Digital Circuit Design"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The NAND gate is considered a universal gate because any other logic function can be implemented using only NAND gates. What is the minimum number of two-input NAND gates required to construct a two-input OR gate?",
+    "diagram_data": {
+      "type": "none",
+      "image_path": ""
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To construct an OR gate from NAND gates, we use De Morgan's laws. The expression for an OR gate, $A \\lor B$, can be rewritten as $\\neg(\\neg A \\land \\neg B)$. This expression can be implemented by inverting the inputs A and B and then feeding them into a NAND gate. Inverting input $A$ requires one NAND gate ($A \\text{ NAND } A = \\neg A$). Inverting input $B$ requires a second NAND gate ($B \\text{ NAND } B = \\neg B$). The outputs of these two gates, $\\neg A$ and $\\neg B$, are then fed into a third NAND gate. The final expression is $(\\neg A) \\text{ NAND } (\\neg B) = \\neg((\\neg A) \\land (\\neg B))$, which simplifies to $A \\lor B$ by De Morgan's law. Thus, a total of 3 NAND gates are required.",
+      "distractor_rationales": {
+        "A": "This is incorrect. One NAND gate with its inputs tied together creates a NOT gate ($A \\text{ NAND } A = \\neg A$), not an OR gate.",
+        "B": "This is incorrect. Two NAND gates are required to create an AND gate. This is achieved by inverting the output of a single NAND gate: $\\neg(A \\text{ NAND } B) = \\neg(\\neg(A \\land B)) = A \\land B$.",
+        "D": "This is incorrect. While it is possible to construct an OR gate with more than 3 NAND gates, the question asks for the minimum number required, which is 3."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Recall De Morgan's laws. How can you express the OR operation ($A \\lor B$) using only AND and NOT operations?",
+      "One of De Morgan's laws states that $A \\lor B = \\neg ((\\neg A) \\land (\\neg B))$. Consider how to implement each part of this expression using only NAND gates.",
+      "A NAND gate performs an inverted AND operation. You will need to generate $\\neg A$ and $\\neg B$ first, and then combine them. How many NAND gates are needed for each step?"
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "94-003",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generation",
+      "book_title": "Discrete Mathematics and Its Applications",
+      "authors": [
+        "Kenneth Rosen"
+      ],
+      "edition": 8,
+      "chapter": 12,
+      "page": 815
+    },
+    "subfield": [
+      "Computer Science"
+    ],
+    "topic": [
+      "Karnaugh Maps",
+      "Boolean Algebra",
+      "Logic Minimization"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "A digital logic circuit has three inputs, A, B, and C, and produces an output Z. The Boolean expression for the output is given by $Z = A B \\overline{C} + A(\\overline{B} + C)$. Use a Karnaugh map to find the most simplified sum-of-products (SOP) expression for Z.",
+    "diagram_data": {
+      "type": "none",
+      "image_path": ""
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$Z = A$"
+      },
+      {
+        "id": "B",
+        "text": "$Z = A\\overline{B} + AC$"
+      },
+      {
+        "id": "C",
+        "text": "$Z = AB + A\\overline{C}$"
+      },
+      {
+        "id": "D",
+        "text": "$Z = B + C$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To simplify the Boolean expression, we first expand it into the sum-of-products (SOP) form, then plot it on a Karnaugh map.\n\n1.  **Expand the expression:**\n    Using the distributive law, $A(B'+C) = AB' + AC$.\n    The full expression becomes: $Z = AB\\overline{C} + A\\overline{B} + AC$.\n\n2.  **Identify the minterms:**\n    We identify the cells to place '1's in the 3-variable K-map:\n    - $AB\\overline{C}$ corresponds to minterm $m_6$ (A=1, B=1, C=0).\n    - $A\\overline{B}$ corresponds to minterms where A=1 and B=0: $m_4$ (100) and $m_5$ (101).\n    - $AC$ corresponds to minterms where A=1 and C=1: $m_5$ (101) and $m_7$ (111).\n    The complete set of minterms is $\\sum m(4, 5, 6, 7)$.\n\n3.  **Plot and group on the K-map:**\n    We place '1's in the cells 4, 5, 6, and 7. This fills the entire row where $A=1$.\n    ```\n          BC\n          00  01  11  10\n        +---+---+---+---+\n     A 0| 0 | 0 | 0 | 0 |\n        +---+---+---+---+\n       1| 1 | 1 | 1 | 1 |\n        +---+---+---+---+\n    ```\n    All four '1's can be combined into a single group of four.\n\n4.  **Simplify:**\n    For this group, the value of A is always 1, while B and C both take on values of 0 and 1. Therefore, B and C are eliminated, and the simplified expression is simply $Z = A$.",
+      "distractor_rationales": {
+        "B": "The expression $Z = A\\overline{B} + AC$ corresponds to the minterms $m(4, 5, 7)$. This is an incomplete simplification as it omits the minterm $m_6$ ($AB\\overline{C}$) from the original function.",
+        "C": "The expression $Z = AB + A\\overline{C}$ corresponds to the minterms $m(4, 6, 7)$. This is an incorrect simplification as it omits the minterm $m_5$ ($A\\overline{B}C$) from the original function.",
+        "D": "The expression $Z = B + C$ is a simplification of a completely different Boolean function, $\\sum m(2, 3, 5, 6, 7)$, and is not equivalent to the given expression."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "First, expand the given Boolean expression into its sum-of-products (SOP) form using the distributive law.",
+      "Create a 3-variable Karnaugh map and plot the '1's corresponding to the minterms from the SOP expression.",
+      "Look for the largest possible rectangular group of adjacent '1's. In this case, a single group of four is possible."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "68-004",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generation",
+      "book_title": "Discrete Mathematics and Its Applications",
+      "authors": [
+        "Kenneth H. Rosen"
+      ],
+      "edition": 8,
+      "chapter": 13,
+      "page": 868
+    },
+    "subfield": [
+      "Theoretical Computer Science"
+    ],
+    "topic": [
+      "Finite Automata",
+      "Regular Languages",
+      "Parity"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following finite-state automata correctly recognizes the language $L$ consisting of all bit strings that contain an even number of 1s and an odd number of 0s? In the diagrams, the start state is indicated by an incoming arrow without a source, and accepting states are denoted by a double circle.",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "images/68-004.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Automaton A"
+      },
+      {
+        "id": "B",
+        "text": "Automaton B"
+      },
+      {
+        "id": "C",
+        "text": "Automaton C"
+      },
+      {
+        "id": "D",
+        "text": "Automaton D"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To recognize this language, the automaton must track the parity of the counts of 0s and 1s. This requires four states, which can be defined as follows:\n- $S_{ee}$: even number of 0s, even number of 1s.\n- $S_{eo}$: even number of 0s, odd number of 1s.\n- $S_{oe}$: odd number of 0s, even number of 1s.\n- $S_{oo}$: odd number of 0s, odd number of 1s.\n\nThe start state corresponds to the empty string, which has zero 0s and zero 1s (both even), so the start state is $S_{ee}$. The accepting state must match the language's condition: odd 0s and even 1s, which is $S_{oe}$.\n\nReading a '0' flips the parity of the 0s count (e.g., $S_{ee} \\xrightarrow{0} S_{oe}$), and reading a '1' flips the parity of the 1s count (e.g., $S_{ee} \\xrightarrow{1} S_{eo}$). Automaton A correctly implements this logic.",
+      "distractor_rationales": {
+        "B": "This automaton has the correct transitions and start state, but the wrong accepting state. It accepts strings with an even number of 0s and an odd number of 1s ($S_{eo}$), not the specified language.",
+        "C": "This automaton has the correct transitions and accepting state, but it incorrectly identifies the start state. The start state must be $S_{ee}$, corresponding to the empty string, not $S_{oo}$.",
+        "D": "This automaton has an incorrect transition function. It swaps the effects of the inputs, causing a '0' to flip the parity of 1s and a '1' to flip the parity of 0s."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "The automaton needs to remember two things: the parity of the number of 0s seen so far, and the parity of the number of 1s.",
+      "Consider the four possible combinations of parities for the counts of 0s and 1s. Each combination will correspond to a state in the automaton.",
+      "The initial state represents the empty string, which has an even count of both 0s and 1s. The accepting state must be the one that represents the condition 'odd number of 0s and even number of 1s'."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  {
+    "schema_version": "mcq-1.0",
+    "problem_id": "94-001",
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generation",
+      "book_title": "Discrete Mathematics and Its Applications",
+      "authors": [
+        "Kenneth Rosen"
+      ],
+      "edition": 8,
+      "chapter": 12,
+      "page": 825
+    },
+    "subfield": [
+      "Computer Science"
+    ],
+    "topic": [
+      "Karnaugh Maps",
+      "Boolean Algebra",
+      "Logic Minimization",
+      "Sum-of-Products"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine the minimized sum-of-products (SOP) expression for the Boolean function represented by the following 2-variable Karnaugh map.",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "images/CS-KMAP-001.png"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$\\bar{x} + y$"
+      },
+      {
+        "id": "B",
+        "text": "$xy + \\bar{x}y + \\bar{x}\\bar{y}$"
+      },
+      {
+        "id": "C",
+        "text": "$y + \\bar{x}\\bar{y}$"
+      },
+      {
+        "id": "D",
+        "text": "$x + \\bar{y}$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "To find the minimized SOP expression, we form the largest possible groups of adjacent '1's. The K-map has '1's corresponding to the minterms $xy$, $\\bar{x}y$, and $\\bar{x}\\bar{y}$.\n1. We can form a group of two '1's in the $\\bar{x}$ row. In this group, the variable $x$ is constant as $\\bar{x}$, while $y$ changes from $y$ to $\\bar{y}$, so it is eliminated. This group yields the product term $\\bar{x}$.\n2. We can form another group of two '1's in the $y$ column. In this group, the variable $y$ is constant, while $x$ changes from $x$ to $\\bar{x}$, so it is eliminated. This group yields the product term $y$.\nThe final minimized expression is the sum (OR) of these terms: $\\bar{x} + y$.",
+      "distractor_rationales": {
+        "B": "This is the canonical sum-of-products expression, which lists all the minterms where the function is true. It is a correct but unminimized representation of the function.",
+        "C": "This expression correctly covers all the '1's but does not use the largest possible groupings. The minterm $\\bar{x}\\bar{y}$ should be grouped with $\\bar{x}y$ to form the simpler term $\\bar{x}$.",
+        "D": "This expression may result from misinterpreting the variable labels for the rows and columns or incorrectly identifying which variables remain constant within the groups."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [
+      "Identify adjacent '1's in the K-map. Your goal is to circle them in the largest possible rectangular groups whose sizes are powers of two (e.g., 1, 2, 4).",
+      "For each group, determine which variables remain constant. If a variable is 1 (uncomplemented) throughout the group, include it. If it's 0 (complemented), include its complement. If it changes, it is eliminated from the term.",
+      "The final expression is the sum (OR) of all the product terms derived from your groups. Ensure every '1' is covered by at least one group."
+    ],
+    "difficulty": "medium",
+    "bloom_taxonomy": [
+      "Analyze"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  }
+]

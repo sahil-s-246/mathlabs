@@ -3,3 +3,5 @@
 input_images/
 .env
 parsed_documents/
+master_dataset_complete.json
+change_one.py
