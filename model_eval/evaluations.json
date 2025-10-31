@@ -1,0 +1,384 @@
+[
+  {
+    "test_run_id": "run_20251031_215918",
+    "evaluated_at": "2025-10-31T22:00:58+00:00Z",
+    "mode": "test",
+    "sampler": "random",
+    "batch_size": 10,
+    "validation_model": "anthropic/claude-opus-4",
+    "student_models": [
+      "openai/gpt-4o-mini",
+      "anthropic/claude-sonnet-4"
+    ],
+    "shuffle_enabled": true,
+    "questions": [
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-026",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T21:59:22+00:00Z",
+          "original_answer": "A",
+          "final_answer": "A",
+          "original_difficulty": "easy",
+          "final_difficulty": "easy",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "A",
+            "reasoning": "The statement is true because a set of vectors is linearly dependent if the number of vectors exceeds the dimension of their span. Since there are 5 vectors and the dimension of their span is 4, at least one vector can be expressed as a linear combination of the others, indicating linear dependence.",
+            "correct": true,
+            "time_ms": 2207
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "A",
+            "reasoning": "A set of vectors is linearly dependent if at least one vector can be expressed as a linear combination of the others. Since we have 5 vectors but their span has dimension only 4, this means we can find a basis of 4 vectors for the span, making the 5th vector redundant (expressible as a combination of the basis vectors). Therefore, the set must be linearly dependent.",
+            "correct": true,
+            "time_ms": 3352
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 2779
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-009",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T21:59:25+00:00Z",
+          "original_answer": "A",
+          "final_answer": "A",
+          "original_difficulty": "medium",
+          "final_difficulty": "medium",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "A",
+            "reasoning": "The subspace \\(W\\) is defined by the linear combinations of the vectors formed by setting \\(s\\) and \\(t\\) to specific values. By letting \\(s = 1, t = 0\\) we get \\(\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}\\) and by letting \\(s = 0, t = 1\\) we find \\(\\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix}\\). These two vectors are linearly independent and span the subspace, thus providing a basis for \\(W\\) with dimension 2.",
+            "correct": true,
+            "time_ms": 3037
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "A",
+            "reasoning": "To find a basis for W, I need to express the general vector in terms of the parameters s and t. The vector $\\begin{bmatrix} s-2t \\\\ s+t \\\\ 3t \\end{bmatrix}$ can be written as $s\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} + t\\begin{bmatrix} -2 \\\\ 1 \\\\ 3 \\end{bmatrix}$. Since s and t are independent parameters and these two vectors are linearly independent (not scalar multiples of each other), they form a basis for W with dimension 2.",
+            "correct": true,
+            "time_ms": 4129
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 3583
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-033",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T21:59:33+00:00Z",
+          "original_answer": "C",
+          "final_answer": "D",
+          "original_difficulty": "medium",
+          "final_difficulty": "medium",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "A",
+            "reasoning": "** By expressing \\(\\mathbf{x}\\) in terms of the basis vectors, we can uniquely determine the coefficients, yielding the coordinate vector in the basis \\(\\mathcal{B}\\).",
+            "correct": false,
+            "time_ms": 5390
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "D",
+            "reasoning": "To find the B-coordinate vector, I need to solve for coefficients c₁, c₂, c₃ such that x = c₁v₁ + c₂v₂ + c₃v₃. By systematically checking the given options through matrix multiplication, option D provides the correct linear combination.",
+            "correct": true,
+            "time_ms": 13627
+          }
+        ],
+        "question_stats": {
+          "accuracy": 0.5,
+          "avg_time_ms": 9508
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-022",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T21:59:47+00:00Z",
+          "original_answer": "A",
+          "final_answer": "A",
+          "original_difficulty": "easy",
+          "final_difficulty": "easy",
+          "shuffle_applied": false,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "A",
+            "reasoning": "The statement is true because the dot product is linear in its second argument. This means that multiplying the vector \\(\\mathbf{v}\\) by a scalar \\(c\\) and then taking the dot product with \\(\\mathbf{u}\\) is equivalent to taking the dot product of \\(\\mathbf{u}\\) and \\(\\mathbf{v}\\) first, and then multiplying by \\(c\\).",
+            "correct": true,
+            "time_ms": 2512
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "A",
+            "reasoning": "This statement describes the scalar multiplication property of the dot product. When we compute $\\mathbf{u} \\cdot (c\\mathbf{v})$, we can factor out the scalar $c$ from the dot product operation, resulting in $c(\\mathbf{u} \\cdot \\mathbf{v})$. This is a fundamental property of dot products that holds for any vectors $\\mathbf{u}$ and $\\mathbf{v}$ and any scalar $c$.",
+            "correct": true,
+            "time_ms": 3309
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 2910
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-032",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T21:59:55+00:00Z",
+          "original_answer": "C",
+          "final_answer": "B",
+          "original_difficulty": "medium",
+          "final_difficulty": "medium",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "B",
+            "reasoning": "** To find the $\\mathcal{B}$-coordinate vector $[\\mathbf{x}]_{\\mathcal{B}}$, we express $\\mathbf{x}$ as a linear combination of $\\mathbf{v}_1$ and $\\mathbf{v}_2$: $\\mathbf{x} = c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2$. By solving the system of equations formed by setting the components equal, we can find $c_1$ and $c_2$. Solving yields $c_1 = 2$ and $c_2 = -1$, giving us the coordinate vector $\\begin{bmatrix} 2 \\\\ -1 \\end{bmatrix}$.\n\n---\n\n### Problem 2:\n\n**ANSWER:** A\n\n**REASONING:** Both $A$ and $B",
+            "correct": true,
+            "time_ms": 4974
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "B",
+            "reasoning": "To find [x]_B, I need to solve x = c₁v₁ + c₂v₂. Testing the given options by direct substitution, option B gives [-1, 2], which when verified gives the linear combination -1v₁ + 2v₂ that most closely matches the target vector x.",
+            "correct": true,
+            "time_ms": 18603
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 11788
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-029",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T22:00:14+00:00Z",
+          "original_answer": "B",
+          "final_answer": "B",
+          "original_difficulty": "medium",
+          "final_difficulty": "medium",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "D",
+            "reasoning": "The Rank-Nullity Theorem states that the dimension of the column space (rank) plus the dimension of the null space must equal the number of columns. Since the column space is \\( p \\)-dimensional and cannot accommodate any dependence (i.e., dim Null \\(\\mathbf{A} = 0\\)), it indicates that the columns of \\(\\mathbf{A}\\) are linearly independent.",
+            "correct": false,
+            "time_ms": 2612
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "B",
+            "reasoning": "Since the column space is p-dimensional, we have rank(A) = p. The rank equals the number of pivot positions in the reduced row echelon form, and since rank(A) = p (the number of columns), every column must contain a pivot position, which means all columns are linearly independent.",
+            "correct": true,
+            "time_ms": 3470
+          }
+        ],
+        "question_stats": {
+          "accuracy": 0.5,
+          "avg_time_ms": 3041
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-038",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T22:00:21+00:00Z",
+          "original_answer": "B",
+          "final_answer": "B",
+          "original_difficulty": "hard",
+          "final_difficulty": "hard",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "B",
+            "reasoning": "The trace of a projection matrix is equal to the rank of the matrix. Since the dimension of the null space of \\(\\mathbf{B}\\) is 2, we can find the rank using the rank-nullity theorem. This theorem states that \\(\\text{dim}(\\text{Nul } \\mathbf{B}) + \\text{dim}(\\text{Col } \\mathbf{B}) = n\\), where \\(n\\) is the number of columns (or rows, since it’s square). Here, \\(5 - 2 = 3\\), so the rank is 3. Therefore, the trace of \\(\\mathbf{B}\\) is 3.",
+            "correct": true,
+            "time_ms": 9711
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "B",
+            "reasoning": "Since B is a projection matrix, its eigenvalues are only 0 or 1. With dim(Nul B) = 2, there are 2 zero eigenvalues and 3 eigenvalues equal to 1, so trace(B) = 3.",
+            "correct": true,
+            "time_ms": 6610
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 8160
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-039",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T22:00:31+00:00Z",
+          "original_answer": "A",
+          "final_answer": "A",
+          "original_difficulty": "hard",
+          "final_difficulty": "hard",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "A",
+            "reasoning": "The set \\( \\mathcal{S} = \\{\\mathbf{x}, \\mathbf{y}, \\mathbf{z}\\} \\) is linearly dependent when the determinant of the change-of-coordinates matrix \\( \\mathbf{C} \\) is zero. Solving the determinant leads us to find \\( c = 1 \\).",
+            "correct": true,
+            "time_ms": 9094
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "A",
+            "reasoning": "The set $\\mathcal{S}$ is linearly dependent when the determinant of the coordinate matrix is zero. Computing the determinant and setting it equal to zero gives $3 - 3c = 0$, which solves to $c = 1$.\n\nANSWER: A",
+            "correct": true,
+            "time_ms": 7176
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 8135
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-004",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T22:00:45+00:00Z",
+          "original_answer": "A",
+          "final_answer": "A",
+          "original_difficulty": "easy",
+          "final_difficulty": "easy",
+          "shuffle_applied": true,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "A",
+            "reasoning": "The inverse of the inverse matrix, \\((\\mathbf{A}^{-1})^{-1}\\), is defined to be \\(\\mathbf{A}\\). This is based on the property that for any invertible matrix \\(\\mathbf{A}\\), applying the inverse operation twice returns the original matrix. Thus, if \\(\\mathbf{A}\\) is invertible, \\((\\mathbf{A}^{-1})^{-1} = \\mathbf{A}\\) holds true.",
+            "correct": true,
+            "time_ms": 8904
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "A",
+            "reasoning": "By the definition of matrix inverse, if $\\mathbf{A}$ is invertible, then $\\mathbf{A} \\cdot \\mathbf{A}^{-1} = \\mathbf{I}$ and $\\mathbf{A}^{-1} \\cdot \\mathbf{A} = \\mathbf{I}$. This means that $\\mathbf{A}$ is the matrix that, when multiplied by $\\mathbf{A}^{-1}$, gives the identity matrix, which is exactly the definition of the inverse of $\\mathbf{A}^{-1}$. Therefore, $(\\mathbf{A}^{-1})^{-1} = \\mathbf{A}$.",
+            "correct": true,
+            "time_ms": 4027
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 6465
+        }
+      },
+      {
+        "original_mcq_ref": {
+          "problem_id": "15-021",
+          "collection": "mcqs"
+        },
+        "validation": {
+          "validated_by": "anthropic/claude-opus-4",
+          "validated_at": "2025-10-31T22:00:53+00:00Z",
+          "original_answer": "B",
+          "final_answer": "B",
+          "original_difficulty": "easy",
+          "final_difficulty": "easy",
+          "shuffle_applied": false,
+          "issues": []
+        },
+        "student_evaluations": [
+          {
+            "model": "openai/gpt-4o-mini",
+            "answer": "B",
+            "reasoning": "The correct statement is that \\(\\|\\mathbf{c\\mathbf{v}}\\| = |c|\\|\\mathbf{v}\\|\\). The norm of a scaled vector is not equal to \\(c\\) times the norm of the vector unless \\(c\\) is non-negative. Hence, the original statement is false.",
+            "correct": true,
+            "time_ms": 2968
+          },
+          {
+            "model": "anthropic/claude-sonnet-4",
+            "answer": "B",
+            "reasoning": "The statement is false because it doesn't account for negative scalars. The correct property is ||cv|| = |c|||v||, where |c| is the absolute value of the scalar c. When c is negative, ||cv|| = |c|||v|| ≠ c||v|| since c would be negative while the norm is always non-negative.",
+            "correct": true,
+            "time_ms": 3779
+          }
+        ],
+        "question_stats": {
+          "accuracy": 1.0,
+          "avg_time_ms": 3373
+        }
+      }
+    ],
+    "summary": {
+      "overall_accuracy": 0.9,
+      "avg_question_time_ms": 5974
+    },
+    "metadata": {
+      "schema_version": "eval-run-1.0"
+    }
+  }
+]
