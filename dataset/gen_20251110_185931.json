@@ -1,0 +1,540 @@
+{
+  "schema_version": "mcq-1.0",
+  "run_id": "gen_20251110_185931",
+  "generated_at": "2025-11-10T19:01:37+00:00Z",
+  "gen-002_gen-001_974323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "combinatorics",
+      "discrete mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the directed graph shown in Exercise 27. What is the total number of distinct paths of length exactly 2 from vertex \\(a\\) to any other vertex?",
+    "diagram_data": {
+      "image_path": "gen-002.png",
+      "alt_text": "A directed graph with four vertices labeled a, b, c, d. Edges are (a,a), (a,b), (a,c), (b,a), (b,c), (c,a), (c,d), (d,d)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "6"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      },
+      {
+        "id": "E",
+        "text": "9"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To find paths of length 2 from vertex \\(a\\), we look for sequences \\(a \\to x \\to y\\) where \\(x\\) and \\(y\\) are vertices in the graph.\nFrom the graph in Exercise 27, the edges starting from \\(a\\) are \\((a,a)\\), \\((a,b)\\), \\((a,c))\\).\n\nIf the first step is \\(a \\to a\\):\n  \\(a \\to a \\to a\\) (path of length 2)\n  \\(a \\to a \\to b\\) (path of length 2)\n  \\(a \\to a \\to c\\) (path of length 2)\n\nIf the first step is \\(a \\to b\\):\n  \\(a \\to b \\to a\\) (path of length 2)\n  \\(a \\to b \\to c\\) (path of length 2)\n\nIf the first step is \\(a \\to c\\):\n  \\(a \\to c \\to a\\) (path of length 2)\n  \\(a \\to c \\to d\\) (path of length 2)\n\nCounting these, there are 3 + 2 + 2 = 7 distinct paths of length exactly 2 starting from vertex \\(a\\).",
+      "distractor_rationales": {
+        "A": "Incorrect count of paths. Some paths may have been missed or double-counted.",
+        "B": "Incorrect count of paths. Ensure all possible two-step sequences are identified.",
+        "D": "Incorrect count of paths. Be careful not to include paths of different lengths or invalid sequences.",
+        "E": "Incorrect count of paths. A systematic enumeration helps avoid errors."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-002_gen-002_974323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "combinatorics",
+      "discrete mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the matrices \\(M_{R_1}\\) and \\(M_{R_2}\\) from Exercise 14, calculate the matrix representing the symmetric difference \\(R_1 \\oplus R_2\\).",
+    "diagram_data": {
+      "image_path": "gen-002.png",
+      "alt_text": "Two 3x3 Boolean matrices are shown. M_R1 = [[0, 1, 0], [1, 1, 0], [1, 0, 0]] and M_R2 = [[0, 1, 0], [0, 1, 1], [1, 1, 1]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\[\\begin{pmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "B",
+        "text": "\\[\\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "C",
+        "text": "\\[\\begin{pmatrix} 0 & 0 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "D",
+        "text": "\\[\\begin{pmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "E",
+        "text": "\\[\\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}\\]"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The symmetric difference \\(R_1 \\oplus R_2\\) corresponds to the element-wise XOR operation on their Boolean matrices, \\(M_{R_1} \\oplus M_{R_2}\\).\n\nGiven:\n\\(M_{R_1} = \\begin{pmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 0 \\end{pmatrix}\\)\n\\(M_{R_2} = \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix}\\)\n\nPerforming element-wise XOR (where \\(0 \\oplus 0 = 0\\), \\(0 \\oplus 1 = 1\\), \\(1 \\oplus 0 = 1\\), \\(1 \\oplus 1 = 0\\)):\n\\(M_{R_1} \\oplus M_{R_2} = \\begin{pmatrix} 0\\oplus0 & 1\\oplus1 & 0\\oplus0 \\\\ 1\\oplus0 & 1\\oplus1 & 0\\oplus1 \\\\ 1\\oplus1 & 0\\oplus1 & 0\\oplus1 \\end{pmatrix} = \\begin{pmatrix} 0 & 0 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 1 \\end{pmatrix}\\)\n\nThus, the correct matrix is \\(\\begin{pmatrix} 0 & 0 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 1 \\end{pmatrix}\\).",
+      "distractor_rationales": {
+        "A": "This matrix represents \\(R_1 \\cup R_2\\) (element-wise OR), not symmetric difference.",
+        "B": "This matrix represents \\(R_1 \\cap R_2\\) (element-wise AND), not symmetric difference.",
+        "D": "This is the zero matrix, which is incorrect.",
+        "E": "This matrix does not correspond to a standard Boolean matrix operation between \\(M_{R_1}\\) and \\(M_{R_2}\\)."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-002_gen-003_974323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "combinatorics",
+      "discrete mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Using the matrix \\(M_R\\) from Exercise 15, determine the matrix \\(M_R^3\\).",
+    "diagram_data": {
+      "image_path": "gen-002.png",
+      "alt_text": "A 3x3 Boolean matrix is shown. M_R = [[0, 1, 0], [0, 0, 1], [1, 1, 0]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\[\\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "B",
+        "text": "\\[\\begin{pmatrix} 0 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 0 & 1 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "C",
+        "text": "\\[\\begin{pmatrix} 1 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "D",
+        "text": "\\[\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "E",
+        "text": "\\[\\begin{pmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}\\]"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To find \\(M_R^3\\), we first calculate \\(M_R^2 = M_R \\cdot M_R\\) using Boolean matrix multiplication, then \\(M_R^3 = M_R^2 \\cdot M_R\\).\n\nGiven \\(M_R = \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{pmatrix}\\)\n\nCalculate \\(M_R^2\\):\n\\(M_R^2 = \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{pmatrix} \\cdot \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{pmatrix} = \\begin{pmatrix} (0\\cdot0+1\\cdot0+0\\cdot1) & (0\\cdot1+1\\cdot0+0\\cdot1) & (0\\cdot0+1\\cdot1+0\\cdot0) \\\\ (0\\cdot0+0\\cdot0+1\\cdot1) & (0\\cdot1+0\\cdot0+1\\cdot1) & (0\\cdot0+0\\cdot1+1\\cdot0) \\\\ (1\\cdot0+1\\cdot0+0\\cdot1) & (1\\cdot1+1\\cdot0+0\\cdot1) & (1\\cdot0+1\\cdot1+0\\cdot0) \\end{pmatrix} = \\begin{pmatrix} 0 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 0 & 1 & 1 \\end{pmatrix}\\)\n\nNow calculate \\(M_R^3 = M_R^2 \\cdot M_R\\):\n\\(M_R^3 = \\begin{pmatrix} 0 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 0 & 1 & 1 \\end{pmatrix} \\cdot \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{pmatrix} = \\begin{pmatrix} (0\\cdot0+0\\cdot0+1\\cdot1) & (0\\cdot1+0\\cdot0+1\\cdot1) & (0\\cdot0+0\\cdot1+1\\cdot0) \\\\ (1\\cdot0+1\\cdot0+0\\cdot1) & (1\\cdot1+1\\cdot0+0\\cdot1) & (1\\cdot0+1\\cdot1+0\\cdot0) \\\\ (0\\cdot0+1\\cdot0+1\\cdot1) & (0\\cdot1+1\\cdot0+1\\cdot1) & (0\\cdot0+1\\cdot1+1\\cdot0) \\end{pmatrix} = \\begin{pmatrix} 1 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix}\\)\n\nThus, the correct matrix is \\(\\begin{pmatrix} 1 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix}\\).",
+      "distractor_rationales": {
+        "A": "This is \\(M_R\\) itself, not \\(M_R^3\\).",
+        "B": "This is \\(M_R^2\\), not \\(M_R^3\\).",
+        "D": "This is the identity matrix, which is incorrect.",
+        "E": "This is the zero matrix, which is incorrect."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-002_gen-004_974323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "combinatorics",
+      "discrete mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the directed graphs from Exercises 23-26 represents a relation that is both reflexive and antisymmetric?",
+    "diagram_data": {
+      "image_path": "gen-002.png",
+      "alt_text": "Four directed graphs are shown, labeled 23, 24, 25, and 26, each depicting a relation on a set of vertices."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Graph 23"
+      },
+      {
+        "id": "B",
+        "text": "Graph 24"
+      },
+      {
+        "id": "C",
+        "text": "Graph 25"
+      },
+      {
+        "id": "D",
+        "text": "Graph 26"
+      },
+      {
+        "id": "E",
+        "text": "None of the above"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "Let's analyze each graph for reflexivity and antisymmetry:\n\n*   **Reflexivity**: A relation R on a set A is reflexive if \\((a,a) \\in R\\) for every \\(a \\in A\\). In a directed graph, this means every vertex must have a loop.\n*   **Antisymmetry**: A relation R is antisymmetric if for all \\(a,b \\in A\\) with \\(a \\neq b\\), if \\((a,b) \\in R\\), then \\((b,a) \\notin R\\). In a directed graph, this means there cannot be two distinct vertices \\(a\\) and \\(b\\) such that there is an edge from \\(a\\) to \\(b\\) and an edge from \\(b\\) to \\(a\\).\n\n1.  **Graph 23**: Vertices {a,b,c}. Edges: (a,b), (b,c), (c,a), (a,c), (c,b), (b,a). No loops. Thus, it is not reflexive. It is also not antisymmetric because, for example, (a,b) and (b,a) both exist.\n2.  **Graph 24**: Vertices {a,b,c}. Edges: (a,a), (b,b), (c,c), (a,b), (b,c), (c,a). All vertices have loops, so it is reflexive. For any \\(x \\neq y\\), if \\((x,y)\\) is an edge, then \\((y,x)\\) is not (e.g., (a,b) exists but (b,a) does not). Thus, it is antisymmetric.\n3.  **Graph 25**: Vertices {a,b,c,d}. Edges: (a,b), (b,c), (c,d), (d,a). No loops. Thus, it is not reflexive.\n4.  **Graph 26**: Vertices {a,b,c,d}. Edges: (a,b), (b,a), (c,d), (d,c), (b,c), (d,b). No loops. Thus, it is not reflexive. It is also not antisymmetric because, for example, (a,b) and (b,a) both exist.\n\nOnly Graph 24 is both reflexive and antisymmetric.",
+      "distractor_rationales": {
+        "A": "Graph 23 is neither reflexive (no loops) nor antisymmetric (e.g., (a,b) and (b,a) both exist).",
+        "C": "Graph 25 is not reflexive (no loops).",
+        "D": "Graph 26 is neither reflexive (no loops) nor antisymmetric (e.g., (a,b) and (b,a) both exist).",
+        "E": "Graph 24 satisfies both conditions."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-002_gen-005_974323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "combinatorics",
+      "discrete mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For the relation \\(R\\) represented by the matrix \\(M_R\\) in Exercise 13, find the matrix representing its complement, \\(\\bar{R}\\).",
+    "diagram_data": {
+      "image_path": "gen-002.png",
+      "alt_text": "A 3x3 Boolean matrix is shown. M_R = [[0, 1, 1], [1, 1, 0], [1, 0, 1]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\[\\begin{pmatrix} 0 & 1 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "B",
+        "text": "\\[\\begin{pmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "C",
+        "text": "\\[\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "D",
+        "text": "\\[\\begin{pmatrix} 1 & 1 & 1 \\\\ 1 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix}\\]"
+      },
+      {
+        "id": "E",
+        "text": "\\[\\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}\\]"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The matrix representing the complement of a relation \\(R\\), denoted \\(M_{\\bar{R}}\\), is obtained by flipping all the entries in \\(M_R\\). That is, if an entry in \\(M_R\\) is 0, it becomes 1 in \\(M_{\\bar{R}}\\), and if it's 1, it becomes 0.\n\nGiven \\(M_R = \\begin{pmatrix} 0 & 1 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{pmatrix}\\)\n\nFlipping each entry:\n\\(M_{\\bar{R}} = \\begin{pmatrix} \\neg0 & \\neg1 & \\neg1 \\\\ \\neg1 & \\neg1 & \\neg0 \\\\ \\neg1 & \\neg0 & \\neg1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}\\)\n\nThus, the correct matrix is \\(\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}\\).",
+      "distractor_rationales": {
+        "A": "This is the original matrix \\(M_R\\), not its complement.",
+        "B": "This is the zero matrix, which is incorrect.",
+        "D": "This is the all-ones matrix, which is incorrect.",
+        "E": "This matrix has some entries incorrectly flipped or not flipped."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-001_gen-001_936323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics",
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the matrix \\(M_R\\) representing a relation \\(R\\) on a finite set \\(A\\), as given in Exercise 13:\n\\[M_R = \\begin{bmatrix} 0 & 1 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{bmatrix}\\]\nWhich property does the relation \\(R\\) possess?",
+    "diagram_data": {
+      "image_path": "gen-001.png",
+      "alt_text": "A matrix M_R with rows [0 1 1], [1 1 0], [1 0 1] is shown next to question 13."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Reflexive"
+      },
+      {
+        "id": "B",
+        "text": "Symmetric"
+      },
+      {
+        "id": "C",
+        "text": "Antisymmetric"
+      },
+      {
+        "id": "D",
+        "text": "Transitive"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "A relation \\(R\\) is symmetric if for every pair \\((i, j)\\), if \\(M_R[i, j] = 1\\), then \\(M_R[j, i] = 1\\). In other words, the matrix \\(M_R\\) must be equal to its transpose \\(M_R^T\\). Let's check the given matrix:\n\\(M_R^T = \\begin{bmatrix} 0 & 1 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{bmatrix}^T = \\begin{bmatrix} 0 & 1 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{bmatrix}\nSince \\(M_R = M_R^T\\), the relation \\(R\\) is symmetric.\n\nIt is not reflexive because \\(M_R[0,0] = 0\\) (not all diagonal elements are 1).\nIt is not antisymmetric because, for example, \\(M_R[0,1] = 1\\) and \\(M_R[1,0] = 1\\), but \\(0 \\neq 1\\). (If \\(M_R[i,j]=1\\) and \\(M_R[j,i]=1\\) for \\(i \\neq j\\), it's not antisymmetric unless \\(i=j\\)).\nChecking transitivity is more complex (requires \\(M_R \\circ M_R \\subseteq M_R\\)), but symmetry is clearly visible.",
+      "distractor_rationales": {
+        "A": "The relation is not reflexive because \\(M_R[0,0] = 0\\). For a relation to be reflexive, all diagonal elements must be 1.",
+        "C": "The relation is not antisymmetric. For example, \\(M_R[0,1]=1\\) and \\(M_R[1,0]=1\\), which violates the condition for antisymmetry (unless the elements are identical).",
+        "D": "Verifying transitivity for a 3x3 matrix involves calculating the Boolean product \\(M_R \\circ M_R\\) and comparing it with \\(M_R\\), which is more involved than checking for symmetry."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-001_gen-002_936323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics",
+      "combinatorics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the directed graph shown in Exercise 23. Which of the following properties does the relation represented by this graph possess?",
+    "diagram_data": {
+      "image_path": "gen-001.png",
+      "alt_text": "A directed graph with three nodes a, b, c. There are edges (a,b), (b,c), (c,a), and loops (a,a), (b,b), (c,c)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Irreflexive"
+      },
+      {
+        "id": "B",
+        "text": "Antisymmetric"
+      },
+      {
+        "id": "C",
+        "text": "Reflexive"
+      },
+      {
+        "id": "D",
+        "text": "Asymmetric"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "A relation represented by a directed graph is reflexive if and only if there is a loop at every vertex. In the directed graph for Exercise 23, there are loops at vertex 'a', vertex 'b', and vertex 'c'. Therefore, the relation is reflexive.\n\nIt is not irreflexive because it has loops.\nIt is not antisymmetric. For example, there is an edge from 'a' to 'b' and an edge from 'b' to 'a'.\nIt is not asymmetric because it has loops and is not antisymmetric.",
+      "distractor_rationales": {
+        "A": "The graph has loops at every vertex (a,a), (b,b), (c,c), which means it is not irreflexive.",
+        "B": "The graph has edges (a,b) and (b,a), which means it is not antisymmetric.",
+        "D": "Asymmetric relations are a stronger condition than antisymmetric (an asymmetric relation is an antisymmetric relation that is also irreflexive). Since it is not antisymmetric and has loops, it cannot be asymmetric."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-001_gen-003_936323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics",
+      "combinatorics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "How many edges are present in the directed graph shown in Exercise 25?",
+    "diagram_data": {
+      "image_path": "gen-001.png",
+      "alt_text": "A directed graph with four nodes a, b, c, d forming a square. There are edges (a,b), (b,c), (c,d), (d,a)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "By counting the arrows (edges) in the directed graph for Exercise 25, we find:\n1.  From 'a' to 'b'\n2.  From 'b' to 'c'\n3.  From 'c' to 'd'\n4.  From 'd' to 'a'\nThere are 4 edges in total.",
+      "distractor_rationales": {
+        "A": "This is an incorrect count of the edges in the graph.",
+        "C": "This is an incorrect count of the edges in the graph.",
+        "D": "This is an incorrect count of the edges in the graph."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-001_gen-004_936323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics",
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the matrices \\(M_{R_1}\\) and \\(M_{R_2}\\) representing relations \\(R_1\\) and \\(R_2\\) on a set \\(A\\), as provided in Exercise 14:\n\\[M_{R_1} = \\begin{bmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 0 \\end{bmatrix} \\quad \\text{and} \\quad M_{R_2} = \\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 1 & 1 \\end{bmatrix}\\]\nFind the matrix representing the union \\(R_1 \\cup R_2\\).",
+    "diagram_data": {
+      "image_path": "gen-001.png",
+      "alt_text": "Two matrices, M_R1 and M_R2, are shown next to question 14. M_R1 has rows [0 1 0], [1 1 0], [1 0 0]. M_R2 has rows [0 1 0], [0 1 1], [1 1 1]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\[\\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0 \\end{bmatrix}\\]"
+      },
+      {
+        "id": "B",
+        "text": "\\[\\begin{bmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 1 \\\\ 1 & 1 & 1 \\end{bmatrix}\\]"
+      },
+      {
+        "id": "C",
+        "text": "\\[\\begin{bmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 0 \\\\ 1 & 1 & 0 \\end{bmatrix}\\]"
+      },
+      {
+        "id": "D",
+        "text": "\\[\\begin{bmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 1 \\\\ 1 & 0 & 1 \\end{bmatrix}\\]"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The matrix for the union of two relations \\(R_1 \\cup R_2\\) is found by performing an element-wise Boolean OR operation on their respective matrices \\(M_{R_1}\\) and \\(M_{R_2}\\). This means \\(M_{R_1 \\cup R_2}[i, j] = M_{R_1}[i, j] \\lor M_{R_2}[i, j]\\).\n\n\\[M_{R_1 \\cup R_2} = \\begin{bmatrix} 0 \\lor 0 & 1 \\lor 1 & 0 \\lor 0 \\\\ 1 \\lor 0 & 1 \\lor 1 & 0 \\lor 1 \\\\ 1 \\lor 1 & 0 \\lor 1 & 0 \\lor 1 \\end{bmatrix} = \\begin{bmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 1 \\\\ 1 & 1 & 1 \\end{bmatrix}\\]",
+      "distractor_rationales": {
+        "A": "This matrix is incorrect; specifically, elements in the second and third rows do not reflect the correct Boolean OR operation.",
+        "C": "This matrix is incorrect; specifically, elements in the second and third rows do not reflect the correct Boolean OR operation.",
+        "D": "This matrix is incorrect; specifically, the element in the third row, third column (0 | 1 = 1) is incorrect."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-001_gen-005_936323": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics",
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the matrix \\(M_R\\) representing a relation \\(R\\) on a finite set, as given in Exercise 15:\n\\[M_R = \\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{bmatrix}\\]\nFind the matrix representing the inverse relation \\(R^{-1}\\).",
+    "diagram_data": {
+      "image_path": "gen-001.png",
+      "alt_text": "A matrix M_R with rows [0 1 0], [0 0 1], [1 1 0] is shown next to question 15."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\[\\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{bmatrix}\\]"
+      },
+      {
+        "id": "B",
+        "text": "\\[\\begin{bmatrix} 0 & 0 & 1 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 0 \\end{bmatrix}\\]"
+      },
+      {
+        "id": "C",
+        "text": "\\[\\begin{bmatrix} 0 & 0 & 1 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{bmatrix}\\]"
+      },
+      {
+        "id": "D",
+        "text": "\\[\\begin{bmatrix} 0 & 0 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 0 \\end{bmatrix}\\]"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The matrix representing the inverse relation \\(R^{-1}\\) is the transpose of the matrix representing \\(R\\), denoted as \\(M_R^T\\). For a matrix \\(M_R\\), its transpose \\(M_R^T\\) is obtained by swapping its rows and columns.\n\nGiven:\n\\[M_R = \\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{bmatrix}\\]\nThen:\n\\[M_{R^{-1}} = M_R^T = \\begin{bmatrix} 0 & 0 & 1 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 0 \\end{bmatrix}\\]",
+      "distractor_rationales": {
+        "A": "This is the original matrix \\(M_R\\), not its transpose (which represents the inverse relation).",
+        "C": "This matrix is incorrect; specifically, the element in the second row, first column should be 1, not 0.",
+        "D": "This matrix is incorrect; specifically, the element in the first row, third column should be 1, not 0."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  }
+}

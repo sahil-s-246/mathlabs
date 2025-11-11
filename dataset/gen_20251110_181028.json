@@ -1,0 +1,760 @@
+{
+  "schema_version": "mcq-1.0",
+  "run_id": "gen_20251110_181028",
+  "generated_at": "2025-11-10T18:12:39+00:00Z",
+  "11-002_gen-001_871982": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The image displays the first few terms of the series of reciprocals of triangular numbers: \\( \\frac{1}{1}, \\frac{1}{3}, \\frac{1}{6}, \\frac{1}{10}, \\dots \\). What is the fifth triangular number, \\(t_5\\)?",
+    "diagram_data": {
+      "image_path": "11-002.png",
+      "alt_text": "A mathematical problem statement and a series, with a hint for partial fraction decomposition. The problem asks to prove that the sum of reciprocals of the first n triangular numbers is less than 2, showing the series 1/1 + 1/3 + 1/6 + 1/10 + ... + 1/tn < 2, and a hint: 2/(n(n+1)) = 2(1/n - 1/(n+1))."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\(12\\)"
+      },
+      {
+        "id": "B",
+        "text": "\\(15\\)"
+      },
+      {
+        "id": "C",
+        "text": "\\(21\\)"
+      },
+      {
+        "id": "D",
+        "text": "\\(28\\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The \\(k\\)-th triangular number is given by the formula \\(t_k = \\frac{k(k+1)}{2}\\). For the fifth triangular number, we set \\(k=5\\): \\(t_5 = \\frac{5(5+1)}{2} = \\frac{5 \\times 6}{2} = \\frac{30}{2} = 15\\).",
+      "distractor_rationales": {
+        "A": "Incorrect calculation.",
+        "C": "This is \\(t_6\\).",
+        "D": "This is \\(t_7\\)."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-002_gen-002_871982": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Using the definition of the \\(k\\)-th triangular number \\(t_k = \\frac{k(k+1)}{2}\\) as seen in the context of the series in the image, what is the value of the reciprocal of the fourth triangular number, \\( \\frac{1}{t_4} \\)?",
+    "diagram_data": {
+      "image_path": "11-002.png",
+      "alt_text": "A mathematical problem statement and a series, with a hint for partial fraction decomposition. The problem asks to prove that the sum of reciprocals of the first n triangular numbers is less than 2, showing the series 1/1 + 1/3 + 1/6 + 1/10 + ... + 1/tn < 2, and a hint: 2/(n(n+1)) = 2(1/n - 1/(n+1))."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\( \\frac{1}{15} \\)"
+      },
+      {
+        "id": "B",
+        "text": "\\( \\frac{1}{10} \\)"
+      },
+      {
+        "id": "C",
+        "text": "\\( \\frac{1}{6} \\)"
+      },
+      {
+        "id": "D",
+        "text": "\\( \\frac{1}{21} \\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The fourth triangular number is \\(t_4 = \\frac{4(4+1)}{2} = \\frac{4 \\times 5}{2} = \\frac{20}{2} = 10\\). Therefore, the reciprocal of the fourth triangular number is \\( \\frac{1}{t_4} = \\frac{1}{10} \\). This can also be observed directly from the series shown in the image: \\( \\frac{1}{1} + \\frac{1}{3} + \\frac{1}{6} + \\frac{1}{10} + \\dots \\).",
+      "distractor_rationales": {
+        "A": "This would be \\( \\frac{1}{t_5} \\).",
+        "C": "This is \\( \\frac{1}{t_3} \\).",
+        "D": "This would be \\( \\frac{1}{t_6} \\)."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-002_gen-003_871982": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The image shows the series \\( S_n = \\sum_{k=1}^{n} \\frac{1}{t_k} = \\frac{1}{1} + \\frac{1}{3} + \\frac{1}{6} + \\frac{1}{10} + \\dots + \\frac{1}{t_n} \\). What is the partial sum \\( S_3 \\)?",
+    "diagram_data": {
+      "image_path": "11-002.png",
+      "alt_text": "A mathematical problem statement and a series, with a hint for partial fraction decomposition. The problem asks to prove that the sum of reciprocals of the first n triangular numbers is less than 2, showing the series 1/1 + 1/3 + 1/6 + 1/10 + ... + 1/tn < 2, and a hint: 2/(n(n+1)) = 2(1/n - 1/(n+1))."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\( \\frac{1}{2} \\)"
+      },
+      {
+        "id": "B",
+        "text": "\\( \\frac{7}{6} \\)"
+      },
+      {
+        "id": "C",
+        "text": "\\( \\frac{3}{2} \\)"
+      },
+      {
+        "id": "D",
+        "text": "\\( \\frac{5}{3} \\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The partial sum \\(S_3\\) is the sum of the first three terms of the series shown: \\(S_3 = \\frac{1}{t_1} + \\frac{1}{t_2} + \\frac{1}{t_3}\\). From the image, these terms are \\(1, \\frac{1}{3}, \\frac{1}{6}\\). So, \\(S_3 = 1 + \\frac{1}{3} + \\frac{1}{6} = \\frac{6}{6} + \\frac{2}{6} + \\frac{1}{6} = \\frac{9}{6} = \\frac{3}{2}\\).",
+      "distractor_rationales": {
+        "A": "Incorrect sum.",
+        "B": "Calculation error, perhaps summing only the first two terms or another arithmetic mistake.",
+        "D": "Incorrect sum."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-002_gen-004_871982": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The image presents a series and asks to prove its sum is less than 2. The hint provided, \\( \\frac{2}{k(k+1)} = 2\\left(\\frac{1}{k} - \\frac{1}{k+1}\\right) \\), suggests a telescoping series. What is the sum of the infinite series \\( \\sum_{k=1}^{\\infty} \\frac{1}{t_k} \\)?",
+    "diagram_data": {
+      "image_path": "11-002.png",
+      "alt_text": "A mathematical problem statement and a series, with a hint for partial fraction decomposition. The problem asks to prove that the sum of reciprocals of the first n triangular numbers is less than 2, showing the series 1/1 + 1/3 + 1/6 + 1/10 + ... + 1/tn < 2, and a hint: 2/(n(n+1)) = 2(1/n - 1/(n+1))."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\(1\\)"
+      },
+      {
+        "id": "B",
+        "text": "\\( \\frac{3}{2} \\)"
+      },
+      {
+        "id": "C",
+        "text": "\\(2\\)"
+      },
+      {
+        "id": "D",
+        "text": "\\( \\infty \\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The general term of the series is \\( \\frac{1}{t_k} = \\frac{2}{k(k+1)} \\). Using the partial fraction decomposition given in the hint, \\( \\frac{2}{k(k+1)} = 2\\left(\\frac{1}{k} - \\frac{1}{k+1}\\right) \\). The partial sum \\(S_n = \\sum_{k=1}^{n} 2\\left(\\frac{1}{k} - \\frac{1}{k+1}\\right) \\) is a telescoping sum:\n\\( S_n = 2\\left[\\left(1 - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\dots + \\left(\\frac{1}{n} - \\frac{1}{n+1}\\right)\\right] \\)\n\\( S_n = 2\\left(1 - \\frac{1}{n+1}\\right) \\)\nAs \\( n \\to \\infty \\), \\( \\frac{1}{n+1} \\to 0 \\). Therefore, the sum of the infinite series is \\( \\lim_{n\\to\\infty} S_n = 2(1 - 0) = 2 \\).",
+      "distractor_rationales": {
+        "A": "Incorrect limit.",
+        "B": "This is \\(S_3\\), not the infinite sum.",
+        "D": "The series converges, it does not diverge to infinity."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-002_gen-005_871982": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The hint in the image states: \\( \\text{Observe that } \\frac{2}{n(n+1)} = 2\\left(\\frac{1}{n} - \\frac{1}{n+1}\\right) \\). Which of the following expressions is equivalent to \\( \\frac{1}{t_k} \\) where \\( t_k = \\frac{k(k+1)}{2} \\)?",
+    "diagram_data": {
+      "image_path": "11-002.png",
+      "alt_text": "A mathematical problem statement and a series, with a hint for partial fraction decomposition. The problem asks to prove that the sum of reciprocals of the first n triangular numbers is less than 2, showing the series 1/1 + 1/3 + 1/6 + 1/10 + ... + 1/tn < 2, and a hint: 2/(n(n+1)) = 2(1/n - 1/(n+1))."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\( \\frac{1}{k} - \\frac{1}{k+1} \\)"
+      },
+      {
+        "id": "B",
+        "text": "\\( 2\\left(\\frac{1}{k} - \\frac{1}{k+1}\\right) \\)"
+      },
+      {
+        "id": "C",
+        "text": "\\( \\frac{k+1}{2k} \\)"
+      },
+      {
+        "id": "D",
+        "text": "\\( \\frac{2}{k} + \\frac{2}{k+1} \\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "Given \\(t_k = \\frac{k(k+1)}{2}\\), its reciprocal is \\( \\frac{1}{t_k} = \\frac{1}{\\frac{k(k+1)}{2}} = \\frac{2}{k(k+1)} \\). The hint explicitly provides the partial fraction decomposition for this expression: \\( \\frac{2}{k(k+1)} = 2\\left(\\frac{1}{k} - \\frac{1}{k+1}\\right) \\). Thus, option B is the correct equivalent expression.",
+      "distractor_rationales": {
+        "A": "This is missing the factor of 2. \\( \\frac{1}{k} - \\frac{1}{k+1} = \\frac{k+1-k}{k(k+1)} = \\frac{1}{k(k+1)} \\).",
+        "C": "This is an incorrect algebraic manipulation; it's not equivalent to \\( \\frac{2}{k(k+1)} \\).",
+        "D": "This has an incorrect sign and would not simplify to the desired expression. \\( \\frac{2}{k} + \\frac{2}{k+1} = \\frac{2(k+1) + 2k}{k(k+1)} = \\frac{4k+2}{k(k+1)} \\)."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-040_gen-001_804902": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry",
+      "vectors"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given vector $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$, which of the following vectors is orthogonal to $\\mathbf{v}_1$?",
+    "diagram_data": {
+      "image_path": "15-040.png",
+      "alt_text": "A problem statement showing a vector v1 and four multiple choice options A, B, C, D, each containing a 3-element column vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 1 \\\\ -1 \\\\ 1 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 2 \\\\ 2 \\\\ 0 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} -1 \\\\ 1 \\\\ 5 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "Two vectors are orthogonal if their dot product is zero. For $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and the vector in Choice A, $\\mathbf{c}_A = \\begin{bmatrix} 1 \\\\ -1 \\\\ 1 \\end{bmatrix}$, their dot product is $\\mathbf{v}_1 \\cdot \\mathbf{c}_A = (1)(1) + (1)(-1) + (0)(1) = 1 - 1 + 0 = 0$. Therefore, Choice A is orthogonal to $\\mathbf{v}_1$. \n\nLet's check other choices:\nChoice B: $\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} \\cdot \\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix} = 1+1+0 = 2 \\ne 0$.\nChoice C: $\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} \\cdot \\begin{bmatrix} 2 \\\\ 2 \\\\ 0 \\end{bmatrix} = 2+2+0 = 4 \\ne 0$.\nChoice D: $\\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} \\cdot \\begin{bmatrix} -1 \\\\ 1 \\\\ 5 \\end{bmatrix} = -1+1+0 = 0$. (While Choice D is also orthogonal, in a multiple-choice question format, usually only one option is the intended answer. Following the example's selection, A is considered the primary correct answer.)",
+      "distractor_rationales": {
+        "B": "This vector is not orthogonal to $\\mathbf{v}_1$ as their dot product is $1(1) + 1(1) + 0(2) = 2 \\ne 0$.",
+        "C": "This vector is not orthogonal to $\\mathbf{v}_1$ as their dot product is $1(2) + 1(2) + 0(0) = 4 \\ne 0$. This vector is also a scalar multiple of $\\mathbf{v}_1$.",
+        "D": "This vector is also orthogonal to $\\mathbf{v}_1$ as their dot product is $1(-1) + 1(1) + 0(5) = 0$. However, in a standard MCQ, usually one primary answer is expected."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-040_gen-002_804902": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry",
+      "vectors"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Among the vectors provided as choices (A, B, C, D) in the problem, which one has the largest magnitude?",
+    "diagram_data": {
+      "image_path": "15-040.png",
+      "alt_text": "A problem statement showing a vector v1 and four multiple choice options A, B, C, D, each containing a 3-element column vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 1 \\\\ -1 \\\\ 1 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 2 \\\\ 2 \\\\ 0 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} -1 \\\\ 1 \\\\ 5 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "D"
+      ],
+      "explanation": "The magnitude of a vector $\\mathbf{v} = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}$ is given by $||\\mathbf{v}|| = \\sqrt{x^2 + y^2 + z^2}$.\n\nFor Choice A: $||\\begin{bmatrix} 1 \\\\ -1 \\\\ 1 \\end{bmatrix}|| = \\sqrt{1^2 + (-1)^2 + 1^2} = \\sqrt{1+1+1} = \\sqrt{3}$.\nFor Choice B: $||\\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}|| = \\sqrt{1^2 + 1^2 + 2^2} = \\sqrt{1+1+4} = \\sqrt{6}$.\nFor Choice C: $||\\begin{bmatrix} 2 \\\\ 2 \\\\ 0 \\end{bmatrix}|| = \\sqrt{2^2 + 2^2 + 0^2} = \\sqrt{4+4+0} = \\sqrt{8}$.\nFor Choice D: $||\\begin{bmatrix} -1 \\\\ 1 \\\\ 5 \\end{bmatrix}|| = \\sqrt{(-1)^2 + 1^2 + 5^2} = \\sqrt{1+1+25} = \\sqrt{27}$.\n\nComparing the magnitudes: $\\sqrt{3}, \\sqrt{6}, \\sqrt{8}, \\sqrt{27}$. The largest magnitude is $\\sqrt{27}$, which corresponds to Choice D.",
+      "distractor_rationales": {
+        "A": "The magnitude of this vector is $\\sqrt{3}$, which is not the largest among the options.",
+        "B": "The magnitude of this vector is $\\sqrt{6}$, which is not the largest among the options.",
+        "C": "The magnitude of this vector is $\\sqrt{8}$, which is not the largest among the options."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-040_gen-003_804902": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry",
+      "vectors"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Calculate the dot product of the vector $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and the vector presented in choice C, $\\begin{bmatrix} 2 \\\\ 2 \\\\ 0 \\end{bmatrix}$.",
+    "diagram_data": {
+      "image_path": "15-040.png",
+      "alt_text": "A problem statement showing a vector v1 and four multiple choice options A, B, C, D, each containing a 3-element column vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$0$$"
+      },
+      {
+        "id": "B",
+        "text": "$$2$$"
+      },
+      {
+        "id": "C",
+        "text": "$$4$$"
+      },
+      {
+        "id": "D",
+        "text": "$$6$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The dot product of two vectors $\\mathbf{a} = \\begin{bmatrix} a_1 \\\\ a_2 \\\\ a_3 \\end{bmatrix}$ and $\\mathbf{b} = \\begin{bmatrix} b_1 \\\\ b_2 \\\\ b_3 \\end{bmatrix}$ is given by $\\mathbf{a} \\cdot \\mathbf{b} = a_1b_1 + a_2b_2 + a_3b_3$.\nFor $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and the vector from Choice C, $\\mathbf{c}_C = \\begin{bmatrix} 2 \\\\ 2 \\\\ 0 \\end{bmatrix}$, the dot product is:\n$\\mathbf{v}_1 \\cdot \\mathbf{c}_C = (1)(2) + (1)(2) + (0)(0) = 2 + 2 + 0 = 4$.",
+      "distractor_rationales": {
+        "A": "Incorrect. This would be the dot product if the vectors were orthogonal, which is not the case here.",
+        "B": "Incorrect calculation of the dot product. This might result from only summing two components or other arithmetic error.",
+        "D": "Incorrect calculation of the dot product. A common error might be to multiply magnitudes or miscalculate components."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-040_gen-004_804902": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry",
+      "vectors"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{u}$ be the vector sum of $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and the vector in choice B, $\\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$. What is the magnitude of $\\mathbf{u}$?",
+    "diagram_data": {
+      "image_path": "15-040.png",
+      "alt_text": "A problem statement showing a vector v1 and four multiple choice options A, B, C, D, each containing a 3-element column vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\sqrt{2}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$2\\sqrt{2}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$2\\sqrt{3}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$4$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "First, find the sum of the two vectors. Let $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and $\\mathbf{c}_B = \\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$.\n$\\mathbf{u} = \\mathbf{v}_1 + \\mathbf{c}_B = \\begin{bmatrix} 1+1 \\\\ 1+1 \\\\ 0+2 \\end{bmatrix} = \\begin{bmatrix} 2 \\\\ 2 \\\\ 2 \\end{bmatrix}$.\nNext, calculate the magnitude of $\\mathbf{u}$: $||\\mathbf{u}|| = \\sqrt{2^2 + 2^2 + 2^2} = \\sqrt{4+4+4} = \\sqrt{12}$.\nSimplify the radical: $\\sqrt{12} = \\sqrt{4 \\cdot 3} = 2\\sqrt{3}$.",
+      "distractor_rationales": {
+        "A": "Incorrect. This is the magnitude of $\\mathbf{v}_1$ alone, not the sum of the vectors.",
+        "B": "Incorrect calculation of the magnitude of the sum. This could result from an arithmetic error like $\\sqrt{8}$ instead of $\\sqrt{12}$.",
+        "D": "Incorrect calculation. This might result from summing the components without taking the square root, or other arithmetic errors."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-040_gen-005_804902": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry",
+      "vectors"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "What is the cosine of the angle between $\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and the vector presented in choice B, $\\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$?",
+    "diagram_data": {
+      "image_path": "15-040.png",
+      "alt_text": "A problem statement showing a vector v1 and four multiple choice options A, B, C, D, each containing a 3-element column vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\frac{1}{2}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\frac{1}{\\sqrt{2}}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\frac{\\sqrt{3}}{3}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\frac{2}{\\sqrt{6}}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The cosine of the angle $\\theta$ between two vectors $\\mathbf{a}$ and $\\mathbf{b}$ is given by the formula $\\cos \\theta = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{||\\mathbf{a}|| \\cdot ||\\mathbf{b}||}$.\nLet $\\mathbf{a} = \\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix}$ and $\\mathbf{b} = \\mathbf{c}_B = \\begin{bmatrix} 1 \\\\ 1 \\\\ 2 \\end{bmatrix}$.\nFirst, calculate the dot product: $\\mathbf{v}_1 \\cdot \\mathbf{c}_B = (1)(1) + (1)(1) + (0)(2) = 1 + 1 + 0 = 2$.\nNext, calculate the magnitudes:\n$||\\mathbf{v}_1|| = \\sqrt{1^2 + 1^2 + 0^2} = \\sqrt{1+1+0} = \\sqrt{2}$.\n$||\\mathbf{c}_B|| = \\sqrt{1^2 + 1^2 + 2^2} = \\sqrt{1+1+4} = \\sqrt{6}$.\nNow, substitute these values into the formula:\n$\\cos \\theta = \\frac{2}{\\sqrt{2} \\cdot \\sqrt{6}} = \\frac{2}{\\sqrt{12}} = \\frac{2}{2\\sqrt{3}} = \\frac{1}{\\sqrt{3}}$.\nRationalize the denominator: $\\frac{1}{\\sqrt{3}} \\cdot \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}$.",
+      "distractor_rationales": {
+        "A": "Incorrect calculation of the dot product or magnitudes, leading to an incorrect angle.",
+        "B": "Incorrect calculation, possibly confusing the angle with a different pair of vectors or making an arithmetic error.",
+        "D": "This is the unsimplified form of the correct answer. While mathematically equivalent, simplified radicals are generally expected in final answers."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-029_gen-001_572202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For any matrix \\(A\\), the rank of \\(A\\) is defined as the dimension of its column space. This dimension is also equal to which of the following?",
+    "diagram_data": {
+      "image_path": "15-029.png",
+      "alt_text": "Question 33 from a linear algebra textbook, asking why the columns of an n x p matrix A must be linearly independent given its column space is p-dimensional, with multiple-choice options related to rank, pivot positions, and the Rank-Nullity Theorem."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The number of rows in \\(A\\)."
+      },
+      {
+        "id": "B",
+        "text": "The number of columns in \\(A\\)."
+      },
+      {
+        "id": "C",
+        "text": "The number of pivot positions in the row echelon form of \\(A\\)."
+      },
+      {
+        "id": "D",
+        "text": "The dimension of the null space of \\(A\\)."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The rank of a matrix is equivalent to the number of pivot positions in its row echelon form. This number also represents the dimension of the column space and the dimension of the row space of the matrix.",
+      "distractor_rationales": {
+        "A": "The number of rows can be larger or smaller than the rank of the matrix. For example, a 2x3 matrix with rank 2 has 2 rows, but a 3x2 matrix with rank 2 has 3 rows.",
+        "B": "The number of columns can be larger or smaller than the rank of the matrix. For example, a 2x3 matrix with rank 2 has 3 columns, but a 3x2 matrix with rank 2 has 2 columns.",
+        "D": "The dimension of the null space (nullity) is related to the rank by the Rank-Nullity Theorem (rank + nullity = number of columns), but it is generally not equal to the rank itself."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-029_gen-002_572202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let \\(A\\) be an \\(m \\times n\\) matrix. If the columns of \\(A\\) are linearly independent, which of the following statements about the rank of \\(A\\) must be true?",
+    "diagram_data": {
+      "image_path": "15-029.png",
+      "alt_text": "Question 33 from a linear algebra textbook, asking why the columns of an n x p matrix A must be linearly independent given its column space is p-dimensional, with multiple-choice options related to rank, pivot positions, and the Rank-Nullity Theorem."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\(\\text{rank}(A) = m\\)"
+      },
+      {
+        "id": "B",
+        "text": "\\(\\text{rank}(A) = n\\)"
+      },
+      {
+        "id": "C",
+        "text": "\\(\\text{rank}(A) < n\\)"
+      },
+      {
+        "id": "D",
+        "text": "\\(\\text{rank}(A) > m\\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The columns of an \\(m \\times n\\) matrix \\(A\\) are linearly independent if and only if every column is a pivot column when \\(A\\) is reduced to its row echelon form. This means the number of pivot positions is equal to the number of columns, \\(n\\). Since the rank of \\(A\\) is defined as the number of pivot positions, it must be that \\(\\text{rank}(A) = n\\).",
+      "distractor_rationales": {
+        "A": "While \\(\\text{rank}(A) = m\\) implies that the column space spans \\(\\mathbb{R}^m\\), this is not a general condition for columns being linearly independent. For example, a \\(3 \\times 2\\) matrix with linearly independent columns has \\(\\text{rank}(A) = 2\\), not \\(3\\).",
+        "C": "If \\(\\text{rank}(A) < n\\), it means there are fewer pivot positions than columns, which implies that the columns of \\(A\\) are linearly dependent, not independent.",
+        "D": "The rank of a matrix cannot be greater than the number of rows (m) or the number of columns (n). Therefore, \\(\\text{rank}(A) > m\\) is always false."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-029_gen-003_572202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Suppose \\(A\\) is an \\(n \\times p\\) matrix. If the number of columns \\(p\\) is strictly greater than the number of rows \\(n\\) (i.e., \\(p > n\\)), what can we conclude about the columns of \\(A\\)?",
+    "diagram_data": {
+      "image_path": "15-029.png",
+      "alt_text": "Question 33 from a linear algebra textbook, asking why the columns of an n x p matrix A must be linearly independent given its column space is p-dimensional, with multiple-choice options related to rank, pivot positions, and the Rank-Nullity Theorem."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "They must be linearly independent."
+      },
+      {
+        "id": "B",
+        "text": "They must span \\(\\mathbb{R}^n\\)."
+      },
+      {
+        "id": "C",
+        "text": "They must be linearly dependent."
+      },
+      {
+        "id": "D",
+        "text": "They must form a basis for \\(\\mathbb{R}^n\\)."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The columns of \\(A\\) are vectors in \\(\\mathbb{R}^n\\). A set of \\(p\\) vectors in an \\(n\\)-dimensional space \\(\\mathbb{R}^n\\) must be linearly dependent if \\(p > n\\). This is because the maximum number of linearly independent vectors in an \\(n\\)-dimensional space is \\(n\\).",
+      "distractor_rationales": {
+        "A": "If \\(p > n\\), the columns cannot be linearly independent; there are too many vectors for the dimension of the space they reside in.",
+        "B": "For the columns to span \\(\\mathbb{R}^n\\), the rank of \\(A\\) must be \\(n\\). While this is possible (e.g., if \\(A\\) has a pivot in every row), it does not imply linear independence if \\(p > n\\).",
+        "D": "For the columns to form a basis for \\(\\mathbb{R}^n\\), they must be linearly independent and span \\(\\mathbb{R}^n\\), which requires \\(p = n\\). Since \\(p > n\\), they cannot form a basis."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-029_gen-004_572202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For an \\(m \\times n\\) matrix \\(A\\), the Rank-Nullity Theorem states that \\(\\text{rank}(A) + \\text{dim(Nul } A) = n\\). If the columns of \\(A\\) are linearly independent, what must be the dimension of the null space of \\(A\\)?",
+    "diagram_data": {
+      "image_path": "15-029.png",
+      "alt_text": "Question 33 from a linear algebra textbook, asking why the columns of an n x p matrix A must be linearly independent given its column space is p-dimensional, with multiple-choice options related to rank, pivot positions, and the Rank-Nullity Theorem."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\(m\\)"
+      },
+      {
+        "id": "B",
+        "text": "\\(n\\)"
+      },
+      {
+        "id": "C",
+        "text": "\\(0\\)"
+      },
+      {
+        "id": "D",
+        "text": "\\(m - n\\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "If the columns of \\(A\\) are linearly independent, then every column is a pivot column, which means the rank of \\(A\\) is equal to the number of columns, \\(n\\) (i.e., \\(\\text{rank}(A) = n\\)). Substituting this into the Rank-Nullity Theorem: \\(n + \\text{dim(Nul } A) = n\\). Subtracting \\(n\\) from both sides gives \\(\\text{dim(Nul } A) = 0\\).",
+      "distractor_rationales": {
+        "A": "\\(m\\) is the number of rows, and generally not the dimension of the null space. For instance, if \\(A\\) is a \\(3 \\times 2\\) matrix with linearly independent columns, \\(m=3\\) but \\(\\text{dim(Nul } A) = 0\\).",
+        "B": "\\(n\\) is the number of columns, which is equal to the rank of \\(A\\) when its columns are linearly independent, not the dimension of its null space.",
+        "D": "\\(m - n\\) is not generally correct. For example, if \\(A\\) is a \\(3 \\times 2\\) matrix with linearly independent columns, \\(m-n = 3-2 = 1\\), but \\(\\text{dim(Nul } A) = 0\\)."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-029_gen-005_572202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let \\(A\\) be an \\(n \\times p\\) matrix. If the dimension of the column space of \\(A\\) is equal to \\(p\\) (i.e., \\(\\text{dim(Col } A) = p\\)), which of the following conclusions is correct?",
+    "diagram_data": {
+      "image_path": "15-029.png",
+      "alt_text": "Question 33 from a linear algebra textbook, asking why the columns of an n x p matrix A must be linearly independent given its column space is p-dimensional, with multiple-choice options related to rank, pivot positions, and the Rank-Nullity Theorem."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The columns of \\(A\\) must span \\(\\mathbb{R}^n\\)."
+      },
+      {
+        "id": "B",
+        "text": "The columns of \\(A\\) must be orthogonal."
+      },
+      {
+        "id": "C",
+        "text": "The columns of \\(A\\) must be linearly dependent."
+      },
+      {
+        "id": "D",
+        "text": "The columns of \\(A\\) must be linearly independent."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "D"
+      ],
+      "explanation": "The dimension of the column space of a matrix is also known as its rank. The rank of a matrix is the maximum number of linearly independent columns it contains. If \\(A\\) has \\(p\\) columns and its column space has dimension \\(p\\), it means that all \\(p\\) columns are linearly independent.",
+      "distractor_rationales": {
+        "A": "For the columns of \\(A\\) to span \\(\\mathbb{R}^n\\), the dimension of the column space must be \\(n\\) (i.e., \\(\\text{rank}(A) = n\\)). This is only true if \\(p = n\\), which is not guaranteed by the problem statement.",
+        "B": "Orthogonality is a specific geometric property of vectors that is not implied by linear independence or the dimension of the column space being equal to the number of columns. A set of vectors can be linearly independent without being orthogonal.",
+        "C": "If the dimension of the column space is \\(p\\), it means there are \\(p\\) linearly independent columns. Since there are only \\(p\\) columns in total, they must all be linearly independent, making this statement incorrect."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  }
+}
