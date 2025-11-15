@@ -1,0 +1,255 @@
+{
+  "schema_version": "mcq-1.0",
+  "run_id": "gen_20251106_210039",
+  "generated_at": "2025-11-06T21:02:39+00:00Z",
+  "gen-001": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the determinant of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "A 2x2 matrix A with entries [2, 3; 3, 2]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$4$$"
+      },
+      {
+        "id": "B",
+        "text": "$$6$$"
+      },
+      {
+        "id": "C",
+        "text": "$$-5$$"
+      },
+      {
+        "id": "D",
+        "text": "$$9$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The determinant of a $2\\times 2$ matrix $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is given by $ad-bc$. For the given matrix $\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$, the determinant is calculated as:\n$$\\det(\\mathbf{A}) = (2)(2) - (3)(3) = 4 - 9 = -5$$",
+      "distractor_rationales": {
+        "A": "This is the product of the diagonal elements, $2 \\times 2 = 4$, not the determinant.",
+        "B": "This might be the sum of diagonal elements ($2+2=4$) or an incorrect multiplication.",
+        "D": "This is the product of the off-diagonal elements, $3 \\times 3 = 9$, not the determinant."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-002": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Calculate the trace of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "A 2x2 matrix A with entries [2, 3; 3, 2]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$2$$"
+      },
+      {
+        "id": "B",
+        "text": "$$3$$"
+      },
+      {
+        "id": "C",
+        "text": "$$4$$"
+      },
+      {
+        "id": "D",
+        "text": "$$5$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The trace of a square matrix is the sum of the elements on its main diagonal. For the given matrix $\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$, the trace is calculated as:\n$$\\text{Tr}(\\mathbf{A}) = 2 + 2 = 4$$",
+      "distractor_rationales": {
+        "A": "This is one of the diagonal elements, not the sum of all diagonal elements.",
+        "B": "This is one of the off-diagonal elements, not part of the trace calculation.",
+        "D": "This is an incorrect sum. Perhaps $2+3$ was calculated, which includes an off-diagonal element."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-003": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the identity matrix $\\mathbf{I} = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$, find $\\mathbf{A} + \\mathbf{I}$ for the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "A 2x2 matrix A with entries [2, 3; 3, 2]. The question asks to add the identity matrix to A."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 3 & 4 \\\\ 4 & 3 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 3 & 3 \\\\ 3 & 3 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 1 & 3 \\\\ 3 & 1 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To add two matrices, we add their corresponding entries:\n$$\\mathbf{A} + \\mathbf{I} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix} + \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 2+1 & 3+0 \\\\ 3+0 & 2+1 \\end{bmatrix} = \\begin{bmatrix} 3 & 3 \\\\ 3 & 3 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "A": "This is the original matrix $\\mathbf{A}$, indicating no addition was performed.",
+        "B": "This would be the result if 1 were added to every element of $\\mathbf{A}$, not just the diagonal elements as per $\\mathbf{I}$.",
+        "D": "This would be the result if 1 were subtracted from the diagonal elements of $\\mathbf{A}$, or if $\\mathbf{A}-\\mathbf{I}$ was calculated incorrectly."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-004": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Calculate $2\\mathbf{A}$ for the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "A 2x2 matrix A with entries [2, 3; 3, 2]. The question asks to multiply A by the scalar 2."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 4 & 3 \\\\ 3 & 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 2 & 6 \\\\ 6 & 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 4 & 6 \\\\ 6 & 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To multiply a matrix by a scalar, multiply each entry of the matrix by that scalar:\n$$2\\mathbf{A} = 2 \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix} = \\begin{bmatrix} 2 \\times 2 & 2 \\times 3 \\\\ 2 \\times 3 & 2 \\times 2 \\end{bmatrix} = \\begin{bmatrix} 4 & 6 \\\\ 6 & 4 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "A": "Only the diagonal elements were multiplied by 2, while the off-diagonal elements were left unchanged.",
+        "B": "Only the off-diagonal elements were multiplied by 2, while the diagonal elements were left unchanged.",
+        "D": "This is an incorrect calculation; it does not result from multiplying matrix A by 2."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-005": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the transpose of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "A 2x2 matrix A with entries [2, 3; 3, 2]. The question asks for the transpose of A."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 3 & 2 \\\\ 2 & 3 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} -2 & -3 \\\\ -3 & -2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 2 & -3 \\\\ -3 & 2 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The transpose of a matrix $\\mathbf{A}$, denoted $\\mathbf{A}^T$, is obtained by interchanging its rows and columns. That is, the element in row $i$, column $j$ of $\\mathbf{A}$ becomes the element in row $j$, column $i$ of $\\mathbf{A}^T$.\nFor the given matrix $\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$:\nThe first row $\\begin{bmatrix} 2 & 3 \\end{bmatrix}$ becomes the first column $\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$.\nThe second row $\\begin{bmatrix} 3 & 2 \\end{bmatrix}$ becomes the second column $\\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}$.\nThus, the transpose is:\n$$\\mathbf{A}^T = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$ \nSince the matrix $\\mathbf{A}$ is symmetric (i.e., $\\mathbf{A} = \\mathbf{A}^T$), its transpose is identical to the original matrix.",
+      "distractor_rationales": {
+        "B": "This matrix swaps the diagonal elements, which is not the definition of a transpose.",
+        "C": "This matrix contains the negative of all elements of $\\mathbf{A}$, which is not the transpose operation.",
+        "D": "This matrix negates the off-diagonal elements, which is not the transpose operation."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  }
+}

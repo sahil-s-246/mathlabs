@@ -1,0 +1,508 @@
+{
+  "schema_version": "mcq-1.0",
+  "run_id": "gen_20251110_183815",
+  "generated_at": "2025-11-10T18:40:43+00:00Z",
+  "62-007_gen-001_587981": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "statistics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Based on the provided poll study, what is the total number of participants surveyed, and what percentage of these participants indicated a preference for the Republican candidate?",
+    "diagram_data": {
+      "image_path": "62-007.png",
+      "alt_text": "A table showing voting preferences by intention to vote. Rows are 'Certain to vote', 'Likely to vote', 'Not likely to vote'. Columns are 'Democrat' and 'Republican'. Data: Certain: D(20), R(30); Likely: D(40), R(10); Not likely: D(30), R(20)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "150 participants; 30% Republican"
+      },
+      {
+        "id": "B",
+        "text": "150 participants; 40% Republican"
+      },
+      {
+        "id": "C",
+        "text": "120 participants; 40% Republican"
+      },
+      {
+        "id": "D",
+        "text": "150 participants; 50% Republican"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The total number of participants is the sum of all entries in the table: $20+30+40+10+30+20 = 150$ participants. The total number of participants who indicated a Republican preference is $30+10+20 = 60$. The percentage of Republican participants is $\\frac{60}{150} \\times 100\\% = \\frac{2}{5} \\times 100\\% = 40\\%$. Thus, there are 150 participants and 40% are Republican.",
+      "distractor_rationales": {
+        "A": "Incorrectly calculates the percentage of Republicans.",
+        "C": "Incorrectly calculates the total number of participants.",
+        "D": "Incorrectly calculates the percentage of Republicans."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-007_gen-002_587981": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "statistics",
+      "probability"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Considering the poll results and the study indicating that 80% of 'certain to vote', 10% of 'likely to vote', and 0% of 'not likely to vote' individuals actually vote, what is the estimated number of participants who will actually vote for the Republican candidate?",
+    "diagram_data": {
+      "image_path": "62-007.png",
+      "alt_text": "A table showing voting preferences by intention to vote. Rows are 'Certain to vote', 'Likely to vote', 'Not likely to vote'. Columns are 'Democrat' and 'Republican'. Data: Certain: D(20), R(30); Likely: D(40), R(10); Not likely: D(30), R(20). Additional text states voting likelihoods: 80% for 'certain', 10% for 'likely', 0% for 'not likely'."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "20"
+      },
+      {
+        "id": "B",
+        "text": "25"
+      },
+      {
+        "id": "C",
+        "text": "30"
+      },
+      {
+        "id": "D",
+        "text": "35"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "From the table, the number of Republicans in each category is: 'Certain to vote' (30), 'Likely to vote' (10), 'Not likely to vote' (20). Applying the voting likelihoods:\n- Republican, Certain to vote: $30 \\times 0.80 = 24$\n- Republican, Likely to vote: $10 \\times 0.10 = 1$\n- Republican, Not likely to vote: $20 \\times 0 = 0$\nTotal estimated Republican voters = $24 + 1 + 0 = 25$.",
+      "distractor_rationales": {
+        "A": "Might be the number of certain to vote Democrats, or a miscalculation.",
+        "C": "This is the total number of \"Certain to vote\" (Democrat + Republican) and multiplied by 0.6, or total Republicans (30+10+20 = 60) divided by 2.",
+        "D": "Might be a calculation error, e.g., $30 \\times 0.8 + 10 \\times 0.1 + 20 \\times 0.5 = 24 + 1 + 10 = 35$."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-007_gen-003_587981": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "statistics",
+      "probability"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Among the participants who are categorized as 'Likely to vote', what fraction expressed a preference for the Democrat candidate?",
+    "diagram_data": {
+      "image_path": "62-007.png",
+      "alt_text": "A table showing voting preferences by intention to vote. Rows are 'Certain to vote', 'Likely to vote', 'Not likely to vote'. Columns are 'Democrat' and 'Republican'. Data: Certain: D(20), R(30); Likely: D(40), R(10); Not likely: D(30), R(20)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$\\frac{1}{5}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{2}{5}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{3}{5}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\frac{4}{5}$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "D"
+      ],
+      "explanation": "The total number of participants categorized as 'Likely to vote' is $40 \\text{ (Democrat)} + 10 \\text{ (Republican)} = 50$. The number of 'Likely to vote' participants who prefer the Democrat candidate is 40. Therefore, the fraction is $\\frac{40}{50} = \\frac{4}{5}$.",
+      "distractor_rationales": {
+        "A": "Incorrectly uses the Republican count for 'Likely to vote' as numerator.",
+        "B": "Possible error in simplification or misreading values.",
+        "C": "Possible error in simplification or misreading values."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-007_gen-004_587981": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "statistics",
+      "probability"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Based on the poll data and the given voting likelihoods, what is the estimated total number of participants who will actually cast a vote in the election?",
+    "diagram_data": {
+      "image_path": "62-007.png",
+      "alt_text": "A table showing voting preferences by intention to vote. Rows are 'Certain to vote', 'Likely to vote', 'Not likely to vote'. Columns are 'Democrat' and 'Republican'. Data: Certain: D(20), R(30); Likely: D(40), R(10); Not likely: D(30), R(20). Additional text states voting likelihoods: 80% for 'certain', 10% for 'likely', 0% for 'not likely'."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "40"
+      },
+      {
+        "id": "B",
+        "text": "45"
+      },
+      {
+        "id": "C",
+        "text": "50"
+      },
+      {
+        "id": "D",
+        "text": "55"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "First, calculate the total number of participants in each voting intention category:\n- Certain to vote: $20 + 30 = 50$\n- Likely to vote: $40 + 10 = 50$\n- Not likely to vote: $30 + 20 = 50$\nNext, apply the voting likelihoods to find the estimated actual voters from each category:\n- Actual voters from 'Certain to vote': $50 \\times 0.80 = 40$\n- Actual voters from 'Likely to vote': $50 \\times 0.10 = 5$\n- Actual voters from 'Not likely to vote': $50 \\times 0 = 0$\nTotal estimated actual voters = $40 + 5 + 0 = 45$.",
+      "distractor_rationales": {
+        "A": "Only counts actual voters from the 'Certain to vote' category.",
+        "C": "Incorrectly adds actual voters. For example, might be $50 \\times 0.8 + 50 \\times 0.2 + 50 \\times 0 = 40 + 10 + 0 = 50$.",
+        "D": "Calculation error, e.g., adding 10 to the correct answer."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-007_gen-005_587981": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "statistics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Among the participants who are categorized as 'Not likely to vote', what is the ratio of those who prefer the Democrat candidate to those who prefer the Republican candidate?",
+    "diagram_data": {
+      "image_path": "62-007.png",
+      "alt_text": "A table showing voting preferences by intention to vote. Rows are 'Certain to vote', 'Likely to vote', 'Not likely to vote'. Columns are 'Democrat' and 'Republican'. Data: Certain: D(20), R(30); Likely: D(40), R(10); Not likely: D(30), R(20)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "2:3"
+      },
+      {
+        "id": "B",
+        "text": "3:2"
+      },
+      {
+        "id": "C",
+        "text": "1:1"
+      },
+      {
+        "id": "D",
+        "text": "1:2"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "From the table, for participants categorized as 'Not likely to vote', there are 30 who prefer the Democrat candidate and 20 who prefer the Republican candidate. The ratio of Democrats to Republicans is $30:20$, which simplifies to $3:2$.",
+      "distractor_rationales": {
+        "A": "Reverses the ratio (Republican to Democrat).",
+        "C": "Incorrectly assumes an equal number.",
+        "D": "Incorrectly simplifies or misreads values."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-014_gen-001_629202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the vectors $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$ and $\\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\ 4 \\\\ -3 \\end{bmatrix}$ from the basis $\\mathcal{B}$, calculate the dot product $\\mathbf{u}_1 \\cdot \\mathbf{u}_2$.",
+    "diagram_data": {
+      "image_path": "15-014.png",
+      "alt_text": "A problem statement defining a subspace W in R^3 with an orthogonal basis {u1, u2} and a vector y. u1 = [3; 0; 1], u2 = [1; 4; -3], y = [10; 5; -9]. The question asks for the orthogonal projection of y onto W, followed by multiple-choice options for the projected vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "0"
+      },
+      {
+        "id": "C",
+        "text": "-3"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The dot product of two vectors $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ u_2 \\\\ u_3 \\end{bmatrix}$ and $\\mathbf{v} = \\begin{bmatrix} v_1 \\\\ v_2 \\\\ v_3 \\end{bmatrix}$ is given by $\\mathbf{u} \\cdot \\mathbf{v} = u_1v_1 + u_2v_2 + u_3v_3$. \nGiven $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$ and $\\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\ 4 \\\\ -3 \\end{bmatrix}$, we calculate their dot product:\n$\\mathbf{u}_1 \\cdot \\mathbf{u}_2 = (3)(1) + (0)(4) + (1)(-3) = 3 + 0 - 3 = 0$.\nSince the dot product is 0, the vectors are orthogonal, which is consistent with them forming an orthogonal basis.",
+      "distractor_rationales": {
+        "A": "Incorrect calculation, possibly only considering the product of the first components.",
+        "C": "Incorrect calculation.",
+        "D": "Incorrect calculation."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-014_gen-002_629202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Using the vector $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$ from the given basis, find the square of its magnitude, $||\\mathbf{u}_1||^2$.",
+    "diagram_data": {
+      "image_path": "15-014.png",
+      "alt_text": "A problem statement defining a subspace W in R^3 with an orthogonal basis {u1, u2} and a vector y. u1 = [3; 0; 1], u2 = [1; 4; -3], y = [10; 5; -9]. The question asks for the orthogonal projection of y onto W, followed by multiple-choice options for the projected vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "9"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "1"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The square of the magnitude (or squared Euclidean norm) of a vector $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ u_2 \\\\ u_3 \\end{bmatrix}$ is given by $||\\mathbf{u}||^2 = u_1^2 + u_2^2 + u_3^2$. \nGiven $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$, we calculate:\n$||\\mathbf{u}_1||^2 = (3)^2 + (0)^2 + (1)^2 = 9 + 0 + 1 = 10$.",
+      "distractor_rationales": {
+        "A": "Only squared the first component.",
+        "C": "Only squared the third component.",
+        "D": "Incorrect calculation."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-014_gen-003_629202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Calculate the sum of the basis vectors $\\mathbf{u}_1 + \\mathbf{u}_2$, given $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$ and $\\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\ 4 \\\\ -3 \\end{bmatrix}$.",
+    "diagram_data": {
+      "image_path": "15-014.png",
+      "alt_text": "A problem statement defining a subspace W in R^3 with an orthogonal basis {u1, u2} and a vector y. u1 = [3; 0; 1], u2 = [1; 4; -3], y = [10; 5; -9]. The question asks for the orthogonal projection of y onto W, followed by multiple-choice options for the projected vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 4 \\\\ 4 \\\\ 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 4 \\\\ 4 \\\\ -2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 2 \\\\ -4 \\\\ 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "To add two vectors, we add their corresponding components. \nGiven $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$ and $\\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\ 4 \\\\ -3 \\end{bmatrix}$, their sum is:\n$\\mathbf{u}_1 + \\mathbf{u}_2 = \\begin{bmatrix} 3+1 \\\\ 0+4 \\\\ 1+(-3) \\end{bmatrix} = \\begin{bmatrix} 4 \\\\ 4 \\\\ -2 \\end{bmatrix}$.",
+      "distractor_rationales": {
+        "A": "Incorrect calculation for the third component.",
+        "C": "Incorrect calculation, possibly subtracting components or making sign errors.",
+        "D": "This is just $\\mathbf{u}_1$, not the sum."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-014_gen-004_629202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given $\\mathbf{y} = \\begin{bmatrix} 10 \\\\ 5 \\\\ -9 \\end{bmatrix}$ and $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$, find the dot product $\\mathbf{y} \\cdot \\mathbf{u}_1$.",
+    "diagram_data": {
+      "image_path": "15-014.png",
+      "alt_text": "A problem statement defining a subspace W in R^3 with an orthogonal basis {u1, u2} and a vector y. u1 = [3; 0; 1], u2 = [1; 4; -3], y = [10; 5; -9]. The question asks for the orthogonal projection of y onto W, followed by multiple-choice options for the projected vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "21"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "-9"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The dot product of two vectors $\\mathbf{y} = \\begin{bmatrix} y_1 \\\\ y_2 \\\\ y_3 \\end{bmatrix}$ and $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ u_2 \\\\ u_3 \\end{bmatrix}$ is given by $\\mathbf{y} \\cdot \\mathbf{u} = y_1u_1 + y_2u_2 + y_3u_3$. \nGiven $\\mathbf{y} = \\begin{bmatrix} 10 \\\\ 5 \\\\ -9 \\end{bmatrix}$ and $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$, we calculate:\n$\\mathbf{y} \\cdot \\mathbf{u}_1 = (10)(3) + (5)(0) + (-9)(1) = 30 + 0 - 9 = 21$.",
+      "distractor_rationales": {
+        "A": "Only calculated the product of the first components.",
+        "C": "Incorrect calculation, possibly only considering the second component.",
+        "D": "Only considered the product of the third components."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-014_gen-005_629202": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following vectors is a scalar multiple of $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$?",
+    "diagram_data": {
+      "image_path": "15-014.png",
+      "alt_text": "A problem statement defining a subspace W in R^3 with an orthogonal basis {u1, u2} and a vector y. u1 = [3; 0; 1], u2 = [1; 4; -3], y = [10; 5; -9]. The question asks for the orthogonal projection of y onto W, followed by multiple-choice options for the projected vector."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 6 \\\\ 0 \\\\ 1 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 3 \\\\ 1 \\\\ 1 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 6 \\\\ 0 \\\\ 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 0 \\\\ 6 \\\\ 2 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "A vector $\\mathbf{v}$ is a scalar multiple of $\\mathbf{u}_1$ if $\\mathbf{v} = c \\mathbf{u}_1$ for some scalar $c$. This means each component of $\\mathbf{v}$ must be $c$ times the corresponding component of $\\mathbf{u}_1$. \nGiven $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 0 \\\\ 1 \\end{bmatrix}$.\nLet's check the options:\n*   A: $\\begin{bmatrix} 6 \\\\ 0 \\\\ 1 \\end{bmatrix}$. If $c\\mathbf{u}_1 = \\begin{bmatrix} 6 \\\\ 0 \\\\ 1 \\end{bmatrix}$, then $3c=6 \\Rightarrow c=2$. But $1c=1 \\Rightarrow c=1$. Since $c$ is not consistent, it's not a scalar multiple.\n*   B: $\\begin{bmatrix} 3 \\\\ 1 \\\\ 1 \\end{bmatrix}$. If $c\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 1 \\\\ 1 \\end{bmatrix}$, then $3c=3 \\Rightarrow c=1$. But $0c=1$ is impossible. Not a scalar multiple.\n*   C: $\\begin{bmatrix} 6 \\\\ 0 \\\\ 2 \\end{bmatrix}$. If $c\\mathbf{u}_1 = \\begin{bmatrix} 6 \\\\ 0 \\\\ 2 \\end{bmatrix}$, then $3c=6 \\Rightarrow c=2$. And $0c=0$, which is true for $c=2$. And $1c=2 \\Rightarrow c=2$. Since $c=2$ is consistent for all components, this is a scalar multiple ($2\\mathbf{u}_1$).\n*   D: $\\begin{bmatrix} 0 \\\\ 6 \\\\ 2 \\end{bmatrix}$. If $c\\mathbf{u}_1 = \\begin{bmatrix} 0 \\\\ 6 \\\\ 2 \\end{bmatrix}$, then $3c=0 \\Rightarrow c=0$. But $0c=6$ is impossible for $c=0$. Not a scalar multiple.\nTherefore, option C is the correct answer.",
+      "distractor_rationales": {
+        "A": "Only the first two components are scaled correctly; the third component (1) is not twice the original third component (1).",
+        "B": "The second component (1) is not a multiple of the original second component (0).",
+        "D": "The first component (0) implies a scalar of 0, but the other components (6, 2) do not match this scalar."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  }
+}

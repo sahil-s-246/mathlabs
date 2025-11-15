@@ -1,0 +1,162 @@
+{
+  "schema_version": "mcq-1.0",
+  "gen-001": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "anthropic/claude-opus-4"
+    },
+    "topic": [
+      "number_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the Parallelogram Law identity shown above, if we set $\\mathbf{u} = \\mathbf{v}$, what does the right side of the equation simplify to?",
+    "diagram_data": {
+      "image_path": "15-017.png",
+      "alt_text": "The Parallelogram Law identity for vectors u and v"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$4||\\mathbf{u}||^2$"
+      },
+      {
+        "id": "B",
+        "text": "$2||\\mathbf{u}||^2$"
+      },
+      {
+        "id": "C",
+        "text": "$||\\mathbf{u}||^2$"
+      },
+      {
+        "id": "D",
+        "text": "$8||\\mathbf{u}||^2$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "When $\\mathbf{u} = \\mathbf{v}$, the right side becomes $2||\\mathbf{u}||^2 + 2||\\mathbf{v}||^2 = 2||\\mathbf{u}||^2 + 2||\\mathbf{u}||^2 = 4||\\mathbf{u}||^2$.",
+      "distractor_rationales": {
+        "B": "This would be the result if we only considered one of the terms on the right side.",
+        "C": "This incorrectly assumes the coefficients disappear when substituting.",
+        "D": "This doubles the correct answer, likely from miscounting the terms."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": [],
+    "problem_id": "gen-001",
+    "generated_at": "2025-11-04T23:31:06+00:00Z",
+    "generation_run_id": "gen_20251104_233040"
+  },
+  "gen-002": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "anthropic/claude-opus-4"
+    },
+    "topic": [
+      "calculus"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "In the Parallelogram Law shown above, if $||\\mathbf{u}|| = 3$ and $||\\mathbf{v}|| = 4$, what is the value of the right side of the equation?",
+    "diagram_data": {
+      "image_path": "15-017.png",
+      "alt_text": "The Parallelogram Law identity for vectors u and v"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$50$"
+      },
+      {
+        "id": "B",
+        "text": "$25$"
+      },
+      {
+        "id": "C",
+        "text": "$14$"
+      },
+      {
+        "id": "D",
+        "text": "$100$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The right side is $2||\\mathbf{u}||^2 + 2||\\mathbf{v}||^2 = 2(3)^2 + 2(4)^2 = 2(9) + 2(16) = 18 + 32 = 50$.",
+      "distractor_rationales": {
+        "B": "This is half the correct answer, likely from forgetting the factor of 2.",
+        "C": "This comes from adding the norms instead of their squares: $2(3) + 2(4) = 14$.",
+        "D": "This doubles the correct answer, possibly from squaring the entire expression."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": [],
+    "problem_id": "gen-002",
+    "generated_at": "2025-11-04T23:31:06+00:00Z",
+    "generation_run_id": "gen_20251104_233040"
+  },
+  "gen-003": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "anthropic/claude-opus-4"
+    },
+    "topic": [
+      "combinatorics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Looking at the Parallelogram Law equation above, how many distinct squared norm terms appear in total when you count both sides of the equation?",
+    "diagram_data": {
+      "image_path": "15-017.png",
+      "alt_text": "The Parallelogram Law identity for vectors u and v"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$4$"
+      },
+      {
+        "id": "B",
+        "text": "$2$"
+      },
+      {
+        "id": "C",
+        "text": "$6$"
+      },
+      {
+        "id": "D",
+        "text": "$3$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The distinct squared norm terms are: $||\\mathbf{u} + \\mathbf{v}||^2$, $||\\mathbf{u} - \\mathbf{v}||^2$, $||\\mathbf{u}||^2$, and $||\\mathbf{v}||^2$. There are 4 distinct terms.",
+      "distractor_rationales": {
+        "B": "This counts only the terms on one side of the equation.",
+        "C": "This counts each occurrence separately rather than distinct terms.",
+        "D": "This misses one of the squared norm terms."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": [],
+    "problem_id": "gen-003",
+    "generated_at": "2025-11-04T23:31:06+00:00Z",
+    "generation_run_id": "gen_20251104_233040"
+  }
+}

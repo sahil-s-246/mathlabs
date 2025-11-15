@@ -29,7 +29,7 @@ if not API_KEY:
     raise RuntimeError("Set OPENROUTER_API_KEY in .env")
 
 # File paths (test mode)
-JSON_MCQ_FILE = "../dataset/baseline_lucas.json"
+JSON_MCQ_FILE = "/Users/lucasyao/Documents/GitHub/mathlabs/dataset/baseline_lucas.json"
 JSON_EVAL_FILE = "evaluations.json"
 
 # MongoDB
@@ -39,7 +39,7 @@ MCQ_COLLECTION = "mcqs"
 EVAL_COLLECTION = "evaluations"
 
 # Shared
-IMAGE_DIR = "/Users/sahilsrinivas/Developer/mathlabs/dataset/images"
+IMAGE_DIR = "/Users/lucasyao/Documents/GitHub/mathlabs/dataset/images"
 MASTER_MODEL = "anthropic/claude-opus-4"
 STUDENT_MODELS = [
     "openai/gpt-4o-mini",

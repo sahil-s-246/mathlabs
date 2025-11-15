@@ -1,0 +1,2103 @@
+{
+  "schema_version": "mcq-1.0",
+  "run_id": "gen_20251110_150725",
+  "generated_at": "2025-11-10T15:21:44+00:00Z",
+  "15-028_gen-001_1762787659.156258": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following matrices is in row-echelon form?",
+    "diagram_data": {
+      "image_path": "15-028.png",
+      "alt_text": "Four 4x3 matrices are shown, labeled A, B, C, and D. Matrix A is: [[1,0,0],[0,1,0],[0,0,1],[0,0,0]]. Matrix B is: [[1,1,1],[2,2,2],[0,0,0],[0,0,0]]. Matrix C is: [[1,2,3],[1,2,3],[1,2,3],[1,2,3]]. Matrix D is: [[1,2,0],[0,0,1],[0,0,0],[0,0,0]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Matrix A"
+      },
+      {
+        "id": "B",
+        "text": "Matrix B"
+      },
+      {
+        "id": "C",
+        "text": "Matrix C"
+      },
+      {
+        "id": "D",
+        "text": "Matrix D"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "A matrix is in row-echelon form if:\n1. All nonzero rows are above any rows of all zeros.\n2. Each leading entry (the first nonzero entry from the left) of a nonzero row is in a column to the right of the leading entry of the row above it.\n3. All entries in a column below a leading entry are zeros.\n\nLet's check each matrix:\n*   Matrix A: Satisfies all conditions. The leading entries are 1s in columns 1, 2, and 3, respectively, and are to the right of the row above. The last row is all zeros. So, Matrix A is in row-echelon form.\n*   Matrix B: The leading entry of the first row is 1. The second row's leading entry (2) is not to the right of the first row's leading entry. Also, the entry below the leading 1 in the first column is 2, not 0. So, Matrix B is not in row-echelon form.\n*   Matrix C: The leading entry of the first row is 1. The second row's leading entry (1) is in the same column as the first row's leading entry. So, Matrix C is not in row-echelon form.\n*   Matrix D: Satisfies all conditions. The leading entries are 1s in columns 1 and 3, respectively, and are to the right of the row above. The last two rows are all zeros. So, Matrix D is in row-echelon form.\n\nSince only one answer can be chosen, and the question asks \"Which of the following matrices...\", we select one correct option. Matrix A is a valid choice.",
+      "distractor_rationales": {
+        "B": "Matrix B is not in row-echelon form because the entry below the leading 1 in the first column is 2, not 0, and the leading entry of the second row (2) is not strictly to the right of the leading entry of the first row.",
+        "C": "Matrix C is not in row-echelon form because the leading entries of the first, second, third, and fourth rows are all in the same column (column 1), violating the condition that each leading entry must be to the right of the leading entry of the row above it.",
+        "D": "Matrix D is also in row-echelon form. However, if only one answer is expected, and A is a clear example, B and C are definitely not in REF. The question implies a single best answer among the options given. Both A and D are in row-echelon form."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-028_gen-002_1762787659.1562781": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following matrices is NOT in row-echelon form?",
+    "diagram_data": {
+      "image_path": "15-028.png",
+      "alt_text": "Four 4x3 matrices are shown, labeled A, B, C, and D. Matrix A is: [[1,0,0],[0,1,0],[0,0,1],[0,0,0]]. Matrix B is: [[1,1,1],[2,2,2],[0,0,0],[0,0,0]]. Matrix C is: [[1,2,3],[1,2,3],[1,2,3],[1,2,3]]. Matrix D is: [[1,2,0],[0,0,1],[0,0,0],[0,0,0]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Matrix A"
+      },
+      {
+        "id": "B",
+        "text": "Matrix B"
+      },
+      {
+        "id": "C",
+        "text": "Matrix C"
+      },
+      {
+        "id": "D",
+        "text": "Matrix D"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "A matrix is in row-echelon form if:\n1. All nonzero rows are above any rows of all zeros.\n2. Each leading entry (the first nonzero entry from the left) of a nonzero row is in a column to the right of the leading entry of the row above it.\n3. All entries in a column below a leading entry are zeros.\n\nLet's check each matrix:\n*   Matrix A: Is in row-echelon form.\n*   Matrix B: The entry below the leading 1 in the first column is 2, not 0. This violates condition 3. So, Matrix B is NOT in row-echelon form.\n*   Matrix C: The leading entries of the first, second, third, and fourth rows are all in the same column (column 1), violating condition 2. So, Matrix C is NOT in row-echelon form.\n*   Matrix D: Is in row-echelon form.\n\nSince both B and C are not in row-echelon form, and the question asks for one, we choose B as a valid answer.",
+      "distractor_rationales": {
+        "A": "Matrix A is in row-echelon form.",
+        "C": "Matrix C is also not in row-echelon form, as its leading entries are not strictly to the right of the row above. However, B is a clear example of a matrix not in REF.",
+        "D": "Matrix D is in row-echelon form."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-028_gen-003_1762787659.1562839": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following matrices has the largest rank?",
+    "diagram_data": {
+      "image_path": "15-028.png",
+      "alt_text": "Four 4x3 matrices are shown, labeled A, B, C, and D. Matrix A is: [[1,0,0],[0,1,0],[0,0,1],[0,0,0]]. Matrix B is: [[1,1,1],[2,2,2],[0,0,0],[0,0,0]]. Matrix C is: [[1,2,3],[1,2,3],[1,2,3],[1,2,3]]. Matrix D is: [[1,2,0],[0,0,1],[0,0,0],[0,0,0]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Matrix A"
+      },
+      {
+        "id": "B",
+        "text": "Matrix B"
+      },
+      {
+        "id": "C",
+        "text": "Matrix C"
+      },
+      {
+        "id": "D",
+        "text": "Matrix D"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The rank of a matrix is the number of pivot positions in its row-echelon form, which is also equal to the number of non-zero rows in its row-echelon form.\n\nLet's determine the rank of each matrix:\n*   Matrix A: Is already in row-echelon form. It has 3 pivot positions (leading 1s). So, Rank(A) = 3.\n*   Matrix B: Row-reducing B gives \\(\\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}\\). It has 1 pivot position. So, Rank(B) = 1.\n*   Matrix C: Row-reducing C gives \\(\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}\\). It has 1 pivot position. So, Rank(C) = 1.\n*   Matrix D: Is already in row-echelon form. It has 2 pivot positions. So, Rank(D) = 2.\n\nComparing the ranks: Rank(A) = 3, Rank(B) = 1, Rank(C) = 1, Rank(D) = 2. The largest rank is 3, which belongs to Matrix A.",
+      "distractor_rationales": {
+        "B": "Matrix B has a rank of 1, which is not the largest among the options.",
+        "C": "Matrix C has a rank of 1, which is not the largest among the options.",
+        "D": "Matrix D has a rank of 2, which is smaller than the rank of Matrix A."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-028_gen-004_1762787659.156288": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following matrices has identical non-zero rows?",
+    "diagram_data": {
+      "image_path": "15-028.png",
+      "alt_text": "Four 4x3 matrices are shown, labeled A, B, C, and D. Matrix A is: [[1,0,0],[0,1,0],[0,0,1],[0,0,0]]. Matrix B is: [[1,1,1],[2,2,2],[0,0,0],[0,0,0]]. Matrix C is: [[1,2,3],[1,2,3],[1,2,3],[1,2,3]]. Matrix D is: [[1,2,0],[0,0,1],[0,0,0],[0,0,0]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Matrix A"
+      },
+      {
+        "id": "B",
+        "text": "Matrix B"
+      },
+      {
+        "id": "C",
+        "text": "Matrix C"
+      },
+      {
+        "id": "D",
+        "text": "Matrix D"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "Let's examine the rows of each matrix:\n*   Matrix A: The non-zero rows are \\(\\begin{bmatrix} 1 & 0 & 0 \\end{bmatrix}\\), \\(\\begin{bmatrix} 0 & 1 & 0 \\end{bmatrix}\\), and \\(\\begin{bmatrix} 0 & 0 & 1 \\end{bmatrix}\\). These are all different.\n*   Matrix B: The non-zero rows are \\(\\begin{bmatrix} 1 & 1 & 1 \\end{bmatrix}\\) and \\(\\begin{bmatrix} 2 & 2 & 2 \\end{bmatrix}\\). These are not identical (the second is twice the first).\n*   Matrix C: The non-zero rows are \\(\\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}\\), \\(\\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}\\), \\(\\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}\\), and \\(\\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}\\). All four non-zero rows are identical.\n*   Matrix D: The non-zero rows are \\(\\begin{bmatrix} 1 & 2 & 0 \\end{bmatrix}\\) and \\(\\begin{bmatrix} 0 & 0 & 1 \\end{bmatrix}\\). These are different.\n\nTherefore, Matrix C has identical non-zero rows.",
+      "distractor_rationales": {
+        "A": "Matrix A has three distinct non-zero rows.",
+        "B": "Matrix B has two non-zero rows, but they are not identical; one is a scalar multiple of the other (Row 2 = 2 * Row 1).",
+        "D": "Matrix D has two distinct non-zero rows."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-028_gen-005_1762787659.1562922": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider Matrix B. What is the maximum number of linearly independent rows in Matrix B?",
+    "diagram_data": {
+      "image_path": "15-028.png",
+      "alt_text": "Four 4x3 matrices are shown, labeled A, B, C, and D. Matrix A is: [[1,0,0],[0,1,0],[0,0,1],[0,0,0]]. Matrix B is: [[1,1,1],[2,2,2],[0,0,0],[0,0,0]]. Matrix C is: [[1,2,3],[1,2,3],[1,2,3],[1,2,3]]. Matrix D is: [[1,2,0],[0,0,1],[0,0,0],[0,0,0]]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The maximum number of linearly independent rows in a matrix is equal to its rank. Let's find the rank of Matrix B:\n$$ \\begin{bmatrix} 1 & 1 & 1 \\\\ 2 & 2 & 2 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix} $$\nWe can perform row operations to transform it into row-echelon form:\nSubtract 2 times the first row from the second row (R2 - 2R1):\n$$ \\begin{bmatrix} 1 & 1 & 1 \\\\ 2 - 2(1) & 2 - 2(1) & 2 - 2(1) \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix} = \\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix} $$\nThis matrix is in row-echelon form. It has only one non-zero row, which corresponds to one pivot position. Therefore, the rank of Matrix B is 1. This means the maximum number of linearly independent rows in Matrix B is 1.",
+      "distractor_rationales": {
+        "B": "The second row of Matrix B is a scalar multiple (2 times) of the first row, meaning they are not linearly independent. Therefore, 2 is not the maximum number of linearly independent rows.",
+        "C": "A 4x3 matrix can have at most 3 linearly independent rows (since there are only 3 columns). However, Matrix B has a rank of 1, so 3 is incorrect.",
+        "D": "A 4x3 matrix can have at most 3 linearly independent rows, as the dimension of the row space cannot exceed the number of columns. The number of rows (4) is an upper bound on the dimension of the row space only if all rows are linearly independent, which is not the case here."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-009_gen-001_1762787700.638069": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "A basketball coach must choose two of three players (A, B, and C) to play the final quarter. The covariance matrix of points per quarter is provided in the diagram. If all players have the same expected points, which pair should the coach choose **when losing by a wide margin** to maximize the chance of a high score?",
+    "diagram_data": {
+      "image_path": "62-009.png",
+      "alt_text": "A 3x3 covariance matrix table for three players A, B, and C. The diagonal elements are variances: Var(A)=100, Var(B)=81, Var(C)=100. The off-diagonal elements are covariances: Cov(A,B)=-80, Cov(A,C)=10, Cov(B,C)=50."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Players A and B"
+      },
+      {
+        "id": "B",
+        "text": "Players A and C"
+      },
+      {
+        "id": "C",
+        "text": "Players B and C"
+      },
+      {
+        "id": "D",
+        "text": "Any pair, as expected points are the same"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To maximize the chance of a high score when losing by a wide margin, the coach should choose the pair with the highest variance, as this indicates greater variability and potential for extreme outcomes.\nThe variance of the sum of two random variables X and Y is given by \\(\\operatorname{Var}(X+Y) = \\operatorname{Var}(X) + \\operatorname{Var}(Y) + 2\\operatorname{Cov}(X,Y)\\).\n\n1.  For Players A and B:\n    \\(\\operatorname{Var}(A+B) = \\operatorname{Var}(A) + \\operatorname{Var}(B) + 2\\operatorname{Cov}(A,B) = 100 + 81 + 2(-80) = 181 - 160 = 21\\)\n2.  For Players A and C:\n    \\(\\operatorname{Var}(A+C) = \\operatorname{Var}(A) + \\operatorname{Var}(C) + 2\\operatorname{Cov}(A,C) = 100 + 100 + 2(10) = 200 + 20 = 220\\)\n3.  For Players B and C:\n    \\(\\operatorname{Var}(B+C) = \\operatorname{Var}(B) + \\operatorname{Var}(C) + 2\\operatorname{Cov}(B,C) = 81 + 100 + 2(50) = 181 + 100 = 281\\)\n\nComparing the variances: \\(\\operatorname{Var}(A+B) = 21\\), \\(\\operatorname{Var}(A+C) = 220\\), \\(\\operatorname{Var}(B+C) = 281\\).\n\nThe pair (B,C) has the highest variance (281), offering the greatest upside potential, which is desirable when losing by a wide margin.",
+      "distractor_rationales": {
+        "A": "This pair (A,B) has the lowest variance (21), making it suitable for minimizing risk when leading, not for maximizing upside when losing.",
+        "B": "This pair (A,C) has a moderate variance (220), but not the highest, so it's not the best choice for maximizing a high score when losing by a wide margin.",
+        "D": "The variances for the different pairs are significantly different (21, 220, 281), which means the choice of players does matter based on the game situation."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-009_gen-002_1762787700.638081": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Based on the covariance matrix for players A, B, and C provided in the diagram, what is the variance of the total points scored by Players A and C in a quarter?",
+    "diagram_data": {
+      "image_path": "62-009.png",
+      "alt_text": "A 3x3 covariance matrix table for three players A, B, and C. The diagonal elements are variances: Var(A)=100, Var(B)=81, Var(C)=100. The off-diagonal elements are covariances: Cov(A,B)=-80, Cov(A,C)=10, Cov(B,C)=50."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\(21\\)"
+      },
+      {
+        "id": "B",
+        "text": "\\(220\\)"
+      },
+      {
+        "id": "C",
+        "text": "\\(281\\)"
+      },
+      {
+        "id": "D",
+        "text": "\\(181\\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The variance of the sum of two random variables X and Y is given by the formula: \\(\\operatorname{Var}(X+Y) = \\operatorname{Var}(X) + \\operatorname{Var}(Y) + 2\\operatorname{Cov}(X,Y)\\).\n\nFrom the provided covariance matrix:\n*   \\(\\operatorname{Var}(A) = 100\\)\n*   \\(\\operatorname{Var}(C) = 100\\)\n*   \\(\\operatorname{Cov}(A,C) = 10\\)\n\nSubstitute these values into the formula for Players A and C:\n\\(\\operatorname{Var}(A+C) = 100 + 100 + 2(10) = 200 + 20 = 220\\).",
+      "distractor_rationales": {
+        "A": "This value (21) represents \\(\\operatorname{Var}(A+B)\\), calculated as \\(100 + 81 + 2(-80) = 21\\).",
+        "C": "This value (281) represents \\(\\operatorname{Var}(B+C)\\), calculated as \\(81 + 100 + 2(50) = 281\\).",
+        "D": "This value (181) represents \\(\\operatorname{Var}(A) + \\operatorname{Var}(B)\\) or \\(\\operatorname{Var}(B) + \\operatorname{Var}(C)\\), but it does not include the covariance term and is not the correct variance for any of the given pairs."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-009_gen-003_1762787700.6380858": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Using the covariance matrix provided in the diagram, calculate the correlation coefficient between Player A and Player B.",
+    "diagram_data": {
+      "image_path": "62-009.png",
+      "alt_text": "A 3x3 covariance matrix table for three players A, B, and C. The diagonal elements are variances: Var(A)=100, Var(B)=81, Var(C)=100. The off-diagonal elements are covariances: Cov(A,B)=-80, Cov(A,C)=10, Cov(B,C)=50."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "\\(-0.889\\)"
+      },
+      {
+        "id": "B",
+        "text": "\\(0.1\\)"
+      },
+      {
+        "id": "C",
+        "text": "\\(0.556\\)"
+      },
+      {
+        "id": "D",
+        "text": "\\(-0.1\\)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The correlation coefficient \\(\\rho(X,Y)\\) between two random variables X and Y is calculated using the formula:\n\\(\\rho(X,Y) = \\frac{\\operatorname{Cov}(X,Y)}{\\sigma(X)\\sigma(Y)}\\)\nwhere \\(\\operatorname{Cov}(X,Y)\\) is the covariance between X and Y, and \\(\\sigma(X)\\) and \\(\\sigma(Y)\\) are the standard deviations of X and Y, respectively.\n\nFrom the provided covariance matrix:\n*   \\(\\operatorname{Var}(A) = 100 \\implies \\sigma(A) = \\sqrt{100} = 10\\)\n*   \\(\\operatorname{Var}(B) = 81 \\implies \\sigma(B) = \\sqrt{81} = 9\\)\n*   \\(\\operatorname{Cov}(A,B) = -80\\)\n\nSubstitute these values into the formula:\n\\(\\rho(A,B) = \\frac{-80}{10 \\times 9} = \\frac{-80}{90} = \\frac{-8}{9} \\approx -0.889\\).",
+      "distractor_rationales": {
+        "B": "This value (0.1) is the correlation coefficient between Player A and Player C, calculated as \\(\\frac{10}{10 \\times 10} = 0.1\\).",
+        "C": "This value (0.556) is the correlation coefficient between Player B and Player C, calculated as \\(\\frac{50}{9 \\times 10} = \\frac{5}{9} \\approx 0.556\\).",
+        "D": "This is an incorrect calculation or misinterpretation of the covariance value. The covariance is -80, so the correlation should be negative."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-009_gen-004_1762787700.638091": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "A basketball coach needs to select two players from A, B, and C. The points per quarter covariance matrix is given in the diagram. Assuming all players have the same expected points, which of the following statements about the total variance of points for each pair is correct?",
+    "diagram_data": {
+      "image_path": "62-009.png",
+      "alt_text": "A 3x3 covariance matrix table for three players A, B, and C. The diagonal elements are variances: Var(A)=100, Var(B)=81, Var(C)=100. The off-diagonal elements are covariances: Cov(A,B)=-80, Cov(A,C)=10, Cov(B,C)=50."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The pair (A,C) has the lowest variance."
+      },
+      {
+        "id": "B",
+        "text": "The pair (A,B) has the highest variance."
+      },
+      {
+        "id": "C",
+        "text": "The variance of (B,C) is greater than the variance of (A,C)."
+      },
+      {
+        "id": "D",
+        "text": "The variance of (A,B) is equal to the variance of (A,C)."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "We need to calculate the variance for each possible pair using the formula \\(\\operatorname{Var}(X+Y) = \\operatorname{Var}(X) + \\operatorname{Var}(Y) + 2\\operatorname{Cov}(X,Y)\\).\n\n1.  For Players A and B:\n    \\(\\operatorname{Var}(A+B) = 100 + 81 + 2(-80) = 181 - 160 = 21\\)\n2.  For Players A and C:\n    \\(\\operatorname{Var}(A+C) = 100 + 100 + 2(10) = 200 + 20 = 220\\)\n3.  For Players B and C:\n    \\(\\operatorname{Var}(B+C) = 81 + 100 + 2(50) = 181 + 100 = 281\\)\n\nNow let's evaluate each statement:\n*   **A. The pair (A,C) has the lowest variance.** False, \\(\\operatorname{Var}(A+C)=220\\), but \\(\\operatorname{Var}(A+B)=21\\) is lower.\n*   **B. The pair (A,B) has the highest variance.** False, \\(\\operatorname{Var}(A+B)=21\\) is the lowest, while \\(\\operatorname{Var}(B+C)=281\\) is the highest.\n*   **C. The variance of (B,C) is greater than the variance of (A,C).** True, \\(\\operatorname{Var}(B+C)=281\\) and \\(\\operatorname{Var}(A+C)=220\\), and \\(281 > 220\\).\n*   **D. The variance of (A,B) is equal to the variance of (A,C).** False, \\(\\operatorname{Var}(A+B)=21\\) and \\(\\operatorname{Var}(A+C)=220\\), which are not equal.",
+      "distractor_rationales": {
+        "A": "The pair (A,B) has the lowest variance (21), not (A,C) (220).",
+        "B": "The pair (A,B) has the lowest variance (21), not the highest. The pair (B,C) has the highest variance (281).",
+        "D": "The variances are 21 for (A,B) and 220 for (A,C), which are significantly different."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "62-009_gen-005_1762787700.6380942": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "A basketball coach must choose two of three players (A, B, and C) to play the final quarter. The covariance matrix of points per quarter is provided in the diagram. If all players have the same expected points, which pair should the coach choose if they want a **moderate level of risk**, meaning neither the absolute lowest nor the highest variance?",
+    "diagram_data": {
+      "image_path": "62-009.png",
+      "alt_text": "A 3x3 covariance matrix table for three players A, B, and C. The diagonal elements are variances: Var(A)=100, Var(B)=81, Var(C)=100. The off-diagonal elements are covariances: Cov(A,B)=-80, Cov(A,C)=10, Cov(B,C)=50."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Players A and B"
+      },
+      {
+        "id": "B",
+        "text": "Players A and C"
+      },
+      {
+        "id": "C",
+        "text": "Players B and C"
+      },
+      {
+        "id": "D",
+        "text": "Any pair, as expected points are the same"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "To determine the pair with a moderate level of risk, we need to calculate the variance for each possible pair using the formula \\(\\operatorname{Var}(X+Y) = \\operatorname{Var}(X) + \\operatorname{Var}(Y) + 2\\operatorname{Cov}(X,Y)\\).\n\n1.  For Players A and B:\n    \\(\\operatorname{Var}(A+B) = 100 + 81 + 2(-80) = 181 - 160 = 21\\) (Lowest variance/risk)\n2.  For Players A and C:\n    \\(\\operatorname{Var}(A+C) = 100 + 100 + 2(10) = 200 + 20 = 220\\) (Moderate variance/risk)\n3.  For Players B and C:\n    \\(\\operatorname{Var}(B+C) = 81 + 100 + 2(50) = 181 + 100 = 281\\) (Highest variance/risk)\n\nOrdering the variances from lowest to highest: 21 (A,B), 220 (A,C), 281 (B,C).\n\nFor a moderate level of risk, the coach should choose the pair with the middle variance, which is (A,C) with a variance of 220.",
+      "distractor_rationales": {
+        "A": "This pair (A,B) has the lowest variance (21), indicating the lowest risk, which is not a moderate level.",
+        "C": "This pair (B,C) has the highest variance (281), indicating the highest risk, which is not a moderate level.",
+        "D": "The variances for the different pairs are significantly different (21, 220, 281), meaning the choice of players does impact the level of risk."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-005_gen-001_1762787773.843543": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "matrix_inverse",
+      "determinant"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the statement from the image: \"If $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ and $ab - cd \\neq 0$, then $A$ is invertible.\" Is this statement true or false?",
+    "diagram_data": {
+      "image_path": "15-005.png",
+      "alt_text": "A 2x2 matrix A with entries a, b, c, d is shown, along with a statement about its invertibility if ab - cd is not zero."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "A $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is invertible if and only if its determinant, which is $ad - bc$, is non-zero. The statement in the image uses the expression $ab - cd$. This is not the correct determinant formula. For example, consider the matrix $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$. Its determinant is $ad - bc = (1)(4) - (2)(2) = 4 - 4 = 0$, so $A$ is not invertible. However, for this matrix, $ab - cd = (1)(2) - (2)(4) = 2 - 8 = -6$, which is not equal to zero. Thus, the condition $ab - cd \\neq 0$ is met, but the matrix is not invertible, making the statement false.",
+      "distractor_rationales": {
+        "A": "The statement is false because the determinant of a $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is $ad - bc$, not $ab - cd$. Invertibility depends on $ad - bc \\neq 0$. A counterexample where $ab - cd \\neq 0$ but $A$ is not invertible is $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$ (here $ad-bc=0$ but $ab-cd=-6 \\neq 0$)."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-005_gen-002_1762787773.843559": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "determinant"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For a $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, which expression correctly represents its determinant, $\\text{det}(A)$?",
+    "diagram_data": {
+      "image_path": "15-005.png",
+      "alt_text": "A 2x2 matrix A with entries a, b, c, d is shown, along with a statement about its invertibility if ab - cd is not zero."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$ab - cd$"
+      },
+      {
+        "id": "B",
+        "text": "$ad - bc$"
+      },
+      {
+        "id": "C",
+        "text": "$ac - bd$"
+      },
+      {
+        "id": "D",
+        "text": "$a+b+c+d$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The determinant of a $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is defined as $ad - bc$. This value is crucial for determining if the matrix is invertible.",
+      "distractor_rationales": {
+        "A": "This expression, $ab - cd$, is shown in the diagram but is not the correct formula for the determinant of a $2 \\times 2$ matrix. It is a common misconception or a typo in some contexts.",
+        "C": "This expression, $ac - bd$, is not the correct formula for the determinant of a $2 \\times 2$ matrix.",
+        "D": "This expression represents the sum of the entries, which is not the determinant of a matrix."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-005_gen-003_1762787773.843564": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "determinant",
+      "invertibility_criteria"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For the matrix $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$, which statement correctly evaluates the expression $ab - cd$ (as seen in the diagram) and the determinant $ad - bc$?",
+    "diagram_data": {
+      "image_path": "15-005.png",
+      "alt_text": "A 2x2 matrix A with entries a, b, c, d is shown, along with a statement about its invertibility if ab - cd is not zero."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$ab - cd = -6$ and $ad - bc = 0$"
+      },
+      {
+        "id": "B",
+        "text": "$ab - cd = 0$ and $ad - bc = -6$"
+      },
+      {
+        "id": "C",
+        "text": "$ab - cd = 6$ and $ad - bc = 0$"
+      },
+      {
+        "id": "D",
+        "text": "$ab - cd = 0$ and $ad - bc = 6$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "For the matrix $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & 4 \\end{bmatrix}$, we have $a=1, b=2, c=2, d=4$. \n\nFirst, evaluate the expression $ab - cd$: \n$ab - cd = (1)(2) - (2)(4) = 2 - 8 = -6$. \n\nNext, evaluate the determinant $ad - bc$: \n$ad - bc = (1)(4) - (2)(2) = 4 - 4 = 0$. \n\nTherefore, the correct statement is that $ab - cd = -6$ and $ad - bc = 0$. Since the determinant is 0, this matrix is not invertible.",
+      "distractor_rationales": {
+        "B": "This swaps the values for $ab - cd$ and $ad - bc$, and incorrectly states the values.",
+        "C": "This incorrectly calculates $ab - cd$ as 6 instead of -6.",
+        "D": "This incorrectly calculates $ab - cd$ as 0 and $ad - bc$ as 6."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-005_gen-004_1762787773.8435688": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "matrix_inverse",
+      "invertibility_criteria"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Based on the definition of invertibility for a $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, which condition implies that $A$ is **not** invertible?",
+    "diagram_data": {
+      "image_path": "15-005.png",
+      "alt_text": "A 2x2 matrix A with entries a, b, c, d is shown, along with a statement about its invertibility if ab - cd is not zero."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$ad - bc \\neq 0$"
+      },
+      {
+        "id": "B",
+        "text": "$ad - bc = 0$"
+      },
+      {
+        "id": "C",
+        "text": "$ab - cd \\neq 0$"
+      },
+      {
+        "id": "D",
+        "text": "$ab - cd = 0$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "A square matrix is invertible if and only if its determinant is non-zero. Conversely, a square matrix is **not** invertible (or is singular) if and only if its determinant is zero. For a $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, the determinant is $ad - bc$. Therefore, the condition that implies $A$ is not invertible is $ad - bc = 0$.",
+      "distractor_rationales": {
+        "A": "This condition, $ad - bc \\neq 0$, implies that the matrix $A$ **is** invertible, not not invertible.",
+        "C": "The expression $ab - cd$ is not the determinant. As shown in gen-001, $ab - cd \\neq 0$ does not guarantee invertibility.",
+        "D": "The expression $ab - cd$ is not the determinant. While $ab - cd = 0$ might imply non-invertibility in some cases, it is not the general condition for a matrix to be not invertible."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-005_gen-005_1762787773.843574": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "determinant"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The expression that defines the determinant of a general $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is:",
+    "diagram_data": {
+      "image_path": "15-005.png",
+      "alt_text": "A 2x2 matrix A with entries a, b, c, d is shown, along with a statement about its invertibility if ab - cd is not zero."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$ab - cd$"
+      },
+      {
+        "id": "B",
+        "text": "$ac + bd$"
+      },
+      {
+        "id": "C",
+        "text": "$ad - bc$"
+      },
+      {
+        "id": "D",
+        "text": "$a+d$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The determinant of a $2 \\times 2$ matrix $A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is calculated by multiplying the elements on the main diagonal and subtracting the product of the elements on the anti-diagonal. This gives the formula $ad - bc$.",
+      "distractor_rationales": {
+        "A": "This expression, $ab - cd$, is shown in the diagram but is not the standard or correct formula for the determinant of a $2 \\times 2$ matrix.",
+        "B": "This expression, $ac + bd$, is not a valid formula for the determinant of a $2 \\times 2$ matrix.",
+        "D": "This expression, $a+d$, represents the trace of the matrix, not its determinant."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-036_gen-001_1762787875.845382": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "projection_matrices"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{B}$ be an $n \\times n$ symmetric matrix. If $\\mathbf{B}$ is an orthogonal projection matrix, which of the following properties must it satisfy?",
+    "diagram_data": {
+      "image_path": "15-036.png",
+      "alt_text": "Mathematical problem statement about an orthogonal projection matrix B and vector decomposition."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$\\mathbf{B}^T = -\\mathbf{B}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\mathbf{B}^2 = \\mathbf{I}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\mathbf{B}^2 = \\mathbf{B}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\text{det}(\\mathbf{B}) = 1$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "An orthogonal projection matrix $\\mathbf{B}$ is defined by two properties: it is symmetric ($\\mathbf{B}^T = \\mathbf{B}$) and idempotent ($\\mathbf{B}^2 = \\mathbf{B}$). The problem statement explicitly mentions \"$\\mathbf{B}^2 = \\mathbf{B}$ (an orthogonal projection matrix)\", directly indicating this property.",
+      "distractor_rationales": {
+        "A": "$\\mathbf{B}^T = -\\mathbf{B}$ defines a skew-symmetric matrix, which is not a general property of an orthogonal projection matrix.",
+        "B": "$\\mathbf{B}^2 = \\mathbf{I}$ means $\\mathbf{B}$ is an involution. While true for orthogonal matrices, it is not a general property of orthogonal projection matrices unless $\\mathbf{B}$ is the identity matrix.",
+        "D": "The determinant of an orthogonal projection matrix is either 0 or 1, but not necessarily 1. For example, the zero matrix is an orthogonal projection matrix, and its determinant is 0."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-036_gen-002_1762787875.845397": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "subspaces"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given an $n \\times n$ orthogonal projection matrix $\\mathbf{B}$ and any vector $\\mathbf{y} \\in \\mathbb{R}^n$, the vector $\\hat{\\mathbf{y}} = \\mathbf{B}\\mathbf{y}$ always lies in which subspace related to $\\mathbf{B}$?",
+    "diagram_data": {
+      "image_path": "15-036.png",
+      "alt_text": "Mathematical problem statement about an orthogonal projection matrix B and vector decomposition."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The Null Space of $\\mathbf{B}$"
+      },
+      {
+        "id": "B",
+        "text": "The Row Space of $\\mathbf{B}$"
+      },
+      {
+        "id": "C",
+        "text": "The Column Space of $\\mathbf{B}$"
+      },
+      {
+        "id": "D",
+        "text": "The Eigenspace corresponding to $\\lambda=0$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "By definition, the column space of a matrix $\\mathbf{B}$ is the set of all possible linear combinations of its column vectors. When a matrix $\\mathbf{B}$ acts on a vector $\\mathbf{y}$ to produce $\\mathbf{B}\\mathbf{y}$, the result is always a vector in the column space of $\\mathbf{B}$. Therefore, $\\hat{\\mathbf{y}} = \\mathbf{B}\\mathbf{y}$ lies in the column space of $\\mathbf{B}$.",
+      "distractor_rationales": {
+        "A": "The Null Space of $\\mathbf{B}$ contains vectors $\\mathbf{x}$ such that $\\mathbf{B}\\mathbf{x} = \\mathbf{0}$. $\\hat{\\mathbf{y}}$ is generally not the zero vector.",
+        "B": "The Row Space of $\\mathbf{B}$ is the column space of $\\mathbf{B}^T$. While for a symmetric matrix $\\mathbf{B}$, the row space is equal to the column space, the most direct definition of $\\mathbf{B}\\mathbf{y}$ places it in the column space.",
+        "D": "The Eigenspace corresponding to $\\lambda=0$ is equivalent to the Null Space of $\\mathbf{B}$, which is incorrect."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-036_gen-003_1762787875.845404": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "orthogonal_complement"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Let $\\mathbf{B}$ be an $n \\times n$ symmetric matrix such that $\\mathbf{B}^2 = \\mathbf{B}$. If $\\hat{\\mathbf{y}} = \\mathbf{B}\\mathbf{y}$ and $\\mathbf{z} = \\mathbf{y} - \\hat{\\mathbf{y}}$, what is the result of $\\mathbf{B}\\mathbf{z}$?",
+    "diagram_data": {
+      "image_path": "15-036.png",
+      "alt_text": "Mathematical problem statement about an orthogonal projection matrix B and vector decomposition."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$\\mathbf{y}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\hat{\\mathbf{y}}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\mathbf{z}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\mathbf{0}$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "D"
+      ],
+      "explanation": "We are given $\\mathbf{z} = \\mathbf{y} - \\hat{\\mathbf{y}}$. Substituting $\\hat{\\mathbf{y}} = \\mathbf{B}\\mathbf{y}$, we get $\\mathbf{z} = \\mathbf{y} - \\mathbf{B}\\mathbf{y}$.\nNow, let's compute $\\mathbf{B}\\mathbf{z}$:\n$\\mathbf{B}\\mathbf{z} = \\mathbf{B}(\\mathbf{y} - \\mathbf{B}\\mathbf{y})$\n$\\mathbf{B}\\mathbf{z} = \\mathbf{B}\\mathbf{y} - \\mathbf{B}^2\\mathbf{y}$\nSince $\\mathbf{B}^2 = \\mathbf{B}$ (as stated in the problem for an orthogonal projection matrix):\n$\\mathbf{B}\\mathbf{z} = \\mathbf{B}\\mathbf{y} - \\mathbf{B}\\mathbf{y}$\n$\\mathbf{B}\\mathbf{z} = \\mathbf{0}$\nThus, $\\mathbf{z}$ is in the Null Space of $\\mathbf{B}$.",
+      "distractor_rationales": {
+        "A": "If $\\mathbf{B}\\mathbf{z} = \\mathbf{y}$, it would imply a very specific and generally false relationship between $\\mathbf{B}$ and $\\mathbf{y}$.",
+        "B": "If $\\mathbf{B}\\mathbf{z} = \\hat{\\mathbf{y}}$, then $\\mathbf{B}(\\mathbf{y} - \\mathbf{B}\\mathbf{y}) = \\mathbf{B}\\mathbf{y}$, which simplifies to $\\mathbf{B}\\mathbf{y} - \\mathbf{B}\\mathbf{y} = \\mathbf{B}\\mathbf{y}$, meaning $\\mathbf{0} = \\mathbf{B}\\mathbf{y}$, which is not generally true.",
+        "C": "If $\\mathbf{B}\\mathbf{z} = \\mathbf{z}$, it would mean $\\mathbf{z}$ is an eigenvector with eigenvalue 1. This is not generally true; $\\mathbf{z}$ is in the null space (eigenvalue 0)."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-036_gen-004_1762787875.845409": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "subspaces",
+      "orthogonal_complement"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "For any symmetric matrix $\\mathbf{B}$, which of the following relationships between its fundamental subspaces is always true?",
+    "diagram_data": {
+      "image_path": "15-036.png",
+      "alt_text": "Mathematical problem statement about an orthogonal projection matrix B and vector decomposition."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$\\text{Col } \\mathbf{B} = \\text{Nul } \\mathbf{B}$"
+      },
+      {
+        "id": "B",
+        "text": "$(\\text{Col } \\mathbf{B})^{\\perp} = \\text{Nul } \\mathbf{B}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\text{Row } \\mathbf{B} = (\\text{Nul } \\mathbf{B})^{\\perp}$"
+      },
+      {
+        "id": "D",
+        "text": "$\\text{Col } \\mathbf{B} = \\text{Row } \\mathbf{B}$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "One of the fundamental theorems of linear algebra states that the orthogonal complement of the column space of a matrix $\\mathbf{A}$ is the null space of its transpose, i.e., $(\\text{Col } \\mathbf{A})^{\\perp} = \\text{Nul } \\mathbf{A}^T$.\nGiven that $\\mathbf{B}$ is a symmetric matrix, we have $\\mathbf{B}^T = \\mathbf{B}$.\nTherefore, for a symmetric matrix $\\mathbf{B}$, $(\\text{Col } \\mathbf{B})^{\\perp} = \\text{Nul } \\mathbf{B}$. This relationship is central to the Orthogonal Decomposition Theorem when dealing with projection matrices.",
+      "distractor_rationales": {
+        "A": "$\\text{Col } \\mathbf{B} = \\text{Nul } \\mathbf{B}$ is generally false. These two subspaces are orthogonal complements for a symmetric matrix, meaning their intersection is only the zero vector.",
+        "C": "This statement is true by another fundamental theorem: $(\\text{Nul } \\mathbf{B})^{\\perp} = \\text{Row } \\mathbf{B}$. However, the question asks for a relationship involving $\\text{Col } \\mathbf{B}$ and $\\text{Nul } \\mathbf{B}$ specifically in the context of the original problem's explanation.",
+        "D": "$\\text{Col } \\mathbf{B} = \\text{Row } \\mathbf{B}$ is true for any symmetric matrix $\\mathbf{B}$. However, this describes the relationship between the column and row spaces, not the null space, which is crucial for the orthogonal decomposition."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-036_gen-005_1762787875.8454132": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "orthogonal_complement",
+      "theorems",
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The decomposition of a vector $\\mathbf{y}$ into a sum of a vector $\\hat{\\mathbf{y}}$ in a subspace $W$ and a vector $\\mathbf{z}$ in its orthogonal complement $W^{\\perp}$ is described by which theorem?",
+    "diagram_data": {
+      "image_path": "15-036.png",
+      "alt_text": "Mathematical problem statement about an orthogonal projection matrix B and vector decomposition."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The Rank-Nullity Theorem"
+      },
+      {
+        "id": "B",
+        "text": "The Fundamental Theorem of Linear Algebra"
+      },
+      {
+        "id": "C",
+        "text": "The Spectral Theorem"
+      },
+      {
+        "id": "D",
+        "text": "The Orthogonal Decomposition Theorem"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "D"
+      ],
+      "explanation": "The Orthogonal Decomposition Theorem states that if $W$ is a subspace of $\\mathbb{R}^n$, then each $\\mathbf{y} \\in \\mathbb{R}^n$ can be uniquely written as $\\mathbf{y} = \\hat{\\mathbf{y}} + \\mathbf{z}$, where $\\hat{\\mathbf{y}}$ is the orthogonal projection of $\\mathbf{y}$ onto $W$ (i.e., $\\hat{\\mathbf{y}} \\in W$) and $\\mathbf{z}$ is a vector orthogonal to $W$ (i.e., $\\mathbf{z} \\in W^{\\perp}$). This precisely describes the scenario given in the problem statement.",
+      "distractor_rationales": {
+        "A": "The Rank-Nullity Theorem relates the dimension of a matrix's column space (rank) to the dimension of its null space (nullity).",
+        "B": "The Fundamental Theorem of Linear Algebra describes relationships between the four fundamental subspaces of a matrix (column space, null space, row space, left null space).",
+        "C": "The Spectral Theorem states that a symmetric matrix can be orthogonally diagonalized, meaning it has an orthonormal basis of eigenvectors and real eigenvalues."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-022_gen-001_1762787984.59166": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "dot_product_properties"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine if the following statement is true or false: For any vectors $\\mathbf{u}$ and $\\mathbf{v}$ in $\\mathbb{R}^n$, $\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{v} \\cdot \\mathbf{u}$.",
+    "diagram_data": {
+      "image_path": "15-022.png",
+      "alt_text": "A mathematical statement from a textbook problem, showing a property of the dot product involving a scalar."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "This statement is **True**. The dot product is commutative.\nLet $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ \\vdots \\\\ u_n \\end{bmatrix}$ and $\\mathbf{v} = \\begin{bmatrix} v_1 \\\\ \\vdots \\\\ v_n \\end{bmatrix}$.\nThen $\\mathbf{u} \\cdot \\mathbf{v} = u_1v_1 + u_2v_2 + \\ldots + u_nv_n$.\nAnd $\\mathbf{v} \\cdot \\mathbf{u} = v_1u_1 + v_2u_2 + \\ldots + v_nu_n$.\nSince multiplication of real numbers is commutative ($u_iv_i = v_iu_i$ for each component), it follows that $\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{v} \\cdot \\mathbf{u}$.",
+      "distractor_rationales": {
+        "B": "A common misconception might be to confuse dot product with matrix multiplication, which is generally not commutative. However, the dot product of two vectors is a scalar, and its components are multiplied using scalar multiplication, which is commutative."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-022_gen-002_1762787984.5916731": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "dot_product_properties",
+      "vector_addition"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine if the following statement is true or false: For any vectors $\\mathbf{u}$, $\\mathbf{v}$, and $\\mathbf{w}$ in $\\mathbb{R}^n$, $\\mathbf{u} \\cdot (\\mathbf{v} + \\mathbf{w}) = \\mathbf{u} \\cdot \\mathbf{v} + \\mathbf{u} \\cdot \\mathbf{w}$.",
+    "diagram_data": {
+      "image_path": "15-022.png",
+      "alt_text": "A mathematical statement from a textbook problem, showing a property of the dot product involving a scalar."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "This statement is **True**. The dot product is distributive over vector addition.\nLet $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ \\vdots \\\\ u_n \\end{bmatrix}$, $\\mathbf{v} = \\begin{bmatrix} v_1 \\\\ \\vdots \\\\ v_n \\end{bmatrix}$, and $\\mathbf{w} = \\begin{bmatrix} w_1 \\\\ \\vdots \\\\ w_n \\end{bmatrix}$.\nThen $\\mathbf{v} + \\mathbf{w} = \\begin{bmatrix} v_1+w_1 \\\\ \\vdots \\\\ v_n+w_n \\end{bmatrix}$.\nLeft-hand side:\n$\\mathbf{u} \\cdot (\\mathbf{v} + \\mathbf{w}) = u_1(v_1+w_1) + \\ldots + u_n(v_n+w_n)$\n$= (u_1v_1 + u_1w_1) + \\ldots + (u_nv_n + u_nw_n)$ (by scalar distributivity)\n$= (u_1v_1 + \\ldots + u_nv_n) + (u_1w_1 + \\ldots + u_nw_n)$ (by commutativity and associativity of scalar addition)\nRight-hand side:\n$\\mathbf{u} \\cdot \\mathbf{v} + \\mathbf{u} \\cdot \\mathbf{w} = (u_1v_1 + \\ldots + u_nv_n) + (u_1w_1 + \\ldots + u_nw_n)$\nSince LHS = RHS, the statement is true.",
+      "distractor_rationales": {
+        "B": "Students might incorrectly assume that not all algebraic properties hold for vector operations, or confuse it with properties that do not hold for other vector products (like the cross product), or simply forget the distributive property of the dot product."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-022_gen-003_1762787984.5916789": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "dot_product_properties",
+      "scalar_multiplication"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine if the following statement is true or false: For any scalar $c$ and vectors $\\mathbf{u}$, $\\mathbf{v}$ in $\\mathbb{R}^n$, $(c\\mathbf{u}) \\cdot \\mathbf{v} = c(\\mathbf{u} \\cdot \\mathbf{v})$.",
+    "diagram_data": {
+      "image_path": "15-022.png",
+      "alt_text": "A mathematical statement from a textbook problem, showing a property of the dot product involving a scalar."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "This statement is **True**. Scalar factors can be factored out of the dot product, regardless of which vector they are initially multiplying.\nLet $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ \\vdots \\\\ u_n \\end{bmatrix}$ and $\\mathbf{v} = \\begin{bmatrix} v_1 \\\\ \\vdots \\\\ v_n \\end{bmatrix}$.\nThen $c\\mathbf{u} = \\begin{bmatrix} cu_1 \\\\ \\vdots \\\\ cu_n \\end{bmatrix}$.\nLeft-hand side:\n$(c\\mathbf{u}) \\cdot \\mathbf{v} = (cu_1)v_1 + (cu_2)v_2 + \\ldots + (cu_n)v_n$\n$= c(u_1v_1) + c(u_2v_2) + \\ldots + c(u_nv_n)$ (by associativity of scalar multiplication)\n$= c(u_1v_1 + u_2v_2 + \\ldots + u_nv_n)$ (by factoring out $c$)\nRight-hand side:\n$c(\\mathbf{u} \\cdot \\mathbf{v}) = c(u_1v_1 + u_2v_2 + \\ldots + u_nv_n)$\nSince LHS = RHS, the statement is true.",
+      "distractor_rationales": {
+        "B": "Some might incorrectly assume that scalar factors cannot be freely moved within or extracted from the dot product, or they might be unsure if the property holds when the scalar multiplies the first vector instead of the second, as shown in the example diagram."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-022_gen-004_1762787984.5916831": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "dot_product_properties",
+      "vector_magnitude"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine if the following statement is true or false: For any vector $\\mathbf{u}$ in $\\mathbb{R}^n$, $\\mathbf{u} \\cdot \\mathbf{u} = ||\\mathbf{u}||^2$.",
+    "diagram_data": {
+      "image_path": "15-022.png",
+      "alt_text": "A mathematical statement from a textbook problem, showing a property of the dot product involving a scalar."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "This statement is **True**. This is a fundamental relationship between the dot product and the magnitude (or length) of a vector.\nLet $\\mathbf{u} = \\begin{bmatrix} u_1 \\\\ \\vdots \\\\ u_n \\end{bmatrix}$.\nThe dot product of a vector with itself is defined as:\n$\\mathbf{u} \\cdot \\mathbf{u} = u_1u_1 + u_2u_2 + \\ldots + u_nu_n = u_1^2 + u_2^2 + \\ldots + u_n^2$.\nThe magnitude (or length) of $\\mathbf{u}$ is defined as $||\\mathbf{u}|| = \\sqrt{u_1^2 + u_2^2 + \\ldots + u_n^2}$.\nSquaring both sides of the magnitude definition gives $||\\mathbf{u}||^2 = (\\sqrt{u_1^2 + u_2^2 + \\ldots + u_n^2})^2 = u_1^2 + u_2^2 + \\ldots + u_n^2$.\nComparing the expressions, we see that $\\mathbf{u} \\cdot \\mathbf{u} = ||\\mathbf{u}||^2$.",
+      "distractor_rationales": {
+        "B": "Students might confuse the dot product with other vector operations or forget the precise definition of vector magnitude, leading them to believe the statement is false. They might also mistakenly think of it as only being true for specific cases rather than a general definition."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-022_gen-005_1762787984.5916858": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "dot_product_properties",
+      "vector_magnitude",
+      "angles_between_vectors"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Determine if the following statement is true or false: For any non-zero vectors $\\mathbf{u}$ and $\\mathbf{v}$ in $\\mathbb{R}^n$, $(\\mathbf{u} \\cdot \\mathbf{v})^2 = ||\\mathbf{u}||^2 ||\\mathbf{v}||^2$.",
+    "diagram_data": {
+      "image_path": "15-022.png",
+      "alt_text": "A mathematical statement from a textbook problem, showing a property of the dot product involving a scalar."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "True"
+      },
+      {
+        "id": "B",
+        "text": "False"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "This statement is **False**. This equality only holds under specific conditions, not for *any* non-zero vectors.\nRecall the formula for the dot product in terms of magnitudes and the angle $\\theta$ between the vectors:\n$\\mathbf{u} \\cdot \\mathbf{v} = ||\\mathbf{u}|| ||\\mathbf{v}|| \\cos \\theta$.\nSquaring both sides:\n$(\\mathbf{u} \\cdot \\mathbf{v})^2 = (||\\mathbf{u}|| ||\\mathbf{v}|| \\cos \\theta)^2 = ||\\mathbf{u}||^2 ||\\mathbf{v}||^2 \\cos^2 \\theta$.\nFor the statement $(\\mathbf{u} \\cdot \\mathbf{v})^2 = ||\\mathbf{u}||^2 ||\\mathbf{v}||^2$ to be true, we must have $\\cos^2 \\theta = 1$. This implies that $\\cos \\theta = 1$ or $\\cos \\theta = -1$, meaning the angle $\\theta$ between the vectors must be $0$ or $\\pi$ radians. In other words, the vectors $\\mathbf{u}$ and $\\mathbf{v}$ must be parallel (linearly dependent).\nIf the vectors are not parallel (e.g., orthogonal), then $\\cos^2 \\theta < 1$, and thus $(\\mathbf{u} \\cdot \\mathbf{v})^2 < ||\\mathbf{u}||^2 ||\\mathbf{v}||^2$. This is a direct consequence of the Cauchy-Schwarz inequality, which states $|\\mathbf{u} \\cdot \\mathbf{v}| \\le ||\\mathbf{u}|| ||\\mathbf{v}||$.\nFor example, let $\\mathbf{u} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}$ and $\\mathbf{v} = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}$.\n$\\mathbf{u} \\cdot \\mathbf{v} = 1(0) + 0(1) = 0$. So $(\\mathbf{u} \\cdot \\mathbf{v})^2 = 0^2 = 0$.\n$||\\mathbf{u}||^2 = 1^2 + 0^2 = 1$. $||\\mathbf{v}||^2 = 0^2 + 1^2 = 1$.\nThen $||\\mathbf{u}||^2 ||\\mathbf{v}||^2 = 1 \\cdot 1 = 1$. Since $0 \\ne 1$, the statement is false for these vectors.",
+      "distractor_rationales": {
+        "A": "Students might confuse the Cauchy-Schwarz inequality (which is an inequality) with an equality, or they might only consider cases where vectors are parallel (e.g., if $\\mathbf{v} = k\\mathbf{u}$ for some scalar $k$), where the equality does hold. They might also forget the role of the angle between vectors in the dot product formula."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-010_gen-001_1762788013.879201": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "determinants"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the determinant of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "The matrix A for which the determinant must be calculated."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$13$$"
+      },
+      {
+        "id": "B",
+        "text": "$$5$$"
+      },
+      {
+        "id": "C",
+        "text": "$$-5$$"
+      },
+      {
+        "id": "D",
+        "text": "$$0$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The determinant of a $2\\times 2$ matrix $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$ is given by $ad - bc$. \nFor matrix $\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$, the determinant is:\n$$\\det(\\mathbf{A}) = (2)(2) - (3)(3) = 4 - 9 = -5$$",
+      "distractor_rationales": {
+        "A": "This is the sum of the squares of the entries or a calculation error.",
+        "B": "This might result from adding the diagonal entries or a sign error in the calculation of the determinant.",
+        "D": "This would imply the matrix is singular, which is not the case."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-010_gen-002_1762788013.879211": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "matrix_properties",
+      "number_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the trace of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "The matrix A for which the trace must be calculated."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$2$$"
+      },
+      {
+        "id": "B",
+        "text": "$$3$$"
+      },
+      {
+        "id": "C",
+        "text": "$$4$$"
+      },
+      {
+        "id": "D",
+        "text": "$$5$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The trace of a square matrix is the sum of the elements on its main diagonal. \nFor matrix $\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$, the diagonal elements are $2$ and $2$. \nTherefore, the trace of $\\mathbf{A}$ is: \n$$\\text{Tr}(\\mathbf{A}) = 2 + 2 = 4$$",
+      "distractor_rationales": {
+        "A": "This is one of the diagonal elements, not their sum.",
+        "B": "This is one of the off-diagonal elements.",
+        "D": "This might be the sum of one diagonal and one off-diagonal element, or an incorrect sum."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-010_gen-003_1762788013.879214": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "matrix_inverse"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the inverse of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "The matrix A for which the inverse must be calculated."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} -2/5 & 3/5 \\\\ 3/5 & -2/5 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 2/5 & -3/5 \\\\ -3/5 & 2/5 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 2 & -3 \\\\ -3 & 2 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 1/2 & 1/3 \\\\ 1/3 & 1/2 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "For a $2\\times 2$ matrix $\\mathbf{A} = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$, its inverse is given by $\\mathbf{A}^{-1} = \\frac{1}{\\det(\\mathbf{A})} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$. \nFirst, calculate the determinant of $\\mathbf{A}$: \n$$\\det(\\mathbf{A}) = (2)(2) - (3)(3) = 4 - 9 = -5$$ \nNow, apply the formula for the inverse: \n$$\\mathbf{A}^{-1} = \\frac{1}{-5} \\begin{bmatrix} 2 & -3 \\\\ -3 & 2 \\end{bmatrix} = \\begin{bmatrix} -2/5 & 3/5 \\\\ 3/5 & -2/5 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "B": "This results from using a positive determinant or incorrect sign distribution with the determinant.",
+        "C": "This is the adjoint matrix, but without dividing by the determinant.",
+        "D": "This incorrectly takes the reciprocal of each element in the original matrix."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-010_gen-004_1762788013.8792162": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "characteristic_polynomial"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the characteristic polynomial of the matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "The matrix A for which the characteristic polynomial must be calculated."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\lambda^2 - 4\\lambda - 5$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\lambda^2 + 4\\lambda - 5$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\lambda^2 - 5\\lambda + 4$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\lambda^2 + 5$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "A"
+      ],
+      "explanation": "The characteristic polynomial is given by $\\det(\\mathbf{A} - \\lambda\\mathbf{I})$, where $\\mathbf{I}$ is the identity matrix and $\\lambda$ is an eigenvalue. \nFor matrix $\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$: \n$$\\mathbf{A} - \\lambda\\mathbf{I} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix} - \\lambda\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 2-\\lambda & 3 \\\\ 3 & 2-\\lambda \\end{bmatrix}$$ \nNow, calculate the determinant: \n$$\\det(\\mathbf{A} - \\lambda\\mathbf{I}) = (2-\\lambda)(2-\\lambda) - (3)(3)$$ \n$$ = (2-\\lambda)^2 - 9$$ \n$$ = (4 - 4\\lambda + \\lambda^2) - 9$$ \n$$ = \\lambda^2 - 4\\lambda - 5$$",
+      "distractor_rationales": {
+        "B": "Incorrect sign for the $\\lambda$ term, possibly from an error in expanding $(2-\\lambda)^2$.",
+        "C": "This polynomial has the trace and determinant swapped or with incorrect signs.",
+        "D": "This is an oversimplified or incorrectly calculated polynomial, possibly missing the linear term."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-010_gen-005_1762788013.8792179": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "matrix_multiplication"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Calculate the matrix $\\mathbf{A}^2$ for the given matrix $\\mathbf{A}$: $$\\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$",
+    "diagram_data": {
+      "image_path": "15-010.png",
+      "alt_text": "The matrix A for which A squared must be calculated."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$\\begin{bmatrix} 4 & 9 \\\\ 9 & 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "B",
+        "text": "$$\\begin{bmatrix} 13 & 12 \\\\ 12 & 13 \\end{bmatrix}$$"
+      },
+      {
+        "id": "C",
+        "text": "$$\\begin{bmatrix} 4 & 6 \\\\ 6 & 4 \\end{bmatrix}$$"
+      },
+      {
+        "id": "D",
+        "text": "$$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "To calculate $\\mathbf{A}^2$, we multiply $\\mathbf{A}$ by itself: \n$$\\mathbf{A}^2 = \\mathbf{A} \\mathbf{A} = \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix} \\begin{bmatrix} 2 & 3 \\\\ 3 & 2 \\end{bmatrix}$$ \nPerform the matrix multiplication: \n$$ (\\mathbf{A}^2)_{11} = (2)(2) + (3)(3) = 4 + 9 = 13 $$ \n$$ (\\mathbf{A}^2)_{12} = (2)(3) + (3)(2) = 6 + 6 = 12 $$ \n$$ (\\mathbf{A}^2)_{21} = (3)(2) + (2)(3) = 6 + 6 = 12 $$ \n$$ (\\mathbf{A}^2)_{22} = (3)(3) + (2)(2) = 9 + 4 = 13 $$ \nSo, \n$$\\mathbf{A}^2 = \\begin{bmatrix} 13 & 12 \\\\ 12 & 13 \\end{bmatrix}$$",
+      "distractor_rationales": {
+        "A": "This results from squaring each element of the matrix individually, which is not valid matrix multiplication.",
+        "C": "This results from multiplying each element by 2, or performing a scalar multiplication instead of matrix multiplication.",
+        "D": "This is the identity matrix; it would imply A is its own inverse or a special type of idempotent matrix, which is not the case."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-003_gen-001_1762788050.844692": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "subfield": [
+      "11"
+    ],
+    "topic": [
+      "number_theory",
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given that the first pentagonal number $P_1 = 1$ and the recurrence relation $P_n = P_{n-1} + (3n - 2)$ for $n \\ge 2$, what is the second pentagonal number, $P_2$?",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "11-003.png",
+      "alt_text": "Diagram illustrating pentagonal numbers. It shows the first pentagonal number as 1 dot, the second as 5 dots forming a pentagon, and the third as 12 dots forming concentric pentagons. The sequence 1, 5, 12, 22 is also mentioned with their additive breakdown."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "7"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "Using the recurrence relation $P_n = P_{n-1} + (3n - 2)$ with $n=2$ and $P_1 = 1$: \n$P_2 = P_1 + (3\\cdot2 - 2) = 1 + (6 - 2) = 1 + 4 = 5$.",
+      "distractor_rationales": {
+        "A": "This is $P_1$, not $P_2$.",
+        "C": "This is the difference added to $P_1$, not the sum.",
+        "D": "Incorrect calculation using the recurrence relation."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-003_gen-002_1762788050.844703": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "subfield": [
+      "11"
+    ],
+    "topic": [
+      "number_theory",
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The $n$-th pentagonal number is given by the formula $P_n = \\frac{n(3n - 1)}{2}$. What is the third pentagonal number, $P_3$?",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "11-003.png",
+      "alt_text": "Diagram illustrating pentagonal numbers. It shows the first pentagonal number as 1 dot, the second as 5 dots forming a pentagon, and the third as 12 dots forming concentric pentagons. The sequence 1, 5, 12, 22 is also mentioned with their additive breakdown."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "7"
+      },
+      {
+        "id": "C",
+        "text": "12"
+      },
+      {
+        "id": "D",
+        "text": "15"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "Using the closed-form formula $P_n = \\frac{n(3n - 1)}{2}$ for $n=3$: \n$P_3 = \\frac{3(3\\cdot3 - 1)}{2} = \\frac{3(9 - 1)}{2} = \\frac{3\\cdot8}{2} = \\frac{24}{2} = 12$.",
+      "distractor_rationales": {
+        "A": "This is $P_2$, not $P_3$.",
+        "B": "Incorrect calculation; perhaps $3n-2$ was used instead of $3n-1$.",
+        "D": "Incorrect calculation; possibly $3n^2/2$ was calculated without the $-n/2$ term."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-003_gen-003_1762788050.844705": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "subfield": [
+      "11"
+    ],
+    "topic": [
+      "number_theory",
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The $n$-th pentagonal number $P_n$ is defined by $P_1 = 1$ and $P_n = P_{n-1} + (3n - 2)$ for $n \\ge 2$. What is the value of $P_4 - P_3$?",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "11-003.png",
+      "alt_text": "Diagram illustrating pentagonal numbers. It shows the first pentagonal number as 1 dot, the second as 5 dots forming a pentagon, and the third as 12 dots forming concentric pentagons. The sequence 1, 5, 12, 22 is also mentioned with their additive breakdown."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "7"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "12"
+      },
+      {
+        "id": "D",
+        "text": "22"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "From the recurrence relation $P_n = P_{n-1} + (3n - 2)$, we can infer that $P_n - P_{n-1} = (3n - 2)$. \nTherefore, for $n=4$, $P_4 - P_3 = (3\\cdot4 - 2) = 12 - 2 = 10$.",
+      "distractor_rationales": {
+        "A": "This would be the difference if $n=3$, i.e., $P_3 - P_2 = 3(3) - 2 = 7$.",
+        "C": "This is $P_3$, not the difference $P_4 - P_3$.",
+        "D": "This is $P_4$, not the difference $P_4 - P_3$."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Understand"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-003_gen-004_1762788050.844707": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "subfield": [
+      "11"
+    ],
+    "topic": [
+      "number_theory",
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "The sequence of pentagonal numbers begins with $P_1=1, P_2=5, P_3=12, P_4=22, \\ldots$. Which of the following recurrence relations correctly describes the $n$-th pentagonal number $P_n$ for $n \\ge 2$?",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "11-003.png",
+      "alt_text": "Diagram illustrating pentagonal numbers. It shows the first pentagonal number as 1 dot, the second as 5 dots forming a pentagon, and the third as 12 dots forming concentric pentagons. The sequence 1, 5, 12, 22 is also mentioned with their additive breakdown."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$P_n = P_{n-1} + (3n - 1)$"
+      },
+      {
+        "id": "B",
+        "text": "$P_n = P_{n-1} + (3n - 2)$"
+      },
+      {
+        "id": "C",
+        "text": "$P_n = P_{n-1} + (2n + 1)$"
+      },
+      {
+        "id": "D",
+        "text": "$P_n = P_{n-1} + (n + 3)$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The problem statement explicitly defines the recurrence relation for pentagonal numbers as $P_n = P_{n-1} + (3n - 2)$ for $n \\ge 2$. This can be verified by checking the given sequence: \n$P_2 = P_1 + (3\\cdot2 - 2) = 1 + 4 = 5$. \n$P_3 = P_2 + (3\\cdot3 - 2) = 5 + 7 = 12$. \n$P_4 = P_3 + (3\\cdot4 - 2) = 12 + 10 = 22$.",
+      "distractor_rationales": {
+        "A": "This recurrence relation would yield $P_2 = 1 + (3\\cdot2 - 1) = 1 + 5 = 6$, which is incorrect.",
+        "C": "This recurrence relation would yield $P_2 = 1 + (2\\cdot2 + 1) = 1 + 5 = 6$, which is incorrect.",
+        "D": "This recurrence relation would yield $P_2 = 1 + (2 + 3) = 1 + 5 = 6$, which is incorrect."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Recall"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "11-003_gen-005_1762788050.8447082": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "subfield": [
+      "11"
+    ],
+    "topic": [
+      "number_theory",
+      "discrete_mathematics"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Based on the definition and visual representation provided, which of the following sequences represents the first four pentagonal numbers?",
+    "diagram_data": {
+      "type": "image",
+      "image_path": "11-003.png",
+      "alt_text": "Diagram illustrating pentagonal numbers. It shows the first pentagonal number as 1 dot, the second as 5 dots forming a pentagon, and the third as 12 dots forming concentric pentagons. The sequence 1, 5, 12, 22 is also mentioned with their additive breakdown."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "1, 3, 6, 10"
+      },
+      {
+        "id": "B",
+        "text": "1, 5, 12, 22"
+      },
+      {
+        "id": "C",
+        "text": "1, 4, 9, 16"
+      },
+      {
+        "id": "D",
+        "text": "1, 2, 3, 4"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The image and the initial description explicitly state the first few pentagonal numbers are 1, 5, 12, 22. \n$P_1 = 1$\n$P_2 = P_1 + (3\\cdot2 - 2) = 1 + 4 = 5$\n$P_3 = P_2 + (3\\cdot3 - 2) = 5 + 7 = 12$\n$P_4 = P_3 + (3\\cdot4 - 2) = 12 + 10 = 22$",
+      "distractor_rationales": {
+        "A": "This sequence represents the triangular numbers.",
+        "C": "This sequence represents the square numbers.",
+        "D": "This sequence represents the natural numbers."
+      }
+    },
+    "evaluation": {
+      "scoring": {
+        "type": "all_or_nothing",
+        "points": 1
+      },
+      "allow_partial_credit": false
+    },
+    "randomization": {
+      "shuffle_choices": true,
+      "lock_ids": [],
+      "group_shuffle": []
+    },
+    "hints": [],
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Recall"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-001_gen-001_1762788098.291232": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "systems_of_linear_equations"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "What is the slope of the line \\(x_1 + 5x_2 = 7\\) shown in the figure?",
+    "diagram_data": {
+      "image_path": "15-001.png",
+      "alt_text": "A 2D graph with an x1-axis and an x2-axis showing two intersecting lines: x1 + 5x2 = 7 and x1 - 2x2 = -2."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$5$$"
+      },
+      {
+        "id": "B",
+        "text": "$$-1/5$$"
+      },
+      {
+        "id": "C",
+        "text": "$$1/5$$"
+      },
+      {
+        "id": "D",
+        "text": "$$-5$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "To find the slope, we rewrite the equation \\(x_1 + 5x_2 = 7\\) in slope-intercept form \\(x_2 = mx_1 + b\\).\nSubtract \\(x_1\\) from both sides: \\(5x_2 = -x_1 + 7\\).\nDivide by 5: \\(x_2 = -\\frac{1}{5}x_1 + \\frac{7}{5}\\).\nThe slope \\(m\\) is the coefficient of \\(x_1\\), which is \\(-1/5\\).",
+      "distractor_rationales": {
+        "A": "This is the coefficient of \\(x_2\\) in the standard form, not the slope.",
+        "C": "A common error is to forget the negative sign or incorrectly calculate the reciprocal.",
+        "D": "This would be the slope if the equation was \\(x_1 + x_2/5 = 7\\) or similar, but it is not correct for the given equation."
+      }
+    },
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-001_gen-002_1762788098.2912471": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "systems_of_linear_equations"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Find the \\(x_2\\)-intercept of the line \\(x_1 - 2x_2 = -2\\) shown in the figure.",
+    "diagram_data": {
+      "image_path": "15-001.png",
+      "alt_text": "A 2D graph with an x1-axis and an x2-axis showing two intersecting lines: x1 + 5x2 = 7 and x1 - 2x2 = -2."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$(0, -1)$$"
+      },
+      {
+        "id": "B",
+        "text": "$$(0, 1)$$"
+      },
+      {
+        "id": "C",
+        "text": "$$(-2, 0)$$"
+      },
+      {
+        "id": "D",
+        "text": "$$(1, 0)$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The \\(x_2\\)-intercept occurs when \\(x_1 = 0\\). Substitute \\(x_1 = 0\\) into the equation \\(x_1 - 2x_2 = -2\\):\n\\(0 - 2x_2 = -2\\)\n\\(-2x_2 = -2\\)\n\\(x_2 = 1\\)\nThus, the \\(x_2\\)-intercept is \\((0, 1)\\).",
+      "distractor_rationales": {
+        "A": "This would be the intercept if there was a sign error in the constant term or when dividing by -2.",
+        "C": "This is the \\(x_1\\)-intercept, not the \\(x_2\\)-intercept.",
+        "D": "This is an incorrect calculation or confusion between \\(x_1\\) and \\(x_2\\) intercepts."
+      }
+    },
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-001_gen-003_1762788098.291285": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "systems_of_linear_equations"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "What is the \\(x_1\\)-intercept of the line \\(x_1 + 5x_2 = 7\\) shown in the figure?",
+    "diagram_data": {
+      "image_path": "15-001.png",
+      "alt_text": "A 2D graph with an x1-axis and an x2-axis showing two intersecting lines: x1 + 5x2 = 7 and x1 - 2x2 = -2."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$(0, 7/5)$$"
+      },
+      {
+        "id": "B",
+        "text": "$$(7, 0)$$"
+      },
+      {
+        "id": "C",
+        "text": "$$(0, 7)$$"
+      },
+      {
+        "id": "D",
+        "text": "$$(5, 0)$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The \\(x_1\\)-intercept occurs when \\(x_2 = 0\\). Substitute \\(x_2 = 0\\) into the equation \\(x_1 + 5x_2 = 7\\):\n\\(x_1 + 5(0) = 7\\)\n\\(x_1 = 7\\)\nThus, the \\(x_1\\)-intercept is \\((7, 0)\\).",
+      "distractor_rationales": {
+        "A": "This is the \\(x_2\\)-intercept, not the \\(x_1\\)-intercept.",
+        "C": "An incorrect calculation or confusion of coordinates.",
+        "D": "This would be the \\(x_1\\)-intercept if the equation was \\(x_1 + x_2 = 5\\) or if the constant term was 5 instead of 7."
+      }
+    },
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-001_gen-004_1762788098.291289": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "systems_of_linear_equations"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Which of the following points lies on the line \\(x_1 - 2x_2 = -2\\) shown in the figure?",
+    "diagram_data": {
+      "image_path": "15-001.png",
+      "alt_text": "A 2D graph with an x1-axis and an x2-axis showing two intersecting lines: x1 + 5x2 = 7 and x1 - 2x2 = -2."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "$$(0, 0)$$"
+      },
+      {
+        "id": "B",
+        "text": "$$(1, 0)$$"
+      },
+      {
+        "id": "C",
+        "text": "$$(-2, 0)$$"
+      },
+      {
+        "id": "D",
+        "text": "$$(0, -1)$$"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "To check which point lies on the line, substitute the coordinates \\((x_1, x_2)\\) into the equation \\(x_1 - 2x_2 = -2\\).\nFor A: \\((0, 0) \\implies 0 - 2(0) = 0 \\neq -2\\)\nFor B: \\((1, 0) \\implies 1 - 2(0) = 1 \\neq -2\\)\nFor C: \\((-2, 0) \\implies -2 - 2(0) = -2\\). This satisfies the equation.\nFor D: \\((0, -1) \\implies 0 - 2(-1) = 2 \\neq -2\\)\nTherefore, the point \\((-2, 0)\\) lies on the line.",
+      "distractor_rationales": {
+        "A": "This point does not satisfy the equation \\(0 \\neq -2\\).",
+        "B": "This point does not satisfy the equation \\(1 \\neq -2\\).",
+        "D": "This point does not satisfy the equation \\(2 \\neq -2\\)."
+      }
+    },
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Apply"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "15-001_gen-005_1762788098.291293": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "linear_algebra",
+      "systems_of_linear_equations",
+      "intersection_of_lines"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Based on the provided figure, what can be concluded about the system of linear equations represented by the two lines \\(x_1 + 5x_2 = 7\\) and \\(x_1 - 2x_2 = -2\\)?",
+    "diagram_data": {
+      "image_path": "15-001.png",
+      "alt_text": "A 2D graph with an x1-axis and an x2-axis showing two intersecting lines: x1 + 5x2 = 7 and x1 - 2x2 = -2."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "The system has no solution."
+      },
+      {
+        "id": "B",
+        "text": "The system has infinitely many solutions."
+      },
+      {
+        "id": "C",
+        "text": "The system has a unique solution."
+      },
+      {
+        "id": "D",
+        "text": "The system has two distinct solutions."
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The figure clearly shows two distinct lines intersecting at a single point. When a system of two linear equations in two variables has lines that intersect at exactly one point, the system has a unique solution.",
+      "distractor_rationales": {
+        "A": "A system has no solution if the lines are parallel and distinct, meaning they never intersect.",
+        "B": "A system has infinitely many solutions if the lines are coincident (the same line), meaning they intersect at every point.",
+        "D": "A system of two linear equations in two variables can only have zero, one, or infinitely many solutions, never exactly two distinct solutions."
+      }
+    },
+    "difficulty": "easy",
+    "bloom_taxonomy": [
+      "Understand"
+    ],
+    "validation_status": "unverified",
+    "flags": []
+  }
+}
