@@ -1,0 +1,485 @@
+{
+  "schema_version": "mcq-1.0",
+  "run_id": "gen_20251110_185418",
+  "generated_at": "2025-11-10T18:55:39+00:00Z",
+  "gen-009_gen-001_204148": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "graph_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Using Prim's algorithm to find the Minimum Spanning Tree (MST) for the graph in Exercise 5.3, what is the total weight of the MST if you start from vertex A?",
+    "diagram_data": {
+      "image_path": "gen-009.png",
+      "alt_text": "A page from a textbook showing graph theory exercises. The top exercise (5.3, 5.5) features a large weighted undirected graph with vertices A through G. The bottom exercise (5.7) features two smaller, separate weighted undirected graphs, one with vertices 1, 2, 3 and the other with vertices 4, 5, 6, each with labeled edge weights."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "37"
+      },
+      {
+        "id": "B",
+        "text": "39"
+      },
+      {
+        "id": "C",
+        "text": "41"
+      },
+      {
+        "id": "D",
+        "text": "43"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "To find the MST using Prim's algorithm starting from vertex A:\n1.  Start with {A}. Edges to consider: (A,D,5), (A,B,7). Select (A,D,5). MST cost: 5. Visited: {A,D}.\n2.  Edges from {A,D} to unvisited: (A,B,7), (D,F,6), (D,E,15), (D,B,9). Select (D,F,6). MST cost: 5+6=11. Visited: {A,D,F}.\n3.  Edges from {A,D,F} to unvisited: (A,B,7), (D,E,15), (D,B,9), (F,E,8), (F,G,11). Select (A,B,7). MST cost: 11+7=18. Visited: {A,D,F,B}.\n4.  Edges from {A,D,F,B} to unvisited: (D,E,15), (D,B,9) (skip, B visited), (F,E,8), (F,G,11), (B,E,7), (B,C,8). Select (B,E,7). MST cost: 18+7=25. Visited: {A,D,F,B,E}.\n5.  Edges from {A,D,F,B,E} to unvisited: (D,E,15) (skip, E visited), (F,E,8) (skip, E visited), (F,G,11), (B,C,8), (E,G,9), (E,C,5). Select (E,C,5). MST cost: 25+5=30. Visited: {A,D,F,B,E,C}.\n6.  Edges from {A,D,F,B,E,C} to unvisited: (F,G,11), (B,C,8) (skip, C visited), (E,G,9). Select (E,G,9). MST cost: 30+9=39. Visited: {A,D,F,B,E,C,G}.\nAll vertices are now included. The total weight of the MST is 39.",
+      "distractor_rationales": {
+        "A": "This value might result from an error in selecting edges or summing weights, for example, missing one edge or selecting a suboptimal edge.",
+        "C": "This value might result from adding an extra edge or selecting a higher-weight edge prematurely.",
+        "D": "This value is likely a result of several calculation errors, possibly including non-MST edges."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-009_gen-002_204148": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "graph_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "What is the total weight of the Minimum Spanning Tree (MST) for the graph in Exercise 5.5 (the same graph as 5.3) using Kruskal's algorithm?",
+    "diagram_data": {
+      "image_path": "gen-009.png",
+      "alt_text": "A page from a textbook showing graph theory exercises. The top exercise (5.3, 5.5) features a large weighted undirected graph with vertices A through G. The bottom exercise (5.7) features two smaller, separate weighted undirected graphs, one with vertices 1, 2, 3 and the other with vertices 4, 5, 6, each with labeled edge weights."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "35"
+      },
+      {
+        "id": "B",
+        "text": "39"
+      },
+      {
+        "id": "C",
+        "text": "42"
+      },
+      {
+        "id": "D",
+        "text": "45"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "To find the MST using Kruskal's algorithm:\n1.  List all edges in non-decreasing order of weights:\n    (A,D,5), (E,C,5), (D,F,6), (A,B,7), (B,E,7), (B,C,8), (F,E,8), (D,B,9), (E,G,9), (F,G,11), (D,E,15).\n2.  Add edges if they don't form a cycle:\n    -   (A,D,5): Add. Components: {A,D}, {B}, {C}, {E}, {F}, {G}. Cost: 5.\n    -   (E,C,5): Add. Components: {A,D}, {B}, {E,C}, {F}, {G}. Cost: 5+5=10.\n    -   (D,F,6): Add. Components: {A,D,F}, {B}, {E,C}, {G}. Cost: 10+6=16.\n    -   (A,B,7): Add. Components: {A,D,F,B}, {E,C}, {G}. Cost: 16+7=23.\n    -   (B,E,7): Add. Components: {A,D,F,B,E,C}, {G}. Cost: 23+7=30.\n    -   (B,C,8): Skip (forms a cycle with (E,C) and (B,E)).\n    -   (F,E,8): Skip (forms a cycle with (D,F), (A,D), (A,B), (B,E)).\n    -   (D,B,9): Skip (forms a cycle with (A,D), (A,B)).\n    -   (E,G,9): Add. Components: {A,D,F,B,E,C,G}. Cost: 30+9=39.\nAll vertices are now connected. The total weight of the MST is 39.",
+      "distractor_rationales": {
+        "A": "This value might result from an error in selecting edges or summing weights, for example, missing one edge or selecting a suboptimal edge.",
+        "C": "This value might result from adding an extra edge or selecting a higher-weight edge that forms a cycle.",
+        "D": "This value is likely a result of several calculation errors, possibly including non-MST edges."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-009_gen-003_204148": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "graph_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "What is the total weight of the Minimum Spanning Forest (MSF) for the graph in Exercise 5.7 using Kruskal's algorithm?",
+    "diagram_data": {
+      "image_path": "gen-009.png",
+      "alt_text": "A page from a textbook showing graph theory exercises. The top exercise (5.3, 5.5) features a large weighted undirected graph with vertices A through G. The bottom exercise (5.7) features two smaller, separate weighted undirected graphs, one with vertices 1, 2, 3 and the other with vertices 4, 5, 6, each with labeled edge weights."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "7"
+      },
+      {
+        "id": "C",
+        "text": "8"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The graph in Exercise 5.7 consists of two connected components. We need to find the MST for each component and sum their weights to get the MSF.\n\nComponent 1 (vertices 1, 2, 3):\nEdges: (1,2,1), (1,3,3), (2,3,6).\nKruskal's algorithm:\n1.  Add (1,2,1). Cost: 1. Components: {1,2}, {3}.\n2.  Add (1,3,3). Cost: 1+3=4. Components: {1,2,3}.\n(2,3,6) would form a cycle.\nMST for Component 1 has a total weight of 4.\n\nComponent 2 (vertices 4, 5, 6):\nEdges: (5,6,1), (4,6,2), (4,5,3).\nKruskal's algorithm:\n1.  Add (5,6,1). Cost: 1. Components: {4}, {5,6}.\n2.  Add (4,6,2). Cost: 1+2=3. Components: {4,5,6}.\n(4,5,3) would form a cycle.\nMST for Component 2 has a total weight of 3.\n\nThe total weight of the Minimum Spanning Forest is the sum of the MSTs for each component: 4 + 3 = 7.",
+      "distractor_rationales": {
+        "A": "This value might result from an error in calculating one of the MSTs, or summing incorrectly.",
+        "C": "This value might result from including a suboptimal edge in one of the components' MSTs.",
+        "D": "This value might result from significant calculation errors in one or both components."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-009_gen-004_204148": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "graph_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "How many edges are present in the graph shown for Exercise 5.3?",
+    "diagram_data": {
+      "image_path": "gen-009.png",
+      "alt_text": "A page from a textbook showing graph theory exercises. The top exercise (5.3, 5.5) features a large weighted undirected graph with vertices A through G. The bottom exercise (5.7) features two smaller, separate weighted undirected graphs, one with vertices 1, 2, 3 and the other with vertices 4, 5, 6, each with labeled edge weights."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "11"
+      },
+      {
+        "id": "C",
+        "text": "12"
+      },
+      {
+        "id": "D",
+        "text": "13"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "Counting the edges in the graph for Exercise 5.3:\n1.  (A,D) - weight 5\n2.  (A,B) - weight 7\n3.  (D,F) - weight 6\n4.  (D,E) - weight 15\n5.  (D,B) - weight 9\n6.  (F,E) - weight 8\n7.  (F,G) - weight 11\n8.  (E,G) - weight 9\n9.  (E,B) - weight 7\n10. (E,C) - weight 5\n11. (B,C) - weight 8\nThere are 11 distinct edges in the graph.",
+      "distractor_rationales": {
+        "A": "This is a common off-by-one error when counting edges.",
+        "C": "This might result from double-counting one edge or misinterpreting the diagram.",
+        "D": "This indicates multiple counting errors or misinterpretation of the graph structure."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-009_gen-005_204148": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "graph_theory"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the two connected components in the graph for Exercise 5.7. What is the sum of the degrees of all vertices in the component containing vertex 1?",
+    "diagram_data": {
+      "image_path": "gen-009.png",
+      "alt_text": "A page from a textbook showing graph theory exercises. The top exercise (5.3, 5.5) features a large weighted undirected graph with vertices A through G. The bottom exercise (5.7) features two smaller, separate weighted undirected graphs, one with vertices 1, 2, 3 and the other with vertices 4, 5, 6, each with labeled edge weights."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "6"
+      },
+      {
+        "id": "C",
+        "text": "8"
+      },
+      {
+        "id": "D",
+        "text": "10"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The component containing vertex 1 consists of vertices {1, 2, 3} and the following edges:\n-   (1,2) with weight 1\n-   (1,3) with weight 3\n-   (2,3) with weight 6\n\nNow, let's find the degree of each vertex in this component:\n-   Degree of vertex 1: Edges (1,2) and (1,3) = 2\n-   Degree of vertex 2: Edges (1,2) and (2,3) = 2\n-   Degree of vertex 3: Edges (1,3) and (2,3) = 2\n\nThe sum of the degrees of all vertices in this component is 2 + 2 + 2 = 6.\nAlternatively, for any graph, the sum of degrees of all vertices is equal to twice the number of edges. In this component, there are 3 edges, so the sum of degrees is 2 * 3 = 6.",
+      "distractor_rationales": {
+        "A": "This might be the sum of degrees for a component with fewer edges or an arithmetic error.",
+        "C": "This could be the sum of degrees for both components combined, or an error in counting edges/degrees.",
+        "D": "This indicates a significant miscalculation of degrees or edges."
+      }
+    },
+    "difficulty": "medium",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-008_gen-001_532612": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the relation matrix \\(M_R = \\begin{bmatrix} 0 & 1 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{bmatrix}\\) from Question 13, how many ordered pairs are in the relation \\(R\\)?",
+    "diagram_data": {
+      "image_path": "gen-008.png",
+      "alt_text": "A 3x3 matrix M_R with rows [0 1 1], [1 1 0], [1 0 1]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "C"
+      ],
+      "explanation": "The number of ordered pairs in a relation is equal to the number of 1s in its relation matrix. Counting the 1s in \\(M_R\\) gives \\(1+1+1+1+1 = 5\\).",
+      "distractor_rationales": {
+        "A": "This would imply only three 1s in the matrix.",
+        "B": "This would imply only four 1s in the matrix.",
+        "D": "This would imply six 1s in the matrix."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-008_gen-002_532612": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Consider the directed graph shown in Exercise 23. Which of the following ordered pairs represents an edge that is *not* present in the graph?",
+    "diagram_data": {
+      "image_path": "gen-008.png",
+      "alt_text": "Directed graph from Exercise 23 with nodes a, b, c. Edges are (a,a), (a,b), (b,c), (c,a), (c,b)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "(a,a)"
+      },
+      {
+        "id": "B",
+        "text": "(b,a)"
+      },
+      {
+        "id": "C",
+        "text": "(b,c)"
+      },
+      {
+        "id": "D",
+        "text": "(c,a)"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "By visually inspecting the graph in Exercise 23, there is no directed edge from node 'b' to node 'a'. The edges (a,a), (b,c), and (c,a) are all present in the graph.",
+      "distractor_rationales": {
+        "A": "The edge (a,a) is present as a loop on node 'a'.",
+        "C": "The edge (b,c) is present in the graph.",
+        "D": "The edge (c,a) is present in the graph."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-008_gen-003_532612": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the relation matrices \\(M_{R_1} = \\begin{bmatrix} 0 & 1 & 0 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 0 \\end{bmatrix}\\) and \\(M_{R_2} = \\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 1 & 1 \\end{bmatrix}\\) from Question 14, what is the entry in the first row and second column of the matrix representing \\(R_1 \\cup R_2\\)?",
+    "diagram_data": {
+      "image_path": "gen-008.png",
+      "alt_text": "Two 3x3 matrices. M_R1 with rows [0 1 0], [1 1 0], [1 0 0]. M_R2 with rows [0 1 0], [0 1 1], [1 1 1]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "0"
+      },
+      {
+        "id": "B",
+        "text": "1"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The entry in the first row and second column of \\(M_{R_1}\\) is 1. The entry in the first row and second column of \\(M_{R_2}\\) is 1. For the union \\(R_1 \\cup R_2\\), the corresponding entry in its matrix is the Boolean OR of these values, which is \\(1 \\lor 1 = 1\\).",
+      "distractor_rationales": {
+        "A": "This would be the case if both entries were 0 or if one was 0 and the other was 0."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-008_gen-004_532612": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "geometry"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "How many directed edges (including loops) are present in the directed graph shown in Exercise 25?",
+    "diagram_data": {
+      "image_path": "gen-008.png",
+      "alt_text": "Directed graph from Exercise 25 with nodes a, b, c, d. Edges are (a,b), (b,c), (c,d), (d,a)."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "By counting the arrows in the directed graph in Exercise 25, we can identify four distinct edges: (a,b), (b,c), (c,d), and (d,a).",
+      "distractor_rationales": {
+        "A": "There are more than 3 edges in the graph.",
+        "C": "There are exactly 4 edges, not 5.",
+        "D": "There are exactly 4 edges, not 6."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  },
+  "gen-008_gen-005_532612": {
+    "question_type": "multiple_choice",
+    "source": {
+      "type": "generate",
+      "model": "gemini-2.5-flash"
+    },
+    "topic": [
+      "algebra"
+    ],
+    "gradelevel": [
+      "College-level"
+    ],
+    "statement": "Given the relation matrix \\(M_R = \\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 1 & 0 \\end{bmatrix}\\) from Question 15, what is the entry in the third row and first column?",
+    "diagram_data": {
+      "image_path": "gen-008.png",
+      "alt_text": "A 3x3 matrix M_R with rows [0 1 0], [0 0 1], [1 1 0]."
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "0"
+      },
+      {
+        "id": "B",
+        "text": "1"
+      }
+    ],
+    "answer": {
+      "correct_ids": [
+        "B"
+      ],
+      "explanation": "The entry in the third row and first column of the given matrix \\(M_R\\) is 1.",
+      "distractor_rationales": {
+        "A": "The entry in the third row and first column is 1, not 0. For example, the entry in the first row and first column is 0."
+      }
+    },
+    "difficulty": "easy",
+    "validation_status": "unverified",
+    "flags": []
+  }
+}
