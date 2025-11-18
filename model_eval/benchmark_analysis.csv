@@ -1,0 +1,6 @@
+Model,Accuracy,Avg_Latency,Total_Errors,Format_Failures,Rubric_Score
+mistralai/mistral-small-3.1-24b-instruct,1.0,9.4489,1,0,85.83
+nvidia/nemotron-nano-12b-v2-vl,0.8,8.5739,2,2,57.14
+openrouter/sherlock-dash-alpha,0.6,3.1776,4,0,55.23
+google/gemma-3-27b-it,0.3,1.8158,7,6,0.0
+qwen/qwen2.5-vl-32b-instruct,0.3,15.3946,7,7,0.0

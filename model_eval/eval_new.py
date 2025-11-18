@@ -1,32 +1,41 @@
 #!/usr/bin/env python3
 """
-MathLabs Evaluator – FINAL WORKING VERSION
-- Validation prompt copied from test_eval.py (works!)
-- No HTTP 400, no ZeroDivisionError
-- mode="test"/"db", sampler="random"/"sequential"
+MathLabs Evaluator – GEMINI MASTER + OPENROUTER FREE STUDENTS
+- Master validator: Gemini 2.0 Flash (official SDK)
+- Students: 100% free OpenRouter models
+- Everything else identical to your final working version
 """
 
 import os
 import json
 import random
-import base64
 import time
-import requests
 import re
+import base64
+import requests
 from datetime import datetime, timezone
 from typing import List, Dict, Any, Optional
 from concurrent.futures import ThreadPoolExecutor
 from pymongo import MongoClient
 from dotenv import load_dotenv
+import certifi
+import ssl
+import google.generativeai as genai
 
 load_dotenv()
 
 # --------------------------------------------------------------------------- #
 # CONFIG
 # --------------------------------------------------------------------------- #
-API_KEY = os.getenv("OPENROUTER_API_KEY")
-if not API_KEY:
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+if not GEMINI_API_KEY:
+    raise RuntimeError("Set GEMINI_API_KEY in .env")
+if not OPENROUTER_API_KEY:
     raise RuntimeError("Set OPENROUTER_API_KEY in .env")
+
+genai.configure(api_key=GEMINI_API_KEY)
 
 # File paths (test mode)
 JSON_MCQ_FILE = "/Users/lucasyao/Documents/GitHub/mathlabs/dataset/baseline_lucas.json"
@@ -39,13 +48,20 @@ MCQ_COLLECTION = "questions"
 EVAL_COLLECTION = "evaluations"
 
 # Shared
-IMAGE_DIR = "/Users/lucasyao/Documents/GitHub/mathlabs/dataset/images"
-MASTER_MODEL = "anthropic/claude-opus-4"
+IMAGE_DIR = "/Users/sahilsrinivas/Developer/mathlabs/dataset/images"
+
+# MODELS
+MASTER_MODEL = "gemini-2.5-flash"  # Gemini via official SDK
+
 STUDENT_MODELS = [
-    "openai/gpt-4o-mini",
-    "anthropic/claude-sonnet-4",
+    "mistralai/mistral-small-3.1-24b-instruct:free",
+    "qwen/qwen2.5-vl-32b-instruct:free",
+    "google/gemma-3-27b-it:free",
+    "openrouter/sherlock-dash-alpha",
+    "nvidia/nemotron-nano-12b-v2-vl:free"
 ]
-BATCH_SIZE = 2  # Safe for validation
+
+BATCH_SIZE = 2
 SHUFFLE_CHOICES = True
 
 
@@ -63,9 +79,20 @@ class MathLabsEvaluator:
             raise ValueError("sampler must be 'random' or 'sequential'")
 
         self.base_url = "https://openrouter.ai/api/v1/chat/completions"
+        self.headers = {
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "Content-Type": "application/json"
+        }
+
+        # Gemini master model
+        self.gemini_master = genai.GenerativeModel(
+            MASTER_MODEL,
+            generation_config={"temperature": 0.0}
+        )
 
         if self.mode == "db":
-            self.client = MongoClient(MONGO_URI)
+            self.client = MongoClient(MONGO_URI,tls=True,
+    tlsCAFile=certifi.where())
             self.db = self.client[DB_NAME]
             self.mcqs = self.db[MCQ_COLLECTION]
             self.evals = self.db[EVAL_COLLECTION]
@@ -74,7 +101,7 @@ class MathLabsEvaluator:
             print(f"Mode: JSON (test) | Sampler: {self.sampler}")
 
     # ------------------------------------------------------------------- #
-    # LOAD MCQs
+    # LOAD MCQs – UNCHANGED
     # ------------------------------------------------------------------- #
     def load_mcqs(self, sample_size: int) -> List[Dict]:
         if self.mode == "db":
@@ -112,7 +139,7 @@ class MathLabsEvaluator:
         return selected
 
     # ------------------------------------------------------------------- #
-    # SAVE EVALUATION
+    # SAVE EVALUATION – UNCHANGED
     # ------------------------------------------------------------------- #
     def save_evaluation(self, eval_doc: Dict):
         if self.mode == "db":
@@ -134,51 +161,61 @@ class MathLabsEvaluator:
             print(f"Saved to {JSON_EVAL_FILE}")
 
     # ------------------------------------------------------------------- #
-    # API CALL (FIXED)
+    # OPENROUTER CALL (STUDENTS ONLY)
     # ------------------------------------------------------------------- #
     def call_model(self, model: str, messages: List[Dict], image_path: Optional[str] = None) -> Dict:
-        headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
-
-        # Create a copy of the messages to avoid modifying the original
         final_messages = [msg.copy() for msg in messages]
 
         if image_path:
-            # This logic is for adding an image to the *first* message
             full_path = os.path.join(IMAGE_DIR, os.path.basename(image_path))
             try:
                 with open(full_path, "rb") as f:
                     b64 = base64.b64encode(f.read()).decode()
-
-                # Assume the text prompt is in the first message's content
                 text_prompt = final_messages[0]['content']
-
-                # Re-format the content of the first message to be multimodal
                 final_messages[0]['content'] = [
                     {"type": "text", "text": text_prompt},
                     {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}}
                 ]
             except Exception as e:
                 print(f"Image error: {e}")
-                # If image fails, it will proceed as a text-only call
 
-        # *** THIS IS THE FIX ***
-        # The payload's "messages" key should be the list itself,
-        # not nested inside another message structure.
         payload = {"model": model, "messages": final_messages}
 
         start = time.time()
         try:
-            r = requests.post(self.base_url, headers=headers, json=payload, timeout=90)
+            r = requests.post(self.base_url, headers=self.headers, json=payload, timeout=90)
             ms = int((time.time() - start) * 1000)
             if r.status_code != 200:
                 error_msg = f"HTTP {r.status_code}: {r.text[:200]}"
-                print(f"  API Error: {error_msg}")  # Added for better debugging
+                print(f"  API Error: {error_msg}")
                 return {"error": True, "content": error_msg, "time_ms": ms}
             return {"error": False, "content": r.json()["choices"][0]["message"]["content"], "time_ms": ms}
         except Exception as e:
             return {"error": True, "content": f"Exception: {e}", "time_ms": int((time.time() - start) * 1000)}
+
     # ------------------------------------------------------------------- #
-    # VALIDATION PROMPT – COPIED FROM test_eval.py (WORKS!)
+    # GEMINI MASTER VALIDATION (NEW)
+    # ------------------------------------------------------------------- #
+    def gemini_validate_batch(self, batch: List[Dict]) -> List[Dict]:
+        prompt = self.build_validation_prompt(batch)
+        contents = [prompt]
+
+        for q in batch:
+            img_path = q.get("diagram_data", {}).get("image_path")
+            if img_path:
+                full_path = os.path.join(IMAGE_DIR, os.path.basename(img_path))
+                if os.path.exists(full_path):
+                    contents.append(genai.upload_file(full_path))
+
+        try:
+            response = self.gemini_master.generate_content(contents)
+            return self.parse_validation(response.text)
+        except Exception as e:
+            print(f"Gemini validation error: {e}")
+            return []
+
+    # ------------------------------------------------------------------- #
+    # YOUR ORIGINAL PROMPTS & PARSERS – 100% UNCHANGED
     # ------------------------------------------------------------------- #
     def build_validation_prompt(self, batch: List[Dict]) -> str:
         parts = [
@@ -203,12 +240,8 @@ class MathLabsEvaluator:
             )
 
         prompt = "".join(parts).rstrip("---\n") + "\n\nOutput JSON array now:"
-
         return prompt
 
-    # ------------------------------------------------------------------- #
-    # PARSE VALIDATION – ROBUST
-    # ------------------------------------------------------------------- #
     def parse_validation(self, text: str) -> List[Dict]:
         m = re.search(r"\[\s*{.*?}\s*(?:,\s*{.*?}\s*)*\]", text, re.DOTALL)
         if not m:
@@ -220,9 +253,6 @@ class MathLabsEvaluator:
             print(f"JSON parse error: {e}\nRaw chunk:\n{m.group(0)[:500]}")
             return []
 
-    # ------------------------------------------------------------------- #
-    # APPLY VALIDATION
-    # ------------------------------------------------------------------- #
     def apply_validation(self, mcq: Dict, val: Dict) -> Dict:
         orig_ans = mcq["answer"]["correct_ids"][0]
         orig_diff = mcq.get("difficulty", "unknown")
@@ -252,9 +282,6 @@ class MathLabsEvaluator:
         }
         return mcq
 
-    # ------------------------------------------------------------------- #
-    # STUDENT EVAL
-    # ------------------------------------------------------------------- #
     def build_student_prompt(self, mcq: Dict) -> str:
         choices = "\n".join(f"{c['id']}) {c['text']}" for c in mcq["choices"])
         return f"Answer this MCQ.\n\n{mcq['statement']}\n\n{choices}\n\nANSWER: <letter>\nREASONING: <2-3 sentences>"
@@ -299,7 +326,7 @@ class MathLabsEvaluator:
         }
 
     # ------------------------------------------------------------------- #
-    # RUN TEST
+    # RUN TEST – ONLY CHANGE: uses gemini_validate_batch
     # ------------------------------------------------------------------- #
     def run_test(self, sample_size: int = 10):
         selected = self.load_mcqs(sample_size)
@@ -309,11 +336,7 @@ class MathLabsEvaluator:
         for i in range(0, len(selected), BATCH_SIZE):
             batch = selected[i:i + BATCH_SIZE]
             print(f"Validating batch {i//BATCH_SIZE + 1} ({len(batch)} questions)")
-            resp = self.call_model(MASTER_MODEL, [{"role": "user", "content": self.build_validation_prompt(batch)}])
-            if resp["error"]:
-                print(f"Validation failed: {resp['content']}")
-                continue
-            vals = self.parse_validation(resp["content"])
+            vals = self.gemini_validate_batch(batch)
             if len(vals) != len(batch):
                 print(f"Validation mismatch: got {len(vals)}, expected {len(batch)}")
                 continue
@@ -322,7 +345,6 @@ class MathLabsEvaluator:
                 q_results.append(self.evaluate_question(mcq))
             time.sleep(1)
 
-        # --- SAFE SUMMARY ---
         if not q_results:
             print("No questions passed validation.")
             eval_doc = {
@@ -330,7 +352,7 @@ class MathLabsEvaluator:
                 "evaluated_at": datetime.now(timezone.utc).isoformat(timespec="seconds") + "Z",
                 "mode": self.mode,
                 "sampler": self.sampler,
-                "batch_size": len(selected),
+                "batch_size":len(selected),
                 "validation_model": MASTER_MODEL,
                 "student_models": STUDENT_MODELS,
                 "shuffle_enabled": SHUFFLE_CHOICES,
@@ -365,5 +387,5 @@ class MathLabsEvaluator:
 # RUN
 # --------------------------------------------------------------------------- #
 if __name__ == "__main__":
-    evaluator = MathLabsEvaluator(mode="db")  # default: test + random
+    evaluator = MathLabsEvaluator(mode="db",sampler="sequential")
     evaluator.run_test(sample_size=10)
