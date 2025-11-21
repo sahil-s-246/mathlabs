@@ -23,6 +23,7 @@ from multi_question_dashboard import main as multi_dashboard
 # -------------------------------------------------------------
 # HOME PAGE CONTENT (Main Findings)
 # -------------------------------------------------------------
+st.set_page_config(page_title="Index")
 st.title("📊 MathLABS Evaluation Dashboard")
 st.markdown("### Comprehensive analysis across multiple questions and evaluation runs")
 st.markdown("---")
