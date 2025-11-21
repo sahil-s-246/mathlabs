@@ -55,7 +55,7 @@ MASTER_MODEL = "gemini-2.5-flash"  # Gemini via official SDK
 
 STUDENT_MODELS = [
     "mistralai/mistral-small-3.1-24b-instruct:free",
-    "qwen/qwen2.5-vl-32b-instruct:free",
+    "meta-llama/llama-3.2-11b-vision-instruct:free",
     "google/gemma-3-27b-it:free",
     "openrouter/sherlock-dash-alpha",
     "nvidia/nemotron-nano-12b-v2-vl:free"
@@ -388,4 +388,4 @@ class MathLabsEvaluator:
 # --------------------------------------------------------------------------- #
 if __name__ == "__main__":
     evaluator = MathLabsEvaluator(mode="db",sampler="sequential")
-    evaluator.run_test(sample_size=10)
+    evaluator.run_test(sample_size=4)
