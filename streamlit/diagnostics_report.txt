@@ -1,0 +1,19 @@
+=== MathLabs Diagnostic Report ===
+
+Total evaluation questions: 4
+Total MongoDB questions: 460
+Total HF images: 125
+
+
+--- A. Evaluation references missing in MongoDB ---
+✔ All evaluation ids exist in MongoDB.
+
+--- B. Evaluation references missing HF images ---
+- 68-020-AKH → missing: (no image_path)
+
+--- C. Fully valid questions (Mongo + Image OK) ---
+- 05-018-AKH
+- 15-028_gen-003_1762787659.1562839
+- 15-032_gen-004_1762466222.573705
+
+=== End of Report ===
