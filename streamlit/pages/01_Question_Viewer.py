@@ -9,15 +9,10 @@ import re
 # -------------------------------------------------------------
 # Streamlit Global Config
 # -------------------------------------------------------------
-st.set_page_config(layout="wide", page_title="MathLabs Question Viewer")
 
 st.title("🧠 Question Viewer")
 st.write("Browse questions, diagrams, and model answers interactively.")
 
-with st.sidebar:
-    st.header("Navigation")
-    st.page_link("app.py", label="🏠 Main Findings")
-    st.page_link("pages/01_Question_Viewer.py", label="🧠 Question Viewer")
 
 
 # -------------------------------------------------------------
