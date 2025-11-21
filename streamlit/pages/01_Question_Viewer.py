@@ -9,15 +9,10 @@ import re
 # -------------------------------------------------------------
 # Streamlit Global Config
 # -------------------------------------------------------------
-st.set_page_config(layout="wide", page_title="MathLabs Question Viewer")
 
 st.title("🧠 Question Viewer")
 st.write("Browse questions, diagrams, and model answers interactively.")
 
-with st.sidebar:
-    st.header("Navigation")
-    st.page_link("app.py", label="🏠 Main Findings")
-    st.page_link("pages/01_Question_Viewer.py", label="🧠 Question Viewer")
 
 
 # -------------------------------------------------------------
@@ -35,54 +30,82 @@ evals_col = db["evaluations"]
 # -------------------------------------------------------------
 @st.cache_data
 def clean_latex(text: str):
+
     if not isinstance(text, str):
         return text
 
-    # inline math $...$
+    # ---- 1. Escape ALL known math operators outside math blocks ----
+    latex_ops = [
+        r"\lor", r"\neg", r"\land", r"\to", r"\leftrightarrow",
+        r"\forall", r"\exists", r"\in", r"\notin",
+        r"\cup", r"\cap", r"\subset", r"\subseteq"
+    ]
+
+    for op in latex_ops:
+        # Replace single slash with double slash
+        text = text.replace(op, op.replace("\\", "\\\\"))
+
+    # ---- 2. Properly format inline math: $...$ ----
     def inline(m):
-        return f"${m.group(1).replace('\\', '\\\\')}$"
+        content = m.group(1).replace("\\", "\\\\")
+        return f"${content}$"
 
     text = re.sub(r"\$(.+?)\$", inline, text)
 
-    # block math $$...$$
+    # ---- 3. Properly format block math: $$...$$ ----
     def block(m):
-        return f"$${m.group(1).replace('\\', '\\\\')}$$"
+        content = m.group(1).replace("\\", "\\\\")
+        return f"$${content}$$"
 
     text = re.sub(r"\$\$(.+?)\$\$", block, text)
+
+    # ---- 4. Escape stray $ ----
+    text = text.replace(" $", " \\$")
+    text = text.replace("$ ", "\\$ ")
+
+    # ---- 5. Ensure no unmatched $ ----
+    if text.count("$") % 2 == 1:
+        text = text.replace("$", "\\$")
 
     return text
 
 
-# -------------------------------------------------------------
-# LOAD ONLY QUESTIONS THAT HAVE EVALUATION
-# -------------------------------------------------------------
-# Get latest evaluation batch
-latest_eval = evals_col.find_one({}, sort=[("_id", -1)])
 
-if not latest_eval:
-    st.error("No evaluation data found in collection.")
+# -------------------------------------------------------------
+# LOAD *ALL* EVALUATION DOCUMENTS
+# -------------------------------------------------------------
+all_evals = list(evals_col.find({}))
+
+if not all_evals:
+    st.error("No evaluation documents found in MongoDB.")
     st.stop()
 
-# Extract all evaluated problem_ids
+# Extract all evaluated problem_ids from ALL evaluation docs
 evaluated_ids = set()
-for q_eval in latest_eval["questions"]:
-    ref = q_eval.get("original_mcq_ref", {})
-    if "problem_id" in ref:
-        evaluated_ids.add(ref["problem_id"])
+
+for doc in all_evals:
+    for q_eval in doc.get("questions", []):
+        ref = q_eval.get("original_mcq_ref", {})
+        pid = ref.get("problem_id")
+        if pid:
+            evaluated_ids.add(pid)
 
 if not evaluated_ids:
-    st.error("Evaluation document found, but contains no valid problem IDs.")
+    st.error("Evaluation documents found, but no valid problem IDs detected.")
     st.stop()
 
-# Load matching questions
-questions = list(questions_col.find({"problem_id": {"$in": list(evaluated_ids)}}))
 
+# -------------------------------------------------------------
+# Load ALL matching questions from MongoDB
+# -------------------------------------------------------------
+questions = list(questions_col.find({"problem_id": {"$in": list(evaluated_ids)}}))
 questions.sort(key=lambda x: x["problem_id"])
 num_questions = len(questions)
 
 if num_questions == 0:
-    st.error("No questions matched the evaluated problem IDs. Check database consistency.")
+    st.error("No questions matched evaluation problem IDs.")
     st.stop()
+
 
 
 # -------------------------------------------------------------
@@ -129,20 +152,24 @@ with col_next:
 
 
 # -------------------------------------------------------------
-# LOAD CURRENT QUESTION
+# LOAD CURRENT QUESTION + ITS EVALUATION BLOCK
 # -------------------------------------------------------------
 q = questions[st.session_state.q_index]
 pid = q["problem_id"]
 
-# Find corresponding evaluation block
-eval_block = next(
-    (ev for ev in latest_eval["questions"]
-     if ev["original_mcq_ref"]["problem_id"] == pid),
-    None
-)
+# We must find the evaluation block from ANY evaluation document
+eval_block = None
+
+for doc in all_evals:
+    for ev in doc.get("questions", []):
+        if ev.get("original_mcq_ref", {}).get("problem_id") == pid:
+            eval_block = ev
+            break
+    if eval_block:
+        break
 
 if not eval_block:
-    st.error("Evaluation mismatch for question.")
+    st.error(f"No evaluation found for question {pid}.")
     st.stop()
 
 
@@ -208,10 +235,10 @@ if st.session_state.answered:
     st.markdown("---")
     st.markdown("## 🤖 Model Answers")
 
-    for stu in eval_block["student_evaluations"]:
+    for stu in eval_block.get("student_evaluations", []):
         ans = stu["answer"]
 
-        if ans not in ["A", "B", "C", "D"]:   # filter invalid
+        if ans not in ["A", "B", "C", "D"]:
             continue
 
         model = stu["model"]
@@ -221,4 +248,4 @@ if st.session_state.answered:
 
         with st.expander(f"{model} — Answer: {ans} {'✔️' if correct else '❌'}"):
             st.write(f"Time: {time_ms} ms")
-            st.markdown(clean_latex(reasoning))
+            st.markdown(reasoning, unsafe_allow_html=True)

@@ -1,0 +1,74 @@
+=== MathLabs Evaluation Statistics ===
+
+Total evaluation batches: 19
+Total unique problem_ids: 28
+Total unique models: 13
+
+
+--- Unique test_run_ids (batches) ---
+- run_20251118_003738
+- run_20251118_004321
+- run_20251118_004807
+- run_20251119_194114
+- run_20251119_194803
+- run_20251119_200245
+- run_20251119_200638
+- run_20251119_201712
+- run_20251119_201916
+- run_20251119_203619
+- run_20251119_203808
+- run_20251119_204457
+- run_20251119_205041
+- run_20251119_205953
+- run_20251119_211314
+- run_20251119_211454
+- run_hybrid_20251119_1720
+- run_hybrid_20251120_1436
+- run_hybrid_20251120_2045
+
+--- Problem Frequency (problem_id → number of times evaluated) ---
+03-001-AKH: 14
+03-002-AKH: 14
+03-003-AKH: 14
+03-004-AKH: 14
+03-005-AKH: 8
+03-006-AKH: 6
+03-007-AKH: 6
+03-008-AKH: 6
+03-009-AKH: 6
+03-010-AKH: 6
+11-002_gen-001_871982: 2
+11-002_gen-002_871982: 2
+11-002_gen-003_871982: 1
+11-002_gen-004_871982: 1
+11-002_gen-005_871982: 1
+11-003_gen-001_1762788050.844692: 1
+11-003_gen-002_1762788050.844703: 1
+11-003_gen-003_1762788050.844705: 1
+11-003_gen-004_1762788050.844707: 1
+11-003_gen-005_1762788050.8447082: 1
+62-002_gen-001_675700: 1
+68-008-AKH: 1
+11-004_gen-001_268267: 1
+68-015-AKH: 1
+68-020-AKH: 1
+05-018-AKH: 1
+15-028_gen-003_1762787659.1562839: 1
+15-032_gen-004_1762466222.573705: 1
+
+--- Model Frequency (model → number of uses) ---
+mistralai/mistral-small-3.1-24b-instruct:free: 114
+nvidia/nemotron-nano-12b-v2-vl:free: 114
+qwen/qwen2.5-vl-32b-instruct:free: 102
+google/gemma-3-27b-it:free: 102
+openrouter/sherlock-dash-alpha: 102
+google/gemini-2.0-flash-exp:free: 16
+google/gemma-3-27b-it:nebius: 12
+Qwen/Qwen2.5-VL-7B-Instruct:hyperbolic: 12
+baidu/ERNIE-4.5-VL-28B-A3B-PT:novita: 12
+CohereLabs/command-a-vision-07-2025:cohere: 12
+zai-org/GLM-4.1V-9B-Thinking:novita: 12
+google/gemini-3-pro: 4
+meta-llama/llama-3.2-11b-vision-instruct:free: 4
+
+=== End of Report ===
